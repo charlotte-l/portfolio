@@ -5,13 +5,6 @@ module.exports = {
 		description: `Hi! I'm Charlotte, I make websites.`,
     url: `https://charlotte-cameron.github.io`,
     favicon: `/static/favicon/favicon.png`,
-    nav: [
-      { path: '/', name: 'Home' },
-      { path: '/#about', name: 'About' },
-      { path: '/#process', name: 'Process' },
-      { path: '/#speaking', name: 'Speaking' },
-      { path: '/#contact', name: 'Contact' },
-    ],
 	},
   plugins: [
     `gatsby-plugin-sass`,
@@ -19,7 +12,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-source-filesystem`,
@@ -47,6 +39,7 @@ module.exports = {
         icon: `static/favicon/favicon.png`,
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: "@chakra-ui/gatsby-plugin",
       options: {
@@ -54,10 +47,14 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-anchor-links",
+      resolve: `gatsby-plugin-netlify`,
       options: {
-        offset: -100
-      }
+        headers: {
+          "/sw.js": [
+            "Cache-Control: no-cache",
+          ],
+        },
+      },
     },
   ],
 };
