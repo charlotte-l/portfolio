@@ -1,0 +1,19 @@
+@keyframes hover {
+  0% {
+    opacity: 0.7;
+    transform: scale3d(0.8, 0.8, 1) translate3d(-10%, -5%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1.2, 1.2, 1) translate3d(20%, 33%, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0%, -30%, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0%, 0);
+  }
+}
