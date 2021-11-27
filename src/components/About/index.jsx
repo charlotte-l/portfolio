@@ -26,13 +26,13 @@ const About = () => {
           <Box></Box>
           <Box>
             <StaggeredFade>
-              <MotionText variants={variants} color={'white'}>
+              <MotionText variants={variants}>
                 I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences that work across all platforms and devices.
               </MotionText>
-              <MotionText variants={variants} color={'white'}>
+              <MotionText variants={variants}>
                 Although I'm very familiar with using frameworks, my websites are primarily hand-coded using HTML5, CSS3, SVG and JavaScript.
               </MotionText>
-              <MotionText variants={variants} color={'white'}>
+              <MotionText variants={variants}>
                 With a strong emphasis on "Progressive Enhancement", I look for creative ways to push the boundaries of website front-end code without compromising on browser support and performance.
               </MotionText>
             </StaggeredFade>

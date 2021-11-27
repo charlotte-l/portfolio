@@ -46,13 +46,12 @@ const Hero = () => {
                 fontWeight={600}
                 fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
                 lineHeight={'1.5'}
-                color={'white'}
                 as="h2"
                 variants={variants}
               >
                 Hi, I'm Charlotte
               </MotionHeading>
-              <MotionText color={'white'} maxW={'md'} lineHeight={1.6} variants={variants}>
+              <MotionText maxW={'md'} lineHeight={1.6} variants={variants}>
                 a web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
               </MotionText>
             </StaggeredFade>

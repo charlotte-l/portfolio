@@ -9,11 +9,11 @@ const Work = () => {
         <Monkey width="100%" />
       </Box>
       <Container maxW="5xl">
-        <Heading as="h2" color={'white'}>My work</Heading>
+        <Heading as="h2">My work</Heading>
         <SimpleGrid columns={2}>
           <Box>
-            <Heading as="h3" color={'white'}>Work sample</Heading>
-            <Text color={'white'} mb="4">
+            <Heading as="h3">Work sample</Heading>
+            <Text mb="4">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
                voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
             </Text>

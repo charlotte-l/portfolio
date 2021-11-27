@@ -12,8 +12,8 @@ const SideProjects = () => {
       </Box>
       <Container maxW="5xl" textAlign="center">
         <Box mb="16">
-          <Heading as="h2" color={'white'}>Side projects</Heading>
-          <Text color={'white'}>
+          <Heading as="h2">Side projects</Heading>
+          <Text>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
               voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
           </Text>
@@ -23,8 +23,8 @@ const SideProjects = () => {
             const { title, info, img } = project;
             return (
               <Box key={i} mb="8">
-                <Heading as="h3" color={'white'}>{title}</Heading>
-                <Text color={'white'}>
+                <Heading as="h3">{title}</Heading>
+                <Text>
                   {info}
                 </Text>
               </Box>
