@@ -8,12 +8,14 @@ import borders from "../foundations/borders"
 
 // Component style overrides
 import Button from "../components/button"
+import Link from "../components/link"
 
 const theme = extendTheme({
     styles,
     borders,
     components: {
       Button,
+      Link
     },
     fonts: {
       heading: "'Playfair Display', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif",

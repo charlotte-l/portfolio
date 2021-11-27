@@ -8,6 +8,7 @@ import { itemVariant } from 'components/common/constants';
 import { Birds } from './Birds';
 import Forest from './Forest';
 
+const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 
 const About = () => {
@@ -15,17 +16,25 @@ const About = () => {
 
   return (
     <Flex as="section" id="about" direction="column" position="relative" bg="#062D36" pb={{ base: 30, md: 48 }}>
-      <Box w="100%" transform="translateY(-12.5%)" overflow="hidden">
-        <Forest width="105%" style={{transform: "translateX(-2.5%)"}} />
+      <Box w="100%" transform="translateY(-20vh)" mb="-10vh" overflow="hidden">
+        <Forest width="105%" style={{ transform: "translateX(-2.5%)" }} />
       </Box>
-      <Box w="40vw" position="absolute" left="-1px" bottom="0">
-        <Birds width="100%" />
-      </Box>
-      <Container maxW="5xl">
-        <SimpleGrid columns={2} className="about-wrapper">
-          <Box></Box>
-          <Box>
+      <Container maxW="100%" minH="40vh" px="0">
+        <SimpleGrid columns={2} className="about-wrapper" overflow="hidden">
+          <Box w="40vw" transform="translateX(-25px)">
+            <Birds width="100%" />
+          </Box>
+          <Flex maxW="60ch" px="3" direction="column" justifyContent="center">
             <StaggeredFade>
+              <MotionHeading
+                fontWeight={700}
+                fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
+                lineHeight={'1.5'}
+                as="h2"
+                variants={variants}
+              >
+                About
+              </MotionHeading>
               <MotionText variants={variants}>
                 I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences that work across all platforms and devices.
               </MotionText>
@@ -36,7 +45,7 @@ const About = () => {
                 With a strong emphasis on "Progressive Enhancement", I look for creative ways to push the boundaries of website front-end code without compromising on browser support and performance.
               </MotionText>
             </StaggeredFade>
-          </Box>
+          </Flex>
         </SimpleGrid>
       </Container>
     </Flex>

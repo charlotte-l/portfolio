@@ -11,7 +11,7 @@ const Contact = () => {
     <Flex as="section" id="contact" direction="column" pt={{ base: 30, md: 48 }} pb='0' bgGradient="linear(to-b, #2B023E, #60336B)">
       <Container maxW="6xl" py="20" mx="auto">
         <Heading as="h2" size="3xl" maxW="3xl">
-          <Link href="mailto:cel.cameron@protonmail.com" color="#f2f2c8"><i>Drop me a line</i></Link>, I'd love to hear from you!
+          <Link href="mailto:cel.cameron@protonmail.com" title="Email Charlotte">Drop me a line</Link>, I'd love to hear from you!
         </Heading>
       </Container>
       <Box w="100%" position='relative'>

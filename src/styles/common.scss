@@ -1,3 +1,51 @@
+html, body {
+  cursor: none !important;
+}
+
+.cursor,
+.cursor2 {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  top: 0px;
+  left: 0px;
+}
+
+.cursor {
+  height: 4px;
+  width: 4px;
+  background: #f1c40f;
+  margin-left: -2px;
+  margin-top: -2px;
+  border-radius: 50%;
+  z-index: 99999;
+}
+
+.cursor2 {
+  height: 36px;
+  width: 36px;
+  margin-left: -18px;
+  margin-top: -18px;
+  z-index: 99998;
+  transition: all 0.3s ease-out;
+}
+
+.cursor2 {
+  background: rgba(241, 196, 15,.1);
+  box-shadow: 0 0 14px rgba(241, 196, 15, 0.3);
+  border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+.cursor2.hover {
+	border: 3px solid #f1c40f;
+	box-shadow: 0 0 22px rgba(241, 196, 15, 0.6);
+  border: 3px solid #f1c40f;
+  height: 60px;
+  width: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
 @keyframes hover {
   0% {
     opacity: 0.7;

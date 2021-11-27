@@ -1,6 +1,14 @@
 import React from 'react';
-import { Container, Flex, SimpleGrid, Box, Text, Heading } from '@chakra-ui/react';
+import { Container, Flex, SimpleGrid, Box, Text, Heading, Stack, Link } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { Monkey } from './Monkey';
+
+import StaggeredFade from 'components/common/StaggeredFade';
+import { itemVariant } from 'components/common/constants';
+
+const MotionText = motion(Text);
+const MotionHeading = motion(Heading);
+const variants = itemVariant;
 
 const Work = () => {
   return (
@@ -9,19 +17,32 @@ const Work = () => {
         <Monkey width="100%" />
       </Box>
       <Container maxW="5xl">
-        <Heading as="h2">My work</Heading>
-        <SimpleGrid columns={2}>
+        <Stack direction="row" spacing="36">
+          <StaggeredFade>
+            <MotionHeading
+              fontWeight={700}
+              fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
+              lineHeight={'1.5'}
+              as="h2"
+              variants={variants}
+            >
+              Work
+            </MotionHeading>
+            <MotionHeading as="h3" variants={variants}>Work sample</MotionHeading>
+            <MotionText mb="4" variants={variants}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
+                voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
+            </MotionText>
+            <MotionText mb="4" variants={variants}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
+                voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
+            </MotionText>
+            <Link href="" title="adenin Technologies">Go to website</Link>
+          </StaggeredFade>
           <Box>
-            <Heading as="h3">Work sample</Heading>
-            <Text mb="4">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-               voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-            </Text>
+            Slider
           </Box>
-          <Box>
-            {/* image to go here */}
-          </Box>
-        </SimpleGrid>
+        </Stack>
       </Container>
     </Flex>
   );

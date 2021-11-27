@@ -43,7 +43,7 @@ const Hero = () => {
             py={{ base: 30, md: 48 }}>
             <StaggeredFade>
               <MotionHeading
-                fontWeight={600}
+                fontWeight={700}
                 fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
                 lineHeight={'1.5'}
                 as="h2"
