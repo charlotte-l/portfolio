@@ -22,35 +22,35 @@ const Forest = (props) => {
     <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3877.3 2174.2" opacity={opacity} {...props}>
       <defs>
         <linearGradient id="layer5Gradient" x1="1740.7" y1="2430.5" x2="2149.4" y2="-452.9" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#3580a5" />
-          <stop offset="40%" stop-color="#3580a5" />
-          <stop offset="100%" stop-color="#d373f3" />
+          <stop offset="0%" stopColor="#3580a5" />
+          <stop offset="40%" stopColor="#3580a5" />
+          <stop offset="100%" stopColor="#d373f3" />
         </linearGradient>
         <linearGradient id="layer4Gradient" x1="1740.7" y1="2430.5" x2="2149.4" y2="-452.9" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#0d538f" />
-          <stop offset="40%" stop-color="#0d538f" />
-          <stop offset="50%" stop-color="#6454e5" />
+          <stop offset="0%" stopColor="#0d538f" />
+          <stop offset="40%" stopColor="#0d538f" />
+          <stop offset="50%" stopColor="#6454e5" />
         </linearGradient>
         <linearGradient id="layer3Gradient" x1="1740.7" y1="2430.5" x2="2149.4" y2="-452.9" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#09647f" />
-          <stop offset="40%" stop-color="#09647f" />
-          <stop offset="90%" stop-color="#c1e554" />
+          <stop offset="0%" stopColor="#09647f" />
+          <stop offset="40%" stopColor="#09647f" />
+          <stop offset="90%" stopColor="#c1e554" />
         </linearGradient>
         <linearGradient id="layer2Gradient" x1="1740.7" y1="2430.5" x2="2149.4" y2="-452.9" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#03363f" />
-          <stop offset="50%" stop-color="#03363f" />
-          <stop offset="100%" stop-color="#79ed87" />
+          <stop offset="0%" stopColor="#03363f" />
+          <stop offset="50%" stopColor="#03363f" />
+          <stop offset="100%" stopColor="#79ed87" />
         </linearGradient>
         <linearGradient id="layer1Gradient" x1="1740.7" y1="2430.5" x2="2149.4" y2="-452.9" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#062d36" />
-          <stop offset="40%" stop-color="#062d36" />
-          <stop offset="100%" stop-color="#3ccfc8" />
+          <stop offset="0%" stopColor="#062d36" />
+          <stop offset="40%" stopColor="#062d36" />
+          <stop offset="100%" stopColor="#3ccfc8" />
         </linearGradient>
         <clipPath id="forestClip" transform="translate(9)">
           <path fill="none" d="M0 0h3862v2174H0z" />
         </clipPath>
       </defs>
-      <g clip-path="url(#forestClip)">
+      <g clipPath="url(#forestClip)">
         <motion.path style={{y: yS1}} d="M3862 500c-150-56-300-120-347-150-61-40-136 12-182 24s-278 45-278 45-169 74-212 103-359 114-359 114-440-74-545-109-167-5-167-5l-132 54-106-39s-604 98-718 111S176 94 125 54C78 17 9 2 0 0v2174h3862Z" transform="translate(9)" fill="url(#layer5Gradient)"/>
         <motion.g fill="url(#layer4Gradient)" style={{y: yS2}}>
           <path d="m3862 1017-4 4-5-12-9 7-7-13-2 1-1 7-4-3-5 3-2-9-16 5 1-5c-4-3-8 4-12 1l9-7-1-2-7 1-1-5-4 6-8-12-7 4-3-4-1 6-5-4c-1-2-3-2-5-3a18 18 0 0 1-3-3l-3 4-5-10-6 2-6-1c-4-7-11-6-17-4a8 8 0 0 1-4 0c5-3 14-4 14-12l-12-2 7-4h-8l9-10c-9 1-12 6-17 10l1-4-5-1 7-5-6-1-7-18-5 2-2-4-2 6h-1l-2-6-4 1 1-6-11 5c-9-3-18-6-28-3l-4-5c1 8-8 3-10 7l-16-4c2 3 3 7 6 10a878 878 0 0 0 1 9l-6 2v-5l-12 3-4-8h-2l-1 5c-11 0-11 0-15-2l10-6-1-2-7 1v-4l-1 1c-6 11-6 12 1 16l-2 6-6-3 3-2-3-10h-2l-2 8c-4 1-8 5-12-1l-3 5-4-8-14 10c-2-8-9-4-14-3l-2-10h-2l-2 6c-7-6-12-2-18 2 6-8 6-8 2-13l-8 7-14 4 4 6-5-1 2 8-4 4-1-4-17-1 2 5-5 2 1-14-17 6v-1l4-3v-1h-12l5 3-3 8 5 4-1 1-4-1-6-10 5-1c-5-2-9-6-14 0l4-8-8-4v-2l-13 7-1-1 3-4h-10l5 4-3 4-5-5v11l4 3-6 5c1-9-4-15-16-19l10 15-3 4-2-7-6 9-4-3-3 6-6-2 2-6-16 12v-6l-16 3c3-5 9-9 3-15l-5 7-4-5-1 2 5 8-16-7-1 1 10 18-4 2-2-5-3-10-3 5c-3 2-3 8-10 7-2 0-5 6-8 10-3-6-7-10-16-10l6 11-16-4v7a11 11 0 0 1-2 0l-5-14-3 1-2 9c-10-6-18 0-26 5l-2-2 6-1-2-2-16-3-5 7 1 2-12-5 1-6c-6 0-12 1-17 6v-6l-12 2 1-1-9-8-3 2 1 9h-11l13 6c-8 3-14 1-21-3l3 8-6 2 2 7h-2l-2-5-9 5-4-8c-8 1-15-2-19-8l-4 5-16-9 1-2-5 2v-7l-2-1-2 11-3-8c-5 0 0 8-8 3l4 4-1 1c-5-1-8 0-9 5-1 4-5 7-7 10h-14l-4-4-1 6-7 2 4 3-5 9-4-8-9 6 1 2 7-1v2l-14 1 4-5c-4-3-8-1-9 1-1 3-3 8 1 11l-1 1-5-4-2 1-9-10-10 12-2-6-8 7-1-11h-3l-1 15c-1-6-5-6-11-3l5 2-5 4-3-8-5 6-2-4h-2l1 5-9-4-4 5-1-1v-3l-1-1-5 8c-6-1-7-12-16-3l-3-5v6l-9-7-2 6-7-3-2 3c-3-5-5-10-12-7-4 2-7 6-10 9l-1-14-21 5-9-3v-4l-9 5-3-7-3 5-14-7 3 9-19 3-3-1-11 1h1l-6 9-13-7-1 1 3 8h-5l-2-6-8 9v-5l-30 6 7 3-11 3-1-1 2-4-12 8v-5l-11 1v-4h-2l-5 11-5-6-9 3 2-6-5 4-2-10h-2l-2 10-12 2 3-9-2-1-7 10 2-11-20 8v2l-5-3 6-14-2-2c-4 4-9 6-12 10-4 4-5 10-8 15-8-3 1-6-2-10l-22 7c0 3 4 8-3 11l2-6c-4 1-7 2-6-3l-8 5c-3 1-5 7-10 2l-7 2-14 10-1-14c-4 4-7 7-11 5-5-1-9-5-14-8l-3 8-10-4 3-5-1-1-8 6-2-8-3 3-2-2-7 7-2-1v-5l-16 2 2 8-13-9-3 2 11 8-5 10h-3l4-8-8 2-7-13-5 6-3-8-3 3-2-10c-6 3-10 7-18 6l5-8-2-1-10 8a15 15 0 0 1-7 3l-2-5-12-1 2 10h-1l-3-5h-1l-6 15a32 32 0 0 1-4 8 46 46 0 0 1-9 8c2-9-1-16-13-20l2 13h-12v1l12 5-19 6a38 38 0 0 0-3-4c-4-4-9-2-14 0-3 1-6 5-9 0l-4 2c2-7-1-12-9-17l-2 15a14 14 0 0 0-14-4c-3 2-8 4-8 7-2 5-6 5-11 6l1-3c-6-1-11 0-15 4s-7 5-13 4a82 82 0 0 1-5 7l-5 3 2-13-9 6-5-7 1 10-16-9c-1 5 7 8-1 11l-6-7h-7l2 9c-4-2-7-2-9-4-4-4-7 0-10 2l-5-10-4 6-4-3-7 18-6-11-4 8-19-4-3 10-6-9-4 8c-6-8-10 2-15 1l-6-7-3 7-3-1-6 4-5-6-2 1-2 8-11-7-2 1 4 6-6 4v1l-8-1 3-5-16 8v-7l-6 4-5 6-4-13-3 1v8l-7-3v1l6 6c-11-1-11-1-19 6 1-5 4-11-3-14-4 6 0 11 4 18-9-5-16-12-26-7l-1-5h-1l-3 16-5-6c-4 3-6 8-12 3l6-4-10 2v-1l-7 4 1-6c-9 0-10 7-13 11l-7-9-2 1 2 5h-5v2l8 2-12 2-2-5c-3 5-6 6-11 2l4 5-4 2 4 2 2 5 4-1-1 2c-6 0-12 3-18 5l-48 19v5l1 3c3 14 12 24 22 34l42 39c12 11 29 13 46 15l96 6 11 1h45l48-3c173-8 345-4 518-6 88-1 175-3 263-7l310-18 206-13 201-13q109-6 218-2l23 1Zm-1908 133h-4l-9-6 14-1 3 2a18 18 0 0 1-4 5Zm321-60-16-3v-7l17 9-1 1Zm92-10-1-1 4-20 11 7Zm431-47-1-3-7-3 12-4c2-1 5 1 9 2-10-2-11 3-13 8Zm316-29-4-1-4 6v-4h-2l-5-5 1-1 14 4v1Zm586-46 9 5c-6 2-11 0-9-5Z" transform="translate(9)" />
