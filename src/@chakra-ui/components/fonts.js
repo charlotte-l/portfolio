@@ -4,10 +4,6 @@ import React from "react"
 const Fonts = () => (
   <Global
     styles={`
-    p {
-      color: red
-    }
-
     @font-face {
         font-family: 'Playfair Display';
         font-style: normal;
