@@ -1,5 +1,3 @@
-export const onServiceWorkerUpdateReady = () => window.location.reload(true);
-
 export const onClientEntry = () => {
   document.getElementById('___loading').style.display = "flex"
 }

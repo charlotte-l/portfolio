@@ -39,22 +39,12 @@ module.exports = {
         icon: `static/favicon/favicon.png`,
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: "@chakra-ui/gatsby-plugin",
       options: {
         resetCSS: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {
-          "/sw.js": [
-            "Cache-Control: no-cache",
-          ],
-        },
-      },
-    },
+    `gatsby-plugin-netlify`
   ],
 };
