@@ -10,14 +10,15 @@ import Forest from './Forest';
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
+const variants = itemVariant;
 
 const About = () => {
-  const variants = itemVariant;
-
   return (
-    <Flex as="section" id="about" direction="column" position="relative" bg="#062D36" pb={{ base: 30, md: 48 }}>
-      <Box w="100%" transform="translateY(-20vh)" mb="-10vh" overflow="hidden">
-        <Forest width="105%" style={{ transform: "translateX(-2.5%)" }} />
+    <Flex as="section" id="about" direction="column" position="relative" bg="#062D36" mt="-1px" pb={{ base: 30, md: 48 }}>
+      <Box id="forest-wrap" w="100%" transform="translateY(-20vh)" mb="-10vh" position="relative">
+        <Box overflow="hidden">
+          <Forest width="105%" style={{ transform: "translateX(-2.5%)" }} />
+        </Box>
       </Box>
       <Container maxW="100%" minH="40vh" px="0">
         <SimpleGrid columns={2} className="about-wrapper" overflow="hidden">

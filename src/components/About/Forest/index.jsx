@@ -46,8 +46,8 @@ const Forest = (props) => {
           <stop offset="40%" stopColor="#062d36" />
           <stop offset="100%" stopColor="#3ccfc8" />
         </linearGradient>
-        <clipPath id="forestClip" transform="translate(9)">
-          <path fill="none" d="M0 0h3862v2174H0z" />
+        <clipPath id="forestClip">
+          <path fill="none" d="M0 0h3862v2174H0z" transform="translate(0 9)" />
         </clipPath>
       </defs>
       <g clipPath="url(#forestClip)">
