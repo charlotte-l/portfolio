@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React from 'react';
 import { Container, Heading, Flex, SimpleGrid, Box, Text } from "@chakra-ui/react";
 
 import { motion } from 'framer-motion';
@@ -43,6 +43,13 @@ const About = () => {
               </MotionText>
               <MotionText variants={variants}>
                 With a strong emphasis on "Progressive Enhancement", I look for creative ways to push the boundaries of website front-end code without compromising on browser support and performance.
+              </MotionText>
+              <MotionText variants={variants}><br/></MotionText>
+              <MotionText variants={variants}>
+                Something about current work
+              </MotionText>
+              <MotionText variants={variants}>
+                Something about what I did before this job (Cybersecurity, Physics degree). Also I'm a level 3 qualified PT!
               </MotionText>
             </StaggeredFade>
           </Flex>
