@@ -1,40 +1,35 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, useEffect } from "react";
+
+function getMousePositionFromEvent(e) {
+  const {
+    clientX,
+    clientY,
+    target
+  } = e;
+
+  return {
+    left: clientX,
+    top: clientY,
+    hover: target.tagName === "A"
+  };
+}
 
 const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = useState({
-    left: 0,
-    top: 0,
-  });
+  const [mousePosition, setMousePostition] = useState({left: 0, top: 0, hover: false});
 
-  const handleMouseMove = useCallback(
-    (e) => {
-      setMousePosition({
-        left: e.clientX,
-        top: e.clientY,
-        hover: e.target.tagName === "A"
-      });
-    },
-    []
-  );
+  const updateMousePosition = useCallback((e) => {
+    setMousePostition(getMousePositionFromEvent(e));
+  }, []);
 
-  const ref = useRef();
+  useEffect(() => {
+    document.addEventListener("mousemove", updateMousePosition);
 
-  const callbackRef = useCallback(
-    (node) => {
-      if (ref.current) {
-        ref.current.removeEventListener("mousemove", handleMouseMove);
-      }
+    return () => {
+      document.removeEventListener("mousemove", updateMousePosition);
+    };
+  }, []);
 
-      ref.current = node;
-
-      if (ref.current) {
-        ref.current.addEventListener("mousemove", handleMouseMove);
-      }
-    },
-    [handleMouseMove]
-  );
-
-  return [callbackRef, mousePosition];
+  return mousePosition;
 };
 
 export default useMousePosition;

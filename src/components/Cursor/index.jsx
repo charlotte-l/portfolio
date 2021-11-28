@@ -1,6 +1,8 @@
 import React from 'react';
+import useMousePosition from 'hooks/useMousePosition';
 
-const Cursor = ({mousePosition = {left: 0, right: 0, hover: false}}) => {
+const Cursor = () => {
+  const mousePosition = useMousePosition();
   return (
     <>
       <div className={`cursor ${mousePosition.hover && 'hover'}`} id="cursor" style={{transform: `translate3d(${mousePosition.left}px,${mousePosition.top}px, 0px`}}></div>

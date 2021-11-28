@@ -12,10 +12,9 @@ import { itemVariant } from 'components/common/constants';
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 const MotionBox = motion(Box);
+const variants = itemVariant;
 
 const SideProjects = () => {
-  const variants = itemVariant;
-
   return (
     <Flex as="section" id="side-projects" position="relative" overflow="hidden" py={{ base: 30, md: 48 }} bgGradient="linear(to-b, #060836, #2B023E)">
       <Box w="25vw" position="absolute" right="-1.5vw" top="0">

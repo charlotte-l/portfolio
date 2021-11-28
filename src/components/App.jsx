@@ -11,16 +11,9 @@ import Cursor from './Cursor';
 
 import Fonts from "../@chakra-ui/components/fonts";
 
-import useMousePosition from 'hooks/useMousePosition';
-
 function App() {
-  const [ref, mousePosition] = useMousePosition();
-
-  React.useEffect(() => {
-  }, [mousePosition]);
-
   return (
-    <div className="app" ref={ref}>
+    <div className="app">
       <Fonts />
       <main>
         <Hero />
@@ -28,7 +21,7 @@ function App() {
         <Work />
         <SideProjects />
         <Contact />
-        <Cursor mousePosition={mousePosition} />
+        <Cursor />
       </main>
       <footer>
         <Footer />
