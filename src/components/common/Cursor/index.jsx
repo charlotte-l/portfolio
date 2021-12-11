@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
+import { throttle } from 'lodash';
 
 const Cursor = () => {
   const cursor = useRef();
@@ -8,12 +9,15 @@ const Cursor = () => {
   let [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
+  let cursorIsHovering = useState(false);
 
   const onMouseMove = (event) => {
-    const { pageX: x, pageY: y } = event;
+    const { clientX: x, clientY: y } = event;
     setMousePosition({ x, y });
     animateCursor(event);
   };
+
+  const throttledMouseMove = useMemo(() => throttle(onMouseMove, 16));
 
   const onResize = () => {
     setWidth(window.innerWidth);
@@ -21,12 +25,13 @@ const Cursor = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("pointermove", throttledMouseMove);
     window.addEventListener("resize", onResize);
     requestRef.current = requestAnimationFrame(animateCursor2);
+    handleLinks();
 
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("pointermove", throttledMouseMove);
       window.removeEventListener("resize", onResize);
       cancelAnimationFrame(requestRef.current);
     };
@@ -38,8 +43,8 @@ const Cursor = () => {
   let endY = winDimensions.height / 2;
 
   function animateCursor(e) {
-    endX = e.pageX;
-    endY = e.pageY;
+    endX = e.clientX;
+    endY = e.clientY;
     cursor.current.style.transform =  `translate3d(${endX}px, ${endY}px, 0)`;
   }
 
@@ -52,6 +57,31 @@ const Cursor = () => {
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animateCursor2);
   };
+
+  function toggleCursorHover() {
+    if (cursorIsHovering.current) {
+      // hover state
+      cursor2.current.style.border = "3px solid #f1c40f";
+      cursor2.current.style.boxShadow = "0 0 22px rgba(241, 196, 15, 0.6)";
+    } else {
+      // normal state
+      cursor2.current.style.border = "";
+      cursor2.current.style.boxShadow =  "";
+    }
+  }
+
+  function handleLinks() {
+    document.querySelectorAll("a").forEach(el => {
+      el.addEventListener("mouseover", () => {
+        cursorIsHovering.current = true;
+        toggleCursorHover();
+      });
+      el.addEventListener("mouseout", () => {
+        cursorIsHovering.current = false;
+        toggleCursorHover();
+      });
+    });
+  }
 
   return (
     <>

@@ -36,16 +36,6 @@ html, body {
   border: 1px solid rgba(241, 196, 15, 0.3);
 }
 
-.cursor2.hover {
-	border: 3px solid #f1c40f;
-	box-shadow: 0 0 22px rgba(241, 196, 15, 0.6);
-  border: 3px solid #f1c40f;
-  height: 60px;
-  width: 60px;
-  margin-left: -30px;
-  margin-top: -30px;
-}
-
 #forest-wrap::after {
   content: '';
   position: absolute;
