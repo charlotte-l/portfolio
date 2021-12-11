@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 function getMousePositionFromEvent(e) {
   const {
@@ -10,7 +10,7 @@ function getMousePositionFromEvent(e) {
   return {
     left: clientX,
     top: clientY,
-    hover: target.tagName === "A"
+    hover: target && target.tagName === "A"
   };
 }
 
@@ -22,10 +22,10 @@ const useMousePosition = () => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("mousemove", updateMousePosition);
+    document.addEventListener("pointermove", updateMousePosition);
 
     return () => {
-      document.removeEventListener("mousemove", updateMousePosition);
+      document.removeEventListener("pointermove", updateMousePosition);
     };
   }, []);
 

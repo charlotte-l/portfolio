@@ -7,7 +7,7 @@ import Work from './Work';
 import SideProjects from './SideProjects';
 import Contact from './Contact';
 import Footer from './Footer';
-import Cursor from './Cursor';
+import Cursor from './common/Cursor';
 
 import Fonts from "../@chakra-ui/components/fonts";
 
