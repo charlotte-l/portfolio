@@ -7,8 +7,8 @@ const Cursor = () => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
   let [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [width, setWidth] = useState();
-  const [height, setHeight] = useState();
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
   let cursorIsHovering = useState(false);
 
   const onMouseMove = (event) => {
@@ -75,7 +75,7 @@ const Cursor = () => {
   }
 
   function handleLinks() {
-    document.querySelectorAll("a").forEach(el => {
+    document.querySelectorAll("a, button").forEach(el => {
       el.addEventListener("mouseover", () => {
         cursorIsHovering.current = true;
         toggleCursorHover();
