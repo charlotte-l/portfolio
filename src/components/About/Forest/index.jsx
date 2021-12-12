@@ -1,17 +1,17 @@
 import React from "react";
-import { motion, useViewportScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useTransform, useSpring } from "framer-motion";
+import useWindowScrollPosition from "hooks/useWindowScrollPos";
 
 const Forest = (props) => {
-  const { scrollY } = useViewportScroll();
 
-  const opacity = useTransform(scrollY, [0, 800], [0.5, 1]);
+  const { y } = useWindowScrollPosition();
+  const opacity = useTransform(y, [0, 600], [0.5, 1]);
 
-  const y1 = useTransform(scrollY, value => value / 40);
-  const y2 = useTransform(scrollY, value => value / 5);
-  const y3 = useTransform(scrollY, value => value / 20);
-  const y4 = useTransform(scrollY, value => value / 5);
-  const y5 = useTransform(scrollY, value => value / 10);
-
+  const y1 = useTransform(y, value => value / 40);
+  const y2 = useTransform(y, value => value / 5);
+  const y3 = useTransform(y, value => value / 20);
+  const y4 = useTransform(y, value => value / 5);
+  const y5 = useTransform(y, value => value / 10);
   const yS1 = useSpring(y1, { stiffness: 400, damping: 90 });
   const yS2 = useSpring(y2, { stiffness: 400, damping: 90 });
   const yS3 = useSpring(y3, { stiffness: 400, damping: 90 });
@@ -67,5 +67,8 @@ const Forest = (props) => {
     </motion.svg>
   );
 };
+
+
+
 
 export default Forest;
