@@ -7,8 +7,8 @@ const Cursor = () => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
   let [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState();
+  const [height, setHeight] = useState();
   let cursorIsHovering = useState(false);
 
   const onMouseMove = (event) => {
@@ -25,6 +25,10 @@ const Cursor = () => {
   };
 
   useEffect(() => {
+    // set initial width/height
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+
     document.addEventListener("pointermove", throttledMouseMove);
     window.addEventListener("resize", onResize);
     requestRef.current = requestAnimationFrame(animateCursor2);

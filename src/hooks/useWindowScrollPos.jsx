@@ -2,17 +2,6 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import { throttle } from "lodash";
 import { useMotionValue } from 'framer-motion'
 
-let supportsPassive = false;
-try {
-  var opts = Object.defineProperty({}, "passive", {
-    get: function() {
-      supportsPassive = true;
-    }
-  });
-  window.addEventListener("testPassive", null, opts);
-  window.removeEventListener("testPassive", null, opts);
-} catch (e) {}
-
 let defaultOptions = {
   throttle: 32
 };
@@ -29,7 +18,6 @@ function useWindowScrollPosition(options) {
   const setPosition = () => {
     const newX = window.pageXOffset;
     const newY = window.pageYOffset;
-    console.log(newY);
     if (
       previous.current.x !== newX ||
       previous.current.y !== newY
@@ -49,7 +37,7 @@ function useWindowScrollPosition(options) {
     window.addEventListener(
       "scroll",
       handleScroll,
-      supportsPassive ? { passive: true } : false
+      { passive: true }
     );
 
     return () => {
