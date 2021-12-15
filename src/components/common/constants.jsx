@@ -39,6 +39,31 @@ export const itemVariant = {
   }
 };
 
+const swoopTransition = {
+  type: 'tween',
+  duration: 1.25,
+  delay: 2,
+  ease: 'linear',
+}
+
+export const swoopArrowVariant = {
+  hidden: {
+    opacity: 0,
+    y: 0,
+    x: -60,
+    rotate: 90,
+    scale: 0.5,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: [0, 0, -40, -80, -100, -50, 0],
+    x: [0, 80, 120, 80, 0, -20, 0],
+    rotate: [90, 45, 0, -45, -135, -202.5, -180],
+    transition: swoopTransition,
+  },
+};
+
 const drawingTransition = {
   duration: 0.5,
   ease: [0, 0.55, 0.45, 1],

@@ -15,7 +15,7 @@ const variants = itemVariant;
 const About = () => {
   return (
     <Flex as="section" id="about" direction="column" position="relative" bg="#062D36" mt="-1px" pb={{ base: 30, md: 48 }}>
-      <Box id="forest-wrap" w="100%" transform="translateY(-20vh)" mb="-10vh" position="relative">
+      <Box id="forest-wrap" w="100%" transform="translateY(-20vh)" mb="-10vh" position="relative" pointerEvents={"none"}>
         <Box overflow="hidden">
           <Forest width="105%" style={{ transform: "translateX(-2.5%)" }} />
         </Box>

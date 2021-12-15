@@ -56,12 +56,3 @@ html, body {
     transform: scale3d(1.2, 1.2, 1) translate3d(20%, 33%, 0);
   }
 }
-
-@keyframes float {
-  0% {
-    transform: translate3d(0%, -30%, 0);
-  }
-  100% {
-    transform: translate3d(0%, 0%, 0);
-  }
-}
