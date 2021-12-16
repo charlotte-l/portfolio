@@ -1,6 +1,7 @@
-import React from 'react';
-import { Box, Flex, Button, Text, Progress, useSafeLayoutEffect } from '@chakra-ui/react';
+import React, { useLayoutEffect } from 'react';
+import { Box, Flex, Button, Text, Progress, IconButton } from '@chakra-ui/react';
 import { useBoundingRect } from 'hooks/useBoundingRect';
+import { NextArrow, PrevArrow } from '../icons'
 
 const Slider = ({
   setTrackIsActive,
@@ -15,9 +16,8 @@ const Slider = ({
 }) => {
   const [rect, ref] = useBoundingRect();
   const width = rect.width;
-  console.log(width);
 
-  useSafeLayoutEffect(() => initSliderWidth(Math.round(width)), [
+  useLayoutEffect(() => initSliderWidth(Math.round(width)), [
     width,
     initSliderWidth
   ]);
@@ -45,42 +45,24 @@ const Slider = ({
         px={`${gap / 2}px`}
         position="relative"
         overflow="hidden"
-        _before={{
-          bgGradient: "linear(to-r, base.d400, transparent)",
-          position: "absolute",
-          w: `${gap / 2}px`,
-          content: "''",
-          zIndex: 1,
-          h: "100%",
-          left: 0,
-          top: 0
-        }}
-        _after={{
-          bgGradient: "linear(to-l, base.d400, transparent)",
-          position: "absolute",
-          w: `${gap / 2}px`,
-          content: "''",
-          zIndex: 1,
-          h: "100%",
-          right: 0,
-          top: 0
-        }}
       >
         {children}
       </Box>
 
       <Flex w={`${itemWidth}px`} mt={`${gap / 2}px`} mx="auto">
-        <Button
+        <IconButton
+          aria-label='Previous slide'
+          icon={<PrevArrow />}
           onClick={handleDecrementClick}
           onFocus={handleFocus}
           mr={`${gap / 3}px`}
-          color="gray.200"
+          fontSize='2xl'
+          color="yellow.300"
           variant="link"
           minW={0}
-          _hover={{textDecoration: 'none'}}
-        >
-          <Text fontSize='4xl' color={"yellow.300"}>«</Text>
-        </Button>
+          _hover={{ textDecoration: 'none' }}
+          _focus={{ boxShadow: 'none' }}
+        />
 
         <Progress
           value={100 / ((positions.length - constraint) / activeItem)}
@@ -90,18 +72,20 @@ const Slider = ({
           h="2px"
         />
 
-        <Button
+        <IconButton
+          aria-label='Next slide'
+          icon={<NextArrow />}
           onClick={handleIncrementClick}
           onFocus={handleFocus}
           ml={`${gap / 3}px`}
-          color="gray.200"
+          fontSize='2xl'
+          color="yellow.300"
           variant="link"
           zIndex={2}
           minW={0}
-          _hover={{textDecoration: 'none'}}
-        >
-          <Text fontSize='4xl' color={"yellow.300"}>»</Text>
-        </Button>
+          _hover={{ textDecoration: 'none' }}
+          _focus={{ boxShadow: 'none' }}
+        />
       </Flex>
     </>
   );

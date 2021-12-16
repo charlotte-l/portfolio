@@ -13,8 +13,9 @@ import screenshotThree from "./screenshots/screenshot-three.png";
 import screenshotFour from "./screenshots/screenshot-four.png";
 import screenshotFive from "./screenshots/screenshot-five.png";
 
-const MotionText = motion(Text);
 const MotionHeading = motion(Heading);
+const MotionText = motion(Text);
+const MotionLink = motion(Link);
 const variants = itemVariant;
 
 const Work = () => {
@@ -25,7 +26,7 @@ const Work = () => {
       </Box>
       <Container maxW="5xl" minH="40vh" px="0">
         <Stack spacing="24" direction="row">
-          <Flex w="60ch" px="3" direction="column" justifyContent="center">
+          <Flex w="60ch" direction="column" justifyContent="center">
             <StaggeredFade>
               <MotionHeading
                 fontWeight={700}
@@ -36,19 +37,20 @@ const Work = () => {
               >
                 Work
               </MotionHeading>
-              <MotionHeading as="h3" variants={variants}>Work sample</MotionHeading>
               <MotionText mb="4" variants={variants}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-                  voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
+                I use HTML &amp; CSS (usually SASS) every day, and I try to keep up with the latest features while maintaining graceful degradation.
+                I use JavaScript fairly often, usually with React. I also run Node.js-based workflow automation via Gulp or Grunt for web projects, 
+                and I've written other Node scripts to automate mundane tasks.
               </MotionText>
               <MotionText mb="4" variants={variants}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-                  voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
+                I have extensive experience with the JAMStack - you could say that static sites are my jam. I also dabble with WordPress and PHP as needed and have also built custom plugins for unique functionality.
               </MotionText>
-              <Link href="" title="adenin Technologies">Go to website</Link>
+              <MotionText variants={variants}>
+                I know my way around Sketch and Figma, and am comfortable using Adobe Photoshop, Illustrator and Premiere.
+              </MotionText>
             </StaggeredFade>
           </Flex>
-          <Box w="30vw">
+          <Flex w="30vw" direction={"column"} justifyContent={'center'}>
             <Carousel>
               <Box w="100%" h="300px">
                 <Image src={screenshotOne} alt='Dan Abramov' boxSize='100%' fit='cover' />
@@ -66,7 +68,7 @@ const Work = () => {
                 <Image src={screenshotFive} alt='Dan Abramov' boxSize='100%' fit='cover' />
               </Box>
             </Carousel>
-          </Box>
+          </Flex>
         </Stack>
       </Container>
     </Flex>

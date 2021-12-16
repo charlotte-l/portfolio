@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Heading, Flex, SimpleGrid, Box, Text } from "@chakra-ui/react";
+import { Container, Heading, Flex, SimpleGrid, Box, Text, Link } from "@chakra-ui/react";
 
 import { motion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
@@ -45,12 +45,15 @@ const About = () => {
               <MotionText variants={variants}>
                 With a strong emphasis on "Progressive Enhancement", I look for creative ways to push the boundaries of website front-end code without compromising on browser support and performance.
               </MotionText>
-              <MotionText variants={variants}><br/></MotionText>
+              <MotionText variants={variants}><br /></MotionText>
               <MotionText variants={variants}>
-                Something about current work
+                I'm currently a web developer at <Link title="adenin Technologies" href="#" target={"_blank"}>adenin Technologies</Link>; I built the majority of the company website. More recently, I've been developing Digital Assistant, a workplace experience and productivity app.
               </MotionText>
               <MotionText variants={variants}>
-                Something about what I did before this job (Cybersecurity, Physics degree). Also I'm a level 3 qualified PT!
+                Prior to 2017, I worked at in Cybersecurity consultancy at <Link title="EY UK" href="https://www.ey.com/en_uk" target={"_blank"}>EY UK</Link>. Before that, I spent a year at <Link title="IBM UK" href="https://www.ibm.com/uk-en" target={"_blank"}>IBM UK</Link> helping to manage a range of technical projects.
+              </MotionText>
+              <MotionText variants={variants}>
+                I have a Bachelor's degree in Physics from the <Link title="University of Manchester" href="https://www.manchester.ac.uk/" target={"_blank"}>University of Manchester</Link>. I'm also a Level 3 qualified Personal Trainer!
               </MotionText>
             </StaggeredFade>
           </Flex>

@@ -22,51 +22,9 @@ const Track = ({
   positions,
   children
 }) => {
-  const [dragStartPosition, setDragStartPosition] = useState(0);
   const controls = useAnimation();
   const x = useMotionValue(0);
   const node = useRef(null);
-
-  const handleDragStart = () => setDragStartPosition(positions[activeItem]);
-
-  const handleDragEnd = (_, info) => {
-    const distance = info.offset.x;
-    const velocity = info.velocity.x * multiplier;
-    const direction = velocity < 0 || distance < 0 ? 1 : -1;
-
-    const extrapolatedPosition =
-      dragStartPosition +
-      (direction === 1
-        ? Math.min(velocity, distance)
-        : Math.max(velocity, distance));
-
-    const closestPosition = positions.reduce((prev, curr) => {
-      return Math.abs(curr - extrapolatedPosition) <
-        Math.abs(prev - extrapolatedPosition)
-        ? curr
-        : prev;
-    }, 0);
-
-    if (!(closestPosition < positions[positions.length - constraint])) {
-      setActiveItem(positions.indexOf(closestPosition));
-      controls.start({
-        x: closestPosition,
-        transition: {
-          velocity: info.velocity.x,
-          ...transitionProps
-        }
-      });
-    } else {
-      setActiveItem(positions.length - constraint);
-      controls.start({
-        x: positions[positions.length - constraint],
-        transition: {
-          velocity: info.velocity.x,
-          ...transitionProps
-        }
-      });
-    }
-  };
 
   const handleResize = useCallback(
     () =>
@@ -123,16 +81,10 @@ const Track = ({
       {itemWidth && (
         <VStack ref={node} spacing={5} alignItems="stretch">
           <MotionFlex
-            dragConstraints={node}
-            onDragStart={handleDragStart}
-            onDragEnd={handleDragEnd}
             animate={controls}
             style={{ x }}
-            drag="x"
-            _active={{ cursor: "grabbing" }}
             minWidth="min-content"
             flexWrap="nowrap"
-            cursor="grab"
           >
             {children}
           </MotionFlex>
