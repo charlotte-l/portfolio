@@ -7,7 +7,9 @@ const Index = () => {
   return (
     <>
       <SEO />
-      <App />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
     </>
   );
 };
