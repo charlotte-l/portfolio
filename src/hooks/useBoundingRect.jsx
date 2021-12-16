@@ -1,20 +1,43 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useLayoutEffect, useCallback } from 'react';
+import { debounce } from 'lodash';
+
+function getDimensionObject(node) {
+  const rect = node.getBoundingClientRect();
+  return {
+    width: rect.width,
+    height: rect.height,
+  };
+}
 
 export const useBoundingRect = () => {
-  const ref = useRef();
-  const [rect, setRect] = useState({});
+  const [dimensions, setDimensions] = useState({});
+  const [node, setNode] = useState(null);
 
-  const set = () => setRect(ref && ref.current ? ref.current.getBoundingClientRect() : {});
+  const ref = useCallback((node) => {
+    setNode(node);
+  }, []);
 
-  const useEffectInEvent = (event, useCapture) => {
-    useEffect(() => {
-      set();
-      window.addEventListener(event, set, useCapture);
-      return () => window.removeEventListener(event, set, useCapture);
-    }, []);
-  };
+  useLayoutEffect(() => {
+    if ("undefined" !== typeof window && node) {
+      const measure = () => {
+        console.log('measuring')
+        window.requestAnimationFrame(() =>
+          setDimensions(getDimensionObject(node))
+        );
+      }
 
-  useEffectInEvent('resize');
+      measure();
 
-  return [rect, ref];
+      const listener = debounce(measure, 100);
+      window.addEventListener("resize", listener);
+      window.addEventListener("scroll", listener, {once: true});
+
+      return () => {
+        window.removeEventListener("resize", listener);
+        window.removeEventListener("scroll", listener);
+      };
+    }
+  }, [node]);
+
+  return [ref, dimensions, node];
 };

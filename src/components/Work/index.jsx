@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Flex, Stack, Box, Text, Heading, Link, Image } from '@chakra-ui/react';
+import { Container, Flex, SimpleGrid, Box, Text, Heading, Link, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { Monkey } from './Monkey';
 import Carousel from '../../components/common/Carousel';
@@ -25,7 +25,7 @@ const Work = () => {
         <Monkey width="100%" />
       </Box>
       <Container maxW="5xl" minH="40vh" px="0">
-        <Stack spacing="24" direction="row">
+        <SimpleGrid columns={2}>
           <Flex w="60ch" direction="column" justifyContent="center">
             <StaggeredFade>
               <MotionHeading
@@ -50,7 +50,7 @@ const Work = () => {
               </MotionText>
             </StaggeredFade>
           </Flex>
-          <Flex w="30vw" direction={"column"} justifyContent={'center'}>
+          <Flex w="30vw" pl="24" direction={"column"} justifyContent={'center'}>
             <Carousel>
               <Box w="100%" h="300px">
                 <Image src={screenshotOne} alt='Dan Abramov' boxSize='100%' fit='cover' />
@@ -69,7 +69,7 @@ const Work = () => {
               </Box>
             </Carousel>
           </Flex>
-        </Stack>
+        </SimpleGrid>
       </Container>
     </Flex>
   );

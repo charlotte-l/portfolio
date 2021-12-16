@@ -14,8 +14,7 @@ const Slider = ({
   children,
   gap
 }) => {
-  const [rect, ref] = useBoundingRect();
-  const width = rect.width;
+  const [ref, { width }] = useBoundingRect();
 
   useLayoutEffect(() => initSliderWidth(Math.round(width)), [
     width,
