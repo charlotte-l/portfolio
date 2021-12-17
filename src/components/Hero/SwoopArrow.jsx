@@ -5,6 +5,10 @@ function getElementY(handle) {
   return window.pageYOffset + handle.getBoundingClientRect().top - 100
 }
 
+function preventDefault(e) {
+  e.preventDefault();
+}
+
 function doScrolling(element, duration) {
   const startingY = window.pageYOffset
   const elementY = getElementY(element)
@@ -14,6 +18,9 @@ function doScrolling(element, duration) {
   let start
 
   if (!diff) return
+
+  // lock scrolling
+  document.addEventListener('wheel', preventDefault, { passive: false });
 
   window.requestAnimationFrame(function step(timestamp) {
     if (!start) start = timestamp
@@ -25,6 +32,9 @@ function doScrolling(element, duration) {
 
     if (time < duration) {
       window.requestAnimationFrame(step)
+    } else {
+      // release scrollock
+      document.removeEventListener('wheel', preventDefault, { passive: false });
     }
   })
 }

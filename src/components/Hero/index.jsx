@@ -27,7 +27,8 @@ const swoopArrowVariants = swoopArrowVariant;
 const Hero = () => {
   const swoopArrow = useRef(null);
 
-  const addHoverClass = () => {
+  const addHoverClass = (def) => {
+    if (def !== 'show') return;
     setTimeout(() => {
       swoopArrow.current.classList.add(heroStyles.swoopArrow);
     }, 500);
@@ -67,7 +68,7 @@ const Hero = () => {
             <MotionText maxW={{base: 'xs', md: 'md'}} variants={variants}>
               a web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
             </MotionText>
-            <MotionArrow ref={swoopArrow} mt="24" variants={swoopArrowVariants} onAnimationComplete={addHoverClass}></MotionArrow>
+            <MotionArrow ref={swoopArrow} mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>
           </StaggeredFade>
         </Stack>
       </Container>

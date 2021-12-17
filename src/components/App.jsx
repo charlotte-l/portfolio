@@ -9,9 +9,12 @@ import Contact from './Contact';
 import Footer from './Footer';
 import Cursor from './common/Cursor';
 
+import { useBreakpointValue } from '@chakra-ui/react'
 import Fonts from "../@chakra-ui/components/fonts";
 
 function App() {
+  const showCursor = useBreakpointValue({ base: false, lg: true })
+
   return (
     <div className="app">
       <Fonts />
@@ -21,7 +24,7 @@ function App() {
         <Work />
         <SideProjects />
         <Contact />
-        <Cursor />
+        {showCursor && <Cursor />}
       </main>
       <footer>
         <Footer />
