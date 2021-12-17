@@ -65,10 +65,10 @@ const Hero = () => {
             >
               Hi, I'm Charlotte
             </MotionHeading>
-            <MotionText maxW={{base: 'xs', md: 'md'}} variants={variants}>
+            <MotionText maxW={{base: 'xs', md: 'md'}} mx='auto' variants={variants}>
               a web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
             </MotionText>
-            <MotionArrow ref={swoopArrow} mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>
+            <MotionArrow ref={swoopArrow} w="10" mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>
           </StaggeredFade>
         </Stack>
       </Container>
