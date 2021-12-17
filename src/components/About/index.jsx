@@ -14,18 +14,18 @@ const variants = itemVariant;
 
 const About = () => {
   return (
-    <Flex as="section" id="about" direction="column" position="relative" bg="#062D36" mt="-1px" pb={{ base: 30, md: 48 }}>
+    <Flex as="section" id="about" direction="column" position="relative" bg="#062D36" mt="-1px" pb={{ base: 32, md: 48 }}>
       <Box id="forest-wrap" w="100%" transform="translateY(-20vh)" mb="-10vh" position="relative" pointerEvents={"none"}>
         <Box overflow="hidden">
           <Forest width="105%" style={{ transform: "translateX(-2.5%)" }} />
         </Box>
       </Box>
       <Container maxW="100%" minH="40vh" px="0">
-        <SimpleGrid columns={2} className="about-wrapper" overflow="hidden">
-          <Box w="40vw" transform="translateX(-25px)">
+        <SimpleGrid columns={{md: '2'}} className="about-wrapper" overflow="hidden">
+          <Box w={{base: "66.66vw", md: "40vw"}} transform="translateX(-25px)">
             <Birds width="100%" />
           </Box>
-          <Flex maxW="60ch" px="3" direction="column" justifyContent="center">
+          <Flex maxW="60ch" px="3" direction="column" justifyContent="center" ml={{base: 'auto', md: '0'}}>
             <StaggeredFade>
               <MotionHeading
                 fontWeight={700}

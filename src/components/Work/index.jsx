@@ -20,13 +20,13 @@ const variants = itemVariant;
 
 const Work = () => {
   return (
-    <Flex as="section" id="work" position="relative" py={{ base: 30, md: 48 }} bgGradient="linear(to-b, #062D36, #060836)">
-      <Box w="10vw" position="absolute" right="5vw" top="0">
+    <Flex as="section" id="work" position="relative" py={{ base: 32, md: 48 }} bgGradient="linear(to-b, #062D36, #060836)">
+      <Box w={{base: "25vw", md: "10vw"}} position="absolute" right="5vw" top="0">
         <Monkey width="100%" />
       </Box>
       <Container maxW="5xl" minH="40vh" px="0">
-        <SimpleGrid columns={2}>
-          <Flex w="60ch" direction="column" justifyContent="center">
+        <SimpleGrid columns={{xl: 2}}>
+          <Flex maxW="60ch" px="3" mr={{base: 'auto', xl: '0'}} mb={{base: '8', xl: '0'}} direction="column" justifyContent="center">
             <StaggeredFade>
               <MotionHeading
                 fontWeight={700}
@@ -49,7 +49,7 @@ const Work = () => {
               </MotionText>
             </StaggeredFade>
           </Flex>
-          <Flex w="30vw" pl="24" direction={"column"} justifyContent={'center'}>
+          <Flex w={{base: "90vw", md: "66.6vw", xl: "100%"}} mx='auto' pl={{xl: "24"}} direction={"column"} justifyContent={'center'}>
             <Carousel>
               <Box w="100%" h="300px">
                 <Image src={screenshotOne} alt='Dan Abramov' boxSize='100%' fit='cover' />

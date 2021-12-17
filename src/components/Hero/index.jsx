@@ -51,20 +51,20 @@ const Hero = () => {
           textAlign={'center'}
           align={'center'}
           spacing={{ base: 4, md: 8 }}
-          mt={{ base: 30, md: 48 }}
-          mb={{ base: 30, md: 32 }}
+          mt={{ base: 36, md: 48 }}
+          mb={{ base: 32, md: 32 }}
         >
           <StaggeredFade>
             <MotionHeading
               fontWeight={700}
-              fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
+              fontSize={{ base: '4xl', md: '6xl' }}
               lineHeight={'1.5'}
               as="h2"
               variants={variants}
             >
               Hi, I'm Charlotte
             </MotionHeading>
-            <MotionText maxW={'md'} lineHeight={1.6} variants={variants}>
+            <MotionText maxW={{base: 'xs', md: 'md'}} variants={variants}>
               a web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
             </MotionText>
             <MotionArrow ref={swoopArrow} mt="24" variants={swoopArrowVariants} onAnimationComplete={addHoverClass}></MotionArrow>

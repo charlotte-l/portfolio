@@ -16,11 +16,11 @@ const variants = itemVariant;
 const SideProjects = () => {
 
   return (
-    <Flex as="section" id="side-projects" position="relative" overflow="hidden" py={{ base: 30, md: 48 }} bgGradient="linear(to-b, #060836, #2B023E)">
-      <Box w="25vw" position="absolute" right="-1.5vw" top="0">
+    <Flex as="section" id="side-projects" position="relative" overflow="hidden" py={{ base: 32, md: 48 }} bgGradient="linear(to-b, #060836, #2B023E)">
+      <Box  w={{base: "40vw", md: "25vw"}} position="absolute" right="-1.5vw" top="0">
         <Stag width="100%" />
       </Box>
-      <Container maxW="5xl" textAlign="center">
+      <Container maxW="5xl" textAlign="center" zIndex='2'>
         <StaggeredFade>
           <Box mb="16">
             <MotionHeading
@@ -36,15 +36,15 @@ const SideProjects = () => {
               When I get chance, I like to mess around with small projects to learn new skills and flex my right brain. Here's a couple of my most recent projects.
             </MotionText>
           </Box>
-          <Grid templateColumns='0.37fr 0.64fr' gap={6}>
+          <Grid templateColumns={{base: '1fr', md: '0.37fr 0.64fr'}} gap={{md: 6}}>
             {projects.slice(0,2).map((project, i) => <ProjectWrapper key={i} projectInfo={project} variants={variants} />)}
           </Grid>
-          <Grid templateColumns='0.64fr 0.37fr' gap={6}>
+          <Grid templateColumns={{base: '1fr', md: '0.37fr 0.64fr'}} gap={{md: 6}}>
             {projects.slice(2).map((project, i) => <ProjectWrapper key={i} projectInfo={project} variants={variants} />)}
           </Grid>
         </StaggeredFade>
       </Container>
-      <Box w="25vw" position="absolute" left="-3.5vw" bottom="0">
+      <Box w={{base: "40vw", md: "25vw"}} position="absolute" left="-3.5vw" bottom="0">
         <Rabbits width="100%" />
       </Box>
     </Flex>

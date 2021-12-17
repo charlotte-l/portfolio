@@ -19,7 +19,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
 
   return (
     <MotionBox overflow="hidden" position="relative" rounded={6} h="200px" mb="8" onPointerEnter={onToggle} onPointerOut={checkTarget} variants={props.variants}>
-      <Image src={img} alt={title} objectFit='cover' />
+      <Image src={img} alt={title} h="100%" w="100%" objectFit='cover' />
       <Fade in={isOpen}>
         <Flex position='absolute' left={0} top={0} w="100%" h="100%" direction='column' alignItems='center' justifyContent='center' bgColor='rgba(0,0,0,0.75)'>
           <Heading as="h3" size='lg' mb='1' pointerEvents='none'>{title}</Heading>
