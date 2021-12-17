@@ -33,7 +33,7 @@ const SideProjects = () => {
               Side projects
             </MotionHeading>
             <MotionText maxW="60ch" mx="auto" variants={variants}>
-              When I get chance, I like to mess around with small projects to learn new skills and flex my right brain. Here's a couple of my recent projects. I had tons of fun making them - I hope you'll like them too.
+              When I get chance, I like to mess around with small projects to learn new skills and flex my right brain. Here's a couple of my most recent projects.
             </MotionText>
           </Box>
           <Grid templateColumns='0.37fr 0.64fr' gap={6}>

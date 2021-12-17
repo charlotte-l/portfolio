@@ -38,15 +38,14 @@ const Work = () => {
                 Work
               </MotionHeading>
               <MotionText mb="4" variants={variants}>
-                I use HTML &amp; CSS (usually SASS) every day, and I try to keep up with the latest features while maintaining graceful degradation.
-                I use JavaScript fairly often, usually with React. I also run Node.js-based workflow automation via Gulp or Grunt for web projects, 
-                and I've written other Node scripts to automate mundane tasks.
+                I use HTML, SASS &amp; JavaScript every day, and I love to utilise bleeding-edge technology to craft unique and modern experiences.
               </MotionText>
               <MotionText mb="4" variants={variants}>
-                I have extensive experience with the JAMStack - you could say that static sites are my jam. I also dabble with WordPress and PHP as needed and have also built custom plugins for unique functionality.
+                I have extensive experience with the JAMStack, as well as JavaScript frameworks like React and jQuery. I also dabble with WordPress and PHP, and have also built custom plugins for customized functionality.
               </MotionText>
               <MotionText variants={variants}>
-                I know my way around Sketch and Figma, and am comfortable using Adobe Photoshop, Illustrator and Premiere.
+                I run Node.js-based workflow automation via Gulp or Grunt for web projects, 
+                and I've written other Node scripts to automate mundane tasks. I also know my way around Sketch and Figma, and I'm comfortable using Adobe Photoshop, Illustrator and Premiere.
               </MotionText>
             </StaggeredFade>
           </Flex>

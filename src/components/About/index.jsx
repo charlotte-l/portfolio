@@ -36,23 +36,16 @@ const About = () => {
               >
                 About
               </MotionHeading>
-              <MotionText variants={variants}>
-                I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences that work across all platforms and devices.
+              <MotionText variants={variants} mb='4'>
+                I have a passion for solving design problems and creating interactive, performant and functional web experiences. 
               </MotionText>
-              <MotionText variants={variants}>
-                Although I'm very familiar with using frameworks, my websites are primarily hand-coded using HTML5, CSS3, SVG and JavaScript.
-              </MotionText>
-              <MotionText variants={variants}>
-                With a strong emphasis on "Progressive Enhancement", I look for creative ways to push the boundaries of website front-end code without compromising on browser support and performance.
-              </MotionText>
-              <MotionText variants={variants}><br /></MotionText>
-              <MotionText variants={variants}>
+              <MotionText variants={variants} mb='4'>
                 I'm currently a web developer at <Link title="adenin Technologies" href="#" target={"_blank"}>adenin Technologies</Link>; I built the majority of the company website. More recently, I've been developing Digital Assistant, a workplace experience and productivity app.
               </MotionText>
-              <MotionText variants={variants}>
-                Prior to 2017, I worked at in Cybersecurity consultancy at <Link title="EY UK" href="https://www.ey.com/en_uk" target={"_blank"}>EY UK</Link>. Before that, I spent a year at <Link title="IBM UK" href="https://www.ibm.com/uk-en" target={"_blank"}>IBM UK</Link> helping to manage a range of technical projects.
+              <MotionText variants={variants} mb='4'>
+                Before web dev, I worked in Cybersecurity consultancy at <Link title="EY UK" href="https://www.ey.com/en_uk" target={"_blank"}>EY UK</Link>. Before that, I spent a year at <Link title="IBM UK" href="https://www.ibm.com/uk-en" target={"_blank"}>IBM UK</Link> managing technical projects.
               </MotionText>
-              <MotionText variants={variants}>
+              <MotionText variants={variants} mb='4'>
                 I have a Bachelor's degree in Physics from the <Link title="University of Manchester" href="https://www.manchester.ac.uk/" target={"_blank"}>University of Manchester</Link>. I'm also a Level 3 qualified Personal Trainer!
               </MotionText>
             </StaggeredFade>
