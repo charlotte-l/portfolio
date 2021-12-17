@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Flex, Heading, SimpleGrid, Box, Text } from '@chakra-ui/react';
-import { Rabbits } from './Rabbits';
-import { Stag } from './Stag';
+import { Container, Flex, Heading, Grid, Link, Box, Text, Image } from '@chakra-ui/react';
+import { Rabbits } from '../Animals/Rabbits';
+import { Stag } from '../Animals/Stag';
+import ProjectWrapper from './ProjectWrapper';
 import { projects } from './Projects';
-
 
 import { motion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
@@ -11,10 +11,10 @@ import { itemVariant } from 'components/common/constants';
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
-const MotionBox = motion(Box);
 const variants = itemVariant;
 
 const SideProjects = () => {
+
   return (
     <Flex as="section" id="side-projects" position="relative" overflow="hidden" py={{ base: 30, md: 48 }} bgGradient="linear(to-b, #060836, #2B023E)">
       <Box w="25vw" position="absolute" right="-1.5vw" top="0">
@@ -32,24 +32,16 @@ const SideProjects = () => {
             >
               Side projects
             </MotionHeading>
-            <MotionText variants={variants}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-              voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
+            <MotionText maxW="60ch" mx="auto" variants={variants}>
+              When I get chance, I like to mess around with small projects to learn new skills and flex my right brain. Here's a couple of my recent projects. I had tons of fun making them - I hope you'll like them too.
             </MotionText>
           </Box>
-          <SimpleGrid columns={2}>
-            {projects.map((project, i) => {
-              const { title, info, img } = project;
-              return (
-                <MotionBox key={i} mb="8" variants={variants}>
-                  <Heading as="h3">{title}</Heading>
-                  <Text>
-                    {info}
-                  </Text>
-                </MotionBox>
-              );
-            })}
-          </SimpleGrid>
+          <Grid templateColumns='0.37fr 0.64fr' gap={6}>
+            {projects.slice(0,2).map((project, i) => <ProjectWrapper key={i} projectInfo={project} variants={variants} />)}
+          </Grid>
+          <Grid templateColumns='0.64fr 0.37fr' gap={6}>
+            {projects.slice(2).map((project, i) => <ProjectWrapper key={i} projectInfo={project} variants={variants} />)}
+          </Grid>
         </StaggeredFade>
       </Container>
       <Box w="25vw" position="absolute" left="-3.5vw" bottom="0">

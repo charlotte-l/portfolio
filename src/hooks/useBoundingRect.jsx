@@ -20,7 +20,6 @@ export const useBoundingRect = () => {
   useLayoutEffect(() => {
     if ("undefined" !== typeof window && node) {
       const measure = () => {
-        console.log('measuring')
         window.requestAnimationFrame(() =>
           setDimensions(getDimensionObject(node))
         );

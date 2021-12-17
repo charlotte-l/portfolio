@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { itemVariant } from 'components/common/constants';
 
-import { Birds } from './Birds';
+import { Birds } from '../Animals/Birds';
 import Forest from './Forest';
 
 const MotionHeading = motion(Heading);

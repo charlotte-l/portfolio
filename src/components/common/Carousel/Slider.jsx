@@ -59,8 +59,6 @@ const Slider = ({
           color="yellow.300"
           variant="link"
           minW={0}
-          _hover={{ textDecoration: 'none' }}
-          _focus={{ boxShadow: 'none' }}
         />
 
         <Progress
@@ -82,8 +80,6 @@ const Slider = ({
           variant="link"
           zIndex={2}
           minW={0}
-          _hover={{ textDecoration: 'none' }}
-          _focus={{ boxShadow: 'none' }}
         />
       </Flex>
     </>

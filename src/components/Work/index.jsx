@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Flex, SimpleGrid, Box, Text, Heading, Link, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { Monkey } from './Monkey';
+import { Monkey } from '../Animals/Monkey';
 import Carousel from '../../components/common/Carousel';
 
 import StaggeredFade from 'components/common/StaggeredFade';
