@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const MotionLinkBox = motion(LinkBox);
 
 const ContactFly = ({ link, icon, x, y }) => {
-  const delay = Math.floor(parseInt(x) / 10) / 2;
+  const delay = Math.floor(parseInt(x) / 10) / -2;
   return (
     <MotionLinkBox
       position={{base: "relative", md: "absolute"}}
@@ -13,7 +13,7 @@ const ContactFly = ({ link, icon, x, y }) => {
       top={{md: y}}
       opacity={{lg: '0.5'}}
       whileHover={{ scale: 1.25, opacity: 1, transition: { duration: .5, ease: "backInOut" } }}
-      animation={{base: `bob 5s infinite ${delay}s alternate-reverse`, lg: 'none'}}
+      animation={`bob 5s infinite ${delay}s alternate-reverse`}
     >
       <Flex rounded="full" p={{base: "6", md: "8"}} w={{base: '100%'}} h='auto' align="center" justify="center" bgGradient="radial(circle, #62336e 0%, #562A63 62.5%, #F9F9EF 75%)" filter="drop-shadow(0px 0px 12px #f2f2c8)">
         {icon}
