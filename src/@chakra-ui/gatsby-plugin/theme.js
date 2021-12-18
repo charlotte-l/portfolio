@@ -5,6 +5,7 @@ import styles from "../styles"
 
 // Foundational style overrides
 import borders from "../foundations/borders"
+import textStyles from "../foundations/textStyles";
 
 // Component style overrides
 import Button from "../components/button"
@@ -21,6 +22,7 @@ const theme = extendTheme({
       heading: "'Playfair Display', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif",
       body: "system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     },
+    textStyles,
 });
 
 export default theme;

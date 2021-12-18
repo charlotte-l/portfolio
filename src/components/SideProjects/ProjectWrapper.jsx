@@ -9,7 +9,8 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
   const { title, info, img, link } = props.projectInfo;
 
   const checkTarget = (e) => {
-    if (e.relatedTarget && e.relatedTarget.classList.contains('view-live')
+    if (e.pointerType == 'touch' && e.target.classList.contains('projectInfo')
+      || e.relatedTarget && e.relatedTarget.classList.contains('view-live')
       || e.target && e.target.classList.contains('view-live')) {
       e.stopPropagation();
       return;
@@ -21,9 +22,9 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
     <MotionBox overflow="hidden" position="relative" rounded={6} h="200px" mb="8" onPointerEnter={onToggle} onPointerOut={checkTarget} variants={props.variants}>
       <Image src={img} alt={title} h="100%" w="100%" objectFit='cover' />
       <Fade in={isOpen}>
-        <Flex position='absolute' left={0} top={0} w="100%" h="100%" direction='column' alignItems='center' justifyContent='center' bgColor='rgba(0,0,0,0.75)'>
+        <Flex className='projectInfo' position='absolute' left={0} top={0} w="100%" h="100%" direction='column' alignItems='center' justifyContent='center' bgColor='rgba(0,0,0,0.75)'>
           <Heading as="h3" size='lg' mb='1' pointerEvents='none'>{title}</Heading>
-          <Text pointerEvents={'none'} mb='2'>{info}</Text>
+          <Text textStyle='paragraph' pointerEvents={'none'} mb='2'>{info}</Text>
           <Link className="view-live" href={link}>View live</Link>
         </Flex>
       </Fade>

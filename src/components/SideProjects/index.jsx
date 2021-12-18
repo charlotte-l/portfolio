@@ -17,7 +17,7 @@ const SideProjects = () => {
 
   return (
     <Flex as="section" id="side-projects" position="relative" overflow="hidden" py={{ base: 32, md: 48 }} bgGradient="linear(to-b, #060836, #2B023E)">
-      <Box  w={{base: "40vw", md: "25vw"}} position="absolute" right="-1.5vw" top="0">
+      <Box w={{base: "40vw", md: "25vw"}} position="absolute" right="-1.5vw" top="0">
         <Stag width="100%" />
       </Box>
       <Container maxW="5xl" textAlign="center" zIndex='2'>
@@ -32,7 +32,7 @@ const SideProjects = () => {
             >
               Side projects
             </MotionHeading>
-            <MotionText maxW="60ch" mx="auto" variants={variants}>
+            <MotionText maxW="65ch" mx="auto" variants={variants} textStyle='paragraph'>
               When I get chance, I like to mess around with small projects to learn new skills and flex my right brain. Here's a couple of my most recent projects.
             </MotionText>
           </Box>

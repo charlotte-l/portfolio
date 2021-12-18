@@ -1,7 +1,8 @@
 const styles = {
     global: {
         body: {
-            color: "white"
+            color: "white",
+            lineHeight: 'tall',
         }
     }
 };

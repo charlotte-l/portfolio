@@ -36,9 +36,7 @@ const Hero = () => {
 
   return (
     <Box as="section" id="hero" className={heroStyles.sectionBg} position="relative" overflow="hidden" minH="50vh">
-      <Container width={'100%'} height={'100%'} maxW="unset" position="absolute">
-        <Ray />
-        <Ray />
+      <Container width='100%' height='100%' maxW="unset" position="absolute">
         <Ray />
         <Ray />
         <Ray />
@@ -58,14 +56,15 @@ const Hero = () => {
           <StaggeredFade>
             <MotionHeading
               fontWeight={700}
-              fontSize={{ base: '4xl', md: '6xl' }}
-              lineHeight={'1.5'}
-              as="h2"
+              fontSize={{ base: '4xl', md: '7xl' }}
+              letterSpacing="1.5px"
+              as="h1"
               variants={variants}
+              mb="2"
             >
               Hi, I'm Charlotte
             </MotionHeading>
-            <MotionText maxW={{base: 'xs', md: 'md'}} mx='auto' variants={variants}>
+            <MotionText maxW={{base: '100%', md: 'xl'}} mx='auto' variants={variants} textStyle='paragraph'>
               a web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
             </MotionText>
             <MotionArrow ref={swoopArrow} w="10" mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>
