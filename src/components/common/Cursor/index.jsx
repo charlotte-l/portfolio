@@ -53,6 +53,8 @@ const Cursor = () => {
   }
 
   const animateCursor2 = (time) => {
+    if (!cursor2.current) return false;
+    
     if (previousTimeRef.current !== undefined) {
       x += (endX - x) / 8;
       y += (endY - y) / 8;
@@ -63,6 +65,8 @@ const Cursor = () => {
   };
 
   function toggleCursorHover() {
+    if (!cursor2.current) return false;
+    
     if (cursorIsHovering.current) {
       // hover state
       cursor2.current.style.border = "3px solid #f1c40f";

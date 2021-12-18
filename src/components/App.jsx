@@ -13,7 +13,7 @@ import { useBreakpointValue } from '@chakra-ui/react'
 import Fonts from "../@chakra-ui/components/fonts";
 
 function App() {
-  const showCursor = useBreakpointValue({ base: false, lg: true })
+  const showCursor = useBreakpointValue({ base: false, md: true })
 
   return (
     <div className="app">
