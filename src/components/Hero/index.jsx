@@ -22,8 +22,6 @@ const MotionArrow = motion(SwoopArrow);
 const variants = itemVariant;
 const swoopArrowVariants = swoopArrowVariant;
 
-
-
 const Hero = () => {
   const swoopArrow = useRef(null);
 
@@ -64,8 +62,8 @@ const Hero = () => {
             >
               Hi, I'm Charlotte
             </MotionHeading>
-            <MotionText maxW={{base: '100%', md: 'xl'}} mx='auto' variants={variants} textStyle='paragraph'>
-              a web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
+            <MotionText maxW={{base: '100%', md: '60ch'}} mx='auto' variants={variants} textStyle='paragraph'>
+              I'm a UK based web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
             </MotionText>
             <MotionArrow ref={swoopArrow} w="10" mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>
           </StaggeredFade>
