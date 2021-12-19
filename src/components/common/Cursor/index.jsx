@@ -12,8 +12,8 @@ const Cursor = () => {
   let cursorIsHovering = useState(false);
 
   const onMouseMove = (event) => {
-    const { clientX: x, clientY: y } = event;
-    setMousePosition({ x, y });
+    // const { clientX: x, clientY: y } = event;
+    // setMousePosition({ x, y });
     animateCursor(event);
   };
 
