@@ -1,0 +1,30 @@
+.skyBG {
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 10px),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 5px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 10px),
+    radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 5px),
+    linear-gradient(0deg, #002e24 0%, #001024 100%);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, center center;
+}
+
+.comet {
+  transform-origin: center center;
+  animation: comet 8s linear infinite;
+}
+
+@keyframes comet {
+  0%,
+  40% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60%,
+  100% {
+    transform: translateX(-100vmax);
+    opacity: 0;
+  }
+}
