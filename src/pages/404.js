@@ -8,7 +8,7 @@ import { Comets } from 'components/Animals/Comets';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { itemVariant } from 'components/common/constants';
 import * as styles from "../styles/not-found.module.scss";
-import illustration from '../images/404-scene--min.svg';
+import { Campsite } from 'components/Animals/Campsite'; 
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
@@ -25,8 +25,8 @@ const PageNotFound = () => {
       <Container maxW="100vw" h="100vh" className={styles.skyBG} position="relative" centerContent justifyContent='center'>
         <Comets style={{position: "absolute", pointerEvents: "none"}} />
         <SimpleGrid columns={{ md: 2 }} gap='12'>
-          <Box px={{base: '12', md: '6', xl: '12'}} zIndex='2'>
-            <Image src={illustration} maxH={{base: "50vh", md: "90vh", xl: "75vh"}} mx="auto" filter='drop-shadow(0px 12px 24px rgba(0,16,36,0.5))' />
+          <Box maxH={{base: "50vh", md: "90vh", xl: "75vh"}} px={{base: '12', md: '6', xl: '12'}} zIndex='2'>
+            <Campsite mx="auto" filter='drop-shadow(0px 12px 32px rgba(0,16,36,0.5))' />
           </Box>
           <Flex alignItems='center' textAlign={{base: "center", md: "left"}}>
             <StaggeredFade>
