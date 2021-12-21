@@ -4,11 +4,11 @@ import { Container, SimpleGrid, Box, Flex, useBreakpointValue, Heading, Text, Li
 
 import SEO from '../components/common/seo';
 import Cursor from 'components/common/Cursor';
-import { Comets } from 'components/Animals/Comets';
+import { Comets } from 'components/Graphics/Comets';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { itemVariant } from 'components/common/constants';
 import * as styles from "../styles/not-found.module.scss";
-import { Campsite } from 'components/Animals/Campsite'; 
+import { Campsite } from 'components/Graphics/Campsite'; 
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
