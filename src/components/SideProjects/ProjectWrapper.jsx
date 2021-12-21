@@ -1,33 +1,62 @@
 import React from "react";
-import { Box, Flex, Image, Heading, Text, Link, Fade, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Image, Heading, Text, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { cardVariant } from 'components/common/constants';
 
 const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
 
 const ProjectWrapper = React.forwardRef((props, ref) => {
-  const { isOpen, onToggle } = useDisclosure({defaultIsOpen: false});
   const { title, info, img, link } = props.projectInfo;
 
-  const checkTarget = (e) => {
-    if (e.pointerType == 'touch' && e.target.classList.contains('projectInfo')
-      || e.relatedTarget && e.relatedTarget.classList.contains('view-live')
-      || e.target && e.target.classList.contains('view-live')) {
-      e.stopPropagation();
-      return;
-    }
-    onToggle();
-  }
-
   return (
-    <MotionBox overflow="hidden" position="relative" rounded={6} h="200px" mb="8" onPointerEnter={onToggle} onPointerOut={checkTarget} variants={props.variants}>
-      <Image src={img} alt={title} h="100%" w="100%" objectFit='cover' />
-      <Fade in={isOpen}>
-        <Flex className='projectInfo' position='absolute' left={0} top={0} w="100%" h="100%" direction='column' alignItems='center' justifyContent='center' bgColor='rgba(0,0,0,0.75)'>
-          <Heading as="h3" size='lg' mb='1' pointerEvents='none'>{title}</Heading>
-          <Text textStyle='paragraph' pointerEvents={'none'} mb='2'>{info}</Text>
-          <Link className="view-live" href={link}>View live</Link>
-        </Flex>
-      </Fade>
+    <MotionBox
+      position="relative"
+      h="200px"
+      mb="8"
+      variants={props.variants}
+      whileHover="hover"
+    >
+      <MotionFlex
+        className='projectInfo'
+        position='absolute'
+        w="100%"
+        h="100%"
+        rounded={6}
+        direction='column'
+        alignItems='center'
+        justifyContent='center'
+        bgColor="blue"
+        boxShadow="dark-lg"
+        style={{WebkitBackfaceVisibility: "hidden"}}
+        variants={cardVariant}
+        custom={'bottom'}
+        initial={{ rotateY: -180 }}
+        transition={{
+          duration: 1,
+          ease: 'easeInOut',
+        }}
+      >
+        <Heading as="h3" size='lg' mb='1' pointerEvents='none'>{title}</Heading>
+        <Text textStyle='paragraph' pointerEvents={'none'} mb='2'>{info}</Text>
+        <Link className="view-live" href={link}>View live</Link>
+      </MotionFlex>
+      <MotionFlex
+        position='absolute'
+        h="100%"
+        w="100%"
+        boxShadow="dark-lg"
+        style={{WebkitBackfaceVisibility: "hidden"}}
+        variants={cardVariant}
+        custom={'top'}
+        initial={{ rotateY: 0 }}
+        transition={{
+          duration: 1,
+          ease: 'easeInOut',
+        }}
+      >
+        <Image src={img} alt={title} h="100%" w="100%" rounded={6} objectFit='cover' />
+      </MotionFlex>
     </MotionBox>
   );
 });

@@ -26,6 +26,22 @@ const itemTransition = {
   ease: [0, 0.55, 0.45, 1],
 }
 
+export const headingVariant = {
+  hidden: (i) => ({
+    opacity: 0,
+    x: i == 'left' ? "-100%" : "100%",
+    y: 24,
+    scale: i == 'left' ? -1 : 1,
+  }),
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    x: i == 'left' ? "-100%" : "100%",
+    scale: i == 'left' ? -1 : 1,
+    transition: itemTransition,
+  }),
+};
+
 export const itemVariant = {
   hidden: {
     opacity: 0,
@@ -37,6 +53,19 @@ export const itemVariant = {
     x: 0,
     transition: itemTransition,
   }
+};
+
+export const cardVariant = {
+  show: (i) => ({
+    rotateY: i == 'top' ? 0 : -180,
+  }),
+  hover: (i) => ({
+    rotateY: i == 'top' ? 180 : 0,
+    transition: {
+      duration: 1,
+      ease: 'easeInOut',
+    },
+  }),
 };
 
 const swoopTransition = {
