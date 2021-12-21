@@ -1,11 +1,10 @@
 import React from "react";
 import { motion, useTransform, useSpring } from "framer-motion";
 import { useBreakpointValue } from '@chakra-ui/react'
-import useWindowScrollPosition from "hooks/useWindowScrollPos";
 
 const Forest = (props) => {
   const showParallaxEffect = useBreakpointValue({ base: false, lg: true });
-  const { y } = useWindowScrollPosition();
+  const y = props.y;
   const opacity = useTransform(y, [0, 600], [0.5, 1]);
   const y0 = useTransform(y, value => value / -2.5);
   const y1 = useTransform(y, value => value / 30);
