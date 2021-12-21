@@ -54,16 +54,16 @@ const Hero = () => {
           <StaggeredFade>
             <MotionHeading
               fontWeight={700}
-              fontSize={{ base: '4xl', md: '7xl' }}
+              fontSize={{ base: '4xl', md: '6xl', xl: '8xl' }}
               letterSpacing="1.5px"
               as="h1"
               variants={variants}
-              mb="2"
+              mb="4"
             >
               Hi, I'm Charlotte
             </MotionHeading>
             <MotionText maxW={{base: '100%', md: '60ch'}} mx='auto' variants={variants} textStyle='paragraph'>
-              I'm a UK based web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet you!
+              I'm a UK based web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet&nbsp;you!
             </MotionText>
             <MotionArrow ref={swoopArrow} w="10" mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>
           </StaggeredFade>
