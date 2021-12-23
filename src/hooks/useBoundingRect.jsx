@@ -1,13 +1,15 @@
-import { useState, useLayoutEffect, useCallback } from 'react';
+import { useState, useLayoutEffect, useCallback, useMemo } from 'react';
 import { debounce } from 'lodash';
 
-function getDimensionObject(node) {
+const getDimensionObject = (node) => {
   const rect = node.getBoundingClientRect();
   return {
     width: rect.width,
     height: rect.height,
+    top: rect.top,
+    left: rect.left,
   };
-}
+};
 
 export const useBoundingRect = () => {
   const [dimensions, setDimensions] = useState({});
@@ -17,19 +19,20 @@ export const useBoundingRect = () => {
     setNode(node);
   }, []);
 
+  const measure = () => {
+    return window.requestAnimationFrame(() => {
+      setDimensions(getDimensionObject(node))
+    });
+  };
+
+  const listener = useMemo(() => debounce(measure, 100));
+
   useLayoutEffect(() => {
     if ("undefined" !== typeof window && node) {
-      const measure = () => {
-        window.requestAnimationFrame(() =>
-          setDimensions(getDimensionObject(node))
-        );
-      }
-
       measure();
 
-      const listener = debounce(measure, 100);
       window.addEventListener("resize", listener);
-      window.addEventListener("scroll", listener, {once: true});
+      window.addEventListener("scroll", listener);
 
       return () => {
         window.removeEventListener("resize", listener);

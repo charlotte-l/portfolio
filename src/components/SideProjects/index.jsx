@@ -11,7 +11,6 @@ const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 
 const SideProjects = () => {
-
   return (
     <Flex as="section" id="side-projects" position="relative" overflow="hidden" py={{ base: 32, md: 48 }} bg="#062D36">
       <Container maxW="5xl" textAlign="center" zIndex='2'>
@@ -31,10 +30,10 @@ const SideProjects = () => {
             </MotionText>
           </Box>
           <Grid templateColumns={{base: '1fr', md: '0.37fr 0.64fr'}} gap={{md: 6}}>
-            {projects.slice(0,2).map((project, i) => <ProjectWrapper key={i} projectInfo={project} variants={itemVariant} />)}
+            {projects.slice(0,2).map((project, i) => <ProjectWrapper key={i} title={project.title} info={project.info} img={project.img} link={project.link} variants={itemVariant} />)}
           </Grid>
           <Grid templateColumns={{base: '1fr', md: '0.64fr 0.37fr'}} gap={{md: 6}}>
-            {projects.slice(2).map((project, i) => <ProjectWrapper key={i} projectInfo={project} variants={itemVariant} />)}
+            {projects.slice(2).map((project, i) => <ProjectWrapper key={i} title={project.title} info={project.info} img={project.img} link={project.link} variants={itemVariant} />)}
           </Grid>
         </StaggeredFade>
       </Container>
