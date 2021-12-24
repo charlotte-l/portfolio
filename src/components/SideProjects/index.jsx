@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { itemVariant } from 'components/common/constants';
 
+const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 
@@ -29,11 +30,23 @@ const SideProjects = () => {
               When I get chance, I like to mess around with small projects to learn new skills and flex my right brain. Here's a couple of my most recent projects.
             </MotionText>
           </Box>
-          <Grid templateColumns={{base: '1fr', md: '0.37fr 0.64fr'}} gap={{md: 6}}>
-            {projects.slice(0,2).map((project, i) => <ProjectWrapper key={i} title={project.title} info={project.info} img={project.img} link={project.link} variants={itemVariant} />)}
+          <Grid templateColumns={{ base: '1fr', md: '0.37fr 0.64fr' }} gap={{ md: 6 }}>
+            {projects.slice(0, 2).map((project, i) => {
+              return (
+                <MotionBox key={i} variants={itemVariant}>
+                  <ProjectWrapper title={project.title} info={project.info} img={project.img} link={project.link} />
+                </MotionBox>
+              )
+            })}
           </Grid>
-          <Grid templateColumns={{base: '1fr', md: '0.64fr 0.37fr'}} gap={{md: 6}}>
-            {projects.slice(2).map((project, i) => <ProjectWrapper key={i} title={project.title} info={project.info} img={project.img} link={project.link} variants={itemVariant} />)}
+          <Grid templateColumns={{ base: '1fr', md: '0.64fr 0.37fr' }} gap={{ md: 6 }}>
+            {projects.slice(2).map((project, i) => {
+              return (
+                <MotionBox key={i} variants={itemVariant}>
+                  <ProjectWrapper title={project.title} info={project.info} img={project.img} link={project.link} />
+                </MotionBox>
+              )
+            })}
           </Grid>
         </StaggeredFade>
       </Container>
