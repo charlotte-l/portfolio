@@ -1,26 +1,26 @@
 import React from 'react';
 import { Container, Flex, SimpleGrid, Box, Text, Heading, Link, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import Carousel from '../../components/common/Carousel';
-
+import useWindowScrollPosition from "hooks/useWindowScrollPos";
+import ParallaxItem from 'components/common/ParallaxItem';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
 
-import screenshotOne from "./screenshots/screenshot-one.png";
-import screenshotTwo from "./screenshots/screenshot-two.png";
-import screenshotThree from "./screenshots/screenshot-three.png";
-import screenshotFour from "./screenshots/screenshot-four.png";
-import screenshotFive from "./screenshots/screenshot-five.png";
+import screenshot1 from "./screenshots/screenshot-one.png";
+import screenshot2 from "./screenshots/screenshot-two.png";
+import screenshot3 from "./screenshots/screenshot-three.png";
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 
 const Work = () => {
+  const { y } = useWindowScrollPosition();
+
   return (
     <Flex as="section" id="work" position="relative" py={{ base: 32, md: 48 }} bg="#062D36">
-      <Container maxW="5xl" minH="40vh" px="0">
-        <SimpleGrid columns={{xl: 2}}>
-          <Flex position='relative' maxW="60ch" pl="10" mr={{base: 'auto', xl: '0'}} mb={{base: '8', xl: '0'}} direction="column" justifyContent="center">
+      <Container maxW="8xl" px="0">
+        <SimpleGrid columns={{md: '2'}}>
+          <Flex position='relative' maxW="60ch"  direction="column" mr={{base: 'auto', xl: '0'}}>
             <StaggeredFade>
               <MotionHeading
                 fontWeight={700}
@@ -45,25 +45,17 @@ const Work = () => {
               </MotionText>
             </StaggeredFade>
           </Flex>
-          <Flex w={{base: "90vw", md: "66.6vw", xl: "100%"}} mx='auto' pl={{xl: "24"}} direction={"column"} justifyContent={'center'}>
-            <Carousel>
-              <Box w="100%" h="300px">
-                <Image src={screenshotOne} alt='Dan Abramov' boxSize='100%' fit='cover' />
-              </Box>
-              <Box w="100%" h="300px">
-                <Image src={screenshotTwo} alt='Dan Abramov' boxSize='100%' fit='cover' />
-              </Box>
-              <Box w="100%" h="300px">
-                <Image src={screenshotThree} alt='Dan Abramov' boxSize='100%' fit='cover' />
-              </Box>
-              <Box w="100%" h="300px">
-                <Image src={screenshotFour} alt='Dan Abramov' boxSize='100%' fit='cover' />
-              </Box>
-              <Box w="100%" h="300px">
-                <Image src={screenshotFive} alt='Dan Abramov' boxSize='100%' fit='cover' />
-              </Box>
-            </Carousel>
-          </Flex>
+          <Box>
+            <ParallaxItem w="80%" ml='auto' mt="48" scroll={y} speed={0.1} initial={{translateY: -400}}>
+              <Image src={screenshot1} h="100%" w="100%" rounded={6} boxShadow="2xl" objectFit='cover' />
+            </ParallaxItem>
+            <ParallaxItem w="66%" ml='auto' mr="20%" mt="-10%" scroll={y} speed={-0.1} initial={{translateY: 250}}>
+              <Image src={screenshot2} h="100%" w="100%" rounded={6} boxShadow="dark-lg" objectFit='cover' />
+            </ParallaxItem>
+            <ParallaxItem w="50%" ml="-20%" mt="-20%" scroll={y} speed={-0.25} initial={{translateY: 100}}>
+              <Image src={screenshot3} h="100%" w="100%" rounded={6} boxShadow="dark-lg" objectFit='cover' />
+            </ParallaxItem>
+          </Box>
         </SimpleGrid>
       </Container>
     </Flex>
