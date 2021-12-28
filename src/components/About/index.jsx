@@ -7,7 +7,6 @@ import { headingVariant, itemVariant } from 'components/common/constants';
 import Forest from './Forest';
 import profile1 from 'images/profile-1.jpg'
 import profile2 from 'images/profile-2.png'
-import Timeline from 'components/common/Timeline';
 import ParallaxItem from 'components/common/ParallaxItem';
 
 const MotionHeading = motion(Heading);
@@ -23,7 +22,7 @@ const About = () => {
           <Forest y={y} width="105%" style={{ transform: "translateX(-2.5%)" }} />
         </Box>
       </Box>
-      <Container maxW="100%">
+      <Container maxW="8xl">
         <SimpleGrid columns={{md: '2'}} className="about-wrapper" overflow="hidden">
           <Box>
             <ParallaxItem w="50%" ml='12' mt="48" scroll={y} speed={0.2} initial={{translateY: -300}}>
@@ -33,7 +32,7 @@ const About = () => {
               <Image src={profile1} h="100%" w="100%" rounded={6} boxShadow="dark-lg" objectFit='cover' />
             </ParallaxItem>
           </Box>
-          <Flex position='relative' maxW="60ch" direction="column" ml={{base: 'auto', md: '0'}} pr="10">
+          <Flex position='relative' maxW="60ch" direction="column" ml={{base: 'auto', md: '0'}}>
             <StaggeredFade>
               <MotionHeading
                 fontWeight={700}
