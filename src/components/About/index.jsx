@@ -58,7 +58,6 @@ const About = () => {
                 I have a Bachelor's degree in Physics from the <Link title="University of Manchester" href="https://www.manchester.ac.uk/" target={"_blank"}>University of Manchester</Link>. I'm also a Level 3 qualified Personal Trainer!
               </MotionText>
             </StaggeredFade>
-            <Timeline />
           </Flex>
         </SimpleGrid>
       </Container>
