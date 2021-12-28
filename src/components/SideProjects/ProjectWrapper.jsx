@@ -26,7 +26,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
     setTimeout(() => {
       controls.start({ rotateX: 0, rotateY: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
       bgControls.start({ translateX: 0, translateY: 0, opacity: 0.5, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
-      contentControls.start({ translateY: "50%", transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
+      contentControls.start({ translateY: "60%", transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
     }, 800);
   }
 
@@ -76,7 +76,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         width="100%"
         padding="20px"
         textAlign="left"
-        initial={{translateY: "50%"}}
+        initial={{translateY: "60%"}}
         animate={contentControls}
         _after={{
           content: "''",
@@ -99,8 +99,8 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         }}
       >
         <Heading as="h3" size="lg" mb="1" zIndex="1">{props.title}</Heading>
-        <Text textStyle="paragraph" zIndex="1">{props.info}</Text>
-        <Link className="view-live" zIndex="1" href={props.link}>View live</Link>
+        <Text textStyle="paragraph-sm" zIndex="1">{props.info}</Text>
+        <Link className="view-live" zIndex="1" href={props.link} target="_blank">View live</Link>
       </MotionBox>
     </MotionBox>
   );

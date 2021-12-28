@@ -5,10 +5,10 @@ import projectImageFour from "./images/project-four.png";
 
 export const projects = [
     {
-        title: 'Project 1',
-        info: 'Some info to go here',
+        title: 'Stargazing',
+        info: 'A simple SVG illustration, brought to life with CSS and Framer Motion animation.',
         img: projectImageOne,
-        link: '#',
+        link: 'https://codesandbox.io/s/stargazing-svg-framer-motion-8b96c',
     },
     {
         title: 'Project 2',
