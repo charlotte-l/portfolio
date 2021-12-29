@@ -69,10 +69,20 @@ const Cursor = () => {
     
     if (cursorIsHovering.current) {
       // hover state
+      cursor.current.style.opacity = 0;
+      cursor2.current.style.height = "48px";
+      cursor2.current.style.width = "48px";
+      cursor2.current.style.marginLeft = "-24px";
+      cursor2.current.style.marginTop = "-24px";
       cursor2.current.style.border = "3px solid #f1c40f";
       cursor2.current.style.boxShadow = "0 0 22px rgba(241, 196, 15, 0.6)";
     } else {
       // normal state
+      cursor.current.style.opacity = 1;
+      cursor2.current.style.height = "";
+      cursor2.current.style.width = "";
+      cursor2.current.style.marginLeft = "";
+      cursor2.current.style.marginTop = "";
       cursor2.current.style.border = "";
       cursor2.current.style.boxShadow =  "";
     }

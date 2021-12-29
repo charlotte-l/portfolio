@@ -17,10 +17,30 @@ const Work = () => {
   const { y } = useWindowScrollPosition();
 
   return (
-    <Flex as="section" id="work" position="relative" py={{ base: 32, md: 48 }} bg="#062D36">
-      <Container maxW="8xl" px="0">
-        <SimpleGrid columns={{md: '2'}}>
-          <Flex position='relative' maxW="60ch"  direction="column" mr={{base: 'auto', xl: '0'}}>
+    <Flex
+      as="section"
+      id="work"
+      position="relative"
+      py={{ base: 32, md: 48 }}
+      bg="#062D36"
+      color="#FFF"
+      zIndex="2"
+      _before={{
+        position: "absolute",
+        content: "''",
+        width: "50vh",
+        height: "50vh",
+        right: "-20%",
+        bottom: "-15vh",
+        borderRadius: "30px",
+        transform: "rotate(45deg)",
+        background: "#062D36",
+        boxShadow: "inset 0px 0px 0px 2px rgb(255 255 255 / 25%), 0px 0px 0px 59px #062D36, 0px 0px 0px 60px rgb(255 255 255 / 20%)",
+      }}
+    >
+      <Container maxW="7xl" px="0">
+        <SimpleGrid columns={{ md: '2' }}>
+          <Flex position='relative' maxW="60ch" direction="column" mr={{ base: 'auto', xl: '0' }}>
             <StaggeredFade>
               <MotionHeading
                 fontWeight={700}
@@ -40,20 +60,83 @@ const Work = () => {
                 I have extensive experience with the JAMStack, as well as JavaScript frameworks like React and jQuery. I also dabble with WordPress and PHP, and have also built custom plugins for customized functionality.
               </MotionText>
               <MotionText variants={itemVariant} textStyle='paragraph'>
-                I run Node.js-based workflow automation via Gulp or Grunt for web projects, 
+                I run Node.js-based workflow automation via Gulp or Grunt for web projects,
                 and I've written other Node scripts to automate mundane tasks. I also know my way around Sketch and Figma, and I'm comfortable using Adobe Photoshop, Illustrator and Premiere.
               </MotionText>
             </StaggeredFade>
           </Flex>
-          <Box>
-            <ParallaxItem w="80%" ml='auto' mt="48" scroll={y} speed={0.1} initial={{translateY: -400}}>
-              <Image src={screenshot1} h="100%" w="100%" rounded={6} boxShadow="2xl" objectFit='cover' />
+          <Box position='relative'>
+            <ParallaxItem
+              w="80%"
+              position="absolute"
+              right="0%"
+              bottom="-85%"
+              zIndex="1"
+              rounded={6}
+              boxShadow="dark-lg"
+              scroll={y}
+              speed={-0.16}
+              initial={{ translateY: -400 }}
+              _after={{
+                content: "''",
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: "0",
+                left: "0",
+                rounded: "6",
+                boxShadow: "border-dark",
+              }}
+            >
+              <Image src={screenshot1} h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
-            <ParallaxItem w="66%" ml='auto' mr="20%" mt="-10%" scroll={y} speed={-0.1} initial={{translateY: 250}}>
-              <Image src={screenshot2} h="100%" w="100%" rounded={6} boxShadow="dark-lg" objectFit='cover' />
+            <ParallaxItem
+              w="66%"
+              position="absolute"
+              left="0%"
+              top="-75%"
+              zIndex="1"
+              rounded={6}
+              boxShadow="dark-lg"
+              scroll={y}
+              speed={0.15}
+              initial={{ translateY: 250 }}
+              _after={{
+                content: "''",
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: "0",
+                left: "0",
+                rounded: "6",
+                boxShadow: "border-dark",
+              }}
+            >
+              <Image src={screenshot2} h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
-            <ParallaxItem w="50%" ml="-20%" mt="-20%" scroll={y} speed={-0.25} initial={{translateY: 100}}>
-              <Image src={screenshot3} h="100%" w="100%" rounded={6} boxShadow="dark-lg" objectFit='cover' />
+            <ParallaxItem
+              w="50%"
+              position="absolute"
+              right="5%"
+              bottom="-50%"
+              zIndex="1"
+              rounded={6}
+              boxShadow="dark-lg"
+              scroll={y}
+              speed={-0.125}
+              initial={{ translateY: 100 }}
+              _after={{
+                content: "''",
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: "0",
+                left: "0",
+                rounded: "6",
+                boxShadow: "border-dark",
+              }}
+            >
+              <Image src={screenshot3} h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
           </Box>
         </SimpleGrid>

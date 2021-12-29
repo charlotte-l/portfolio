@@ -33,7 +33,7 @@ const Hero = () => {
   }
 
   return (
-    <Box as="section" id="hero" className={heroStyles.sectionBg} position="relative" overflow="hidden" minH="50vh">
+    <Box as="section" id="hero" className={heroStyles.sectionBg} position="relative" overflow="hidden" minH="50vh" color={'white'}>
       <Container width='100%' height='100%' maxW="unset" position="absolute">
         <Ray />
         <Ray />
@@ -62,7 +62,7 @@ const Hero = () => {
             >
               Hi, I'm Charlotte
             </MotionHeading>
-            <MotionText maxW={{base: '100%', md: '60ch'}} mx='auto' variants={variants} textStyle='paragraph'>
+            <MotionText maxW={{base: '100%', md: '60ch'}} mx='auto' variants={variants} textStyle='paragraph-lg'>
               I'm a UK based web developer. I'm passionate about building fast, accessible and beautiful experiences for all. It's great to meet&nbsp;you!
             </MotionText>
             <MotionArrow ref={swoopArrow} w="10" mt="24" variants={swoopArrowVariants} onAnimationComplete={(def) => addHoverClass(def)}></MotionArrow>

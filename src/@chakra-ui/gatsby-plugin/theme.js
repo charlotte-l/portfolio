@@ -5,7 +5,8 @@ import styles from "../styles"
 
 // Foundational style overrides
 import borders from "../foundations/borders"
-import textStyles from "../foundations/textStyles";
+import shadows from "../foundations/shadows"
+import textStyles from "../foundations/textStyles"
 
 // Component style overrides
 import Button from "../components/button"
@@ -14,6 +15,7 @@ import Link from "../components/link"
 const theme = extendTheme({
     styles,
     borders,
+    shadows,
     components: {
       Button,
       Link

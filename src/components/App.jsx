@@ -16,20 +16,20 @@ function App() {
   const showCursor = useBreakpointValue({ base: false, md: true })
 
   return (
-    <div className="app">
+    <>
       <Fonts />
-      <main>
+      <main style={{overflow: 'hidden'}}>
         <Hero />
         <About />
         <Work />
         <SideProjects />
         <Contact />
-        {showCursor && <Cursor />}
       </main>
       <footer>
         <Footer />
       </footer>
-    </div>
+      {showCursor && <Cursor />}
+    </>
   );
 }
 

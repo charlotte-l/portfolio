@@ -9,6 +9,11 @@ const textStyles = {
     fontWeight: 'light',
     letterSpacing: '0.35px',
   },
+  "paragraph-lg": {
+    fontSize: ['20px', '22px'],
+    fontWeight: 'light',
+    letterSpacing: '0.40px',
+  },
 };
 
 export default textStyles;

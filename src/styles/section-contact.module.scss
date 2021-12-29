@@ -17,7 +17,7 @@
     width: $size;
     opacity: random(100) * 0.01;
     animation-delay: -$i * .4s;
-    background: radial-gradient(circle, #62336e 0%, #562A63 80%, #FFF 86%, #FFF 90%, #F9F9EF 100%);
+    background: radial-gradient(circle, #207285 0%, #062D36 80%, #FFF 86%, #FFF 90%, #F9F9EF 100%);
     box-shadow: 0px 0px 12px #ffe876;
     border: 2px solid #F9F9EF;
     transform: translate3d((random(100) * 1vw), (random(30) * 1vh), (random(100) * 1px));

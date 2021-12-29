@@ -7,7 +7,16 @@ import { socialNetworks } from './SocialNetworks';
 const Contact = () => {
 
   return (
-    <Flex as="section" id="contact" direction="column" pt={{ base: 30, md: 48 }} pb={{ base: 8, sm: 20, md: 12 }} bg="#001024" overflow="hidden">
+    <Flex
+      as="section"
+      id="contact"
+      direction="column"
+      pt={{ base: 30, md: 36 }}
+      pb={{ base: 8, sm: 20, md: 12 }}
+      bg="#062D36"
+      overflow="hidden"
+      color="#FFF"
+    >
       <Container maxW="6xl" py="20" mx="auto">
         <Heading as="h2" fontSize={{ base: '4xl', md: '5xl', xl: '7xl' }} maxW="3xl">
           <Link href="mailto:cel.cameron@protonmail.com" title="Email Charlotte">Drop me a line</Link>, I'd love to hear from you!
