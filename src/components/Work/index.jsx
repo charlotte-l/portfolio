@@ -21,21 +21,22 @@ const Work = () => {
       as="section"
       id="work"
       position="relative"
-      py={{ base: 32, md: 48 }}
-      bg="#062D36"
-      color="#FFF"
+      pt={{ base: 32, md: 80 }}
+      pb={{ base: 32, md: 56 }}
+      bg="#a7b9b4"
+      color="#062D36"
       zIndex="2"
-      _before={{
-        position: "absolute",
+      _after={{
         content: "''",
-        width: "50vh",
-        height: "50vh",
-        right: "-20%",
-        bottom: "-15vh",
-        borderRadius: "30px",
-        transform: "rotate(45deg)",
-        background: "#062D36",
-        boxShadow: "inset 0px 0px 0px 2px rgb(255 255 255 / 25%), 0px 0px 0px 59px #062D36, 0px 0px 0px 60px rgb(255 255 255 / 20%)",
+        position: "absolute",
+        background: "inherit",
+        bottom: "-30%",
+        left: "0",
+        right: "0",
+        height: "50%",
+        transform: "skewY(-4.5deg)",
+        transformOrigin: "-100%",
+        zIndex: "-1",
       }}
     >
       <Container maxW="7xl" px="0">
@@ -53,13 +54,13 @@ const Work = () => {
               >
                 Work
               </MotionHeading>
-              <MotionText mt="24" mb="4" variants={itemVariant} textStyle='paragraph'>
+              <MotionText mt="24" mb="4" variants={itemVariant} textStyle='paragraph-normal'>
                 I use HTML, SASS &amp; JavaScript every day, and I love to utilise bleeding-edge technology to craft unique and modern experiences.
               </MotionText>
-              <MotionText mb="4" variants={itemVariant} textStyle='paragraph'>
+              <MotionText mb="4" variants={itemVariant} textStyle='paragraph-normal'>
                 I have extensive experience with the JAMStack, as well as JavaScript frameworks like React and jQuery. I also dabble with WordPress and PHP, and have also built custom plugins for customized functionality.
               </MotionText>
-              <MotionText variants={itemVariant} textStyle='paragraph'>
+              <MotionText variants={itemVariant} textStyle='paragraph-normal'>
                 I run Node.js-based workflow automation via Gulp or Grunt for web projects,
                 and I've written other Node scripts to automate mundane tasks. I also know my way around Sketch and Figma, and I'm comfortable using Adobe Photoshop, Illustrator and Premiere.
               </MotionText>

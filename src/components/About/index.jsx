@@ -28,16 +28,17 @@ const About = () => {
       pb={{ base: 32, md: 72 }}
       minH="100vh"
       zIndex="3"
-      _before={{
-        position: "absolute",
+      _after={{
         content: "''",
-        width: "66vh",
-        height: "66vh",
-        left: "-20%",
-        bottom: "-10vh",
-        borderRadius: "50%",
-        background: "#062D36",
-        boxShadow: "inset 0px 0px 0px 2px rgb(255 255 255 / 25%), 0px 0px 0px 59px #062D36, 0px 0px 0px 60px rgb(255 255 255 / 20%)",
+        position: "absolute",
+        background: "inherit",
+        bottom: "7%",
+        left: "0",
+        right: "0",
+        height: "50%",
+        transform: "skewY(4.5deg)",
+        transformOrigin: "-100%",
+        zIndex: "-1",
       }}
     >
       <Box id="forest-wrap" w="100%" transform="translateY(-20vh)" mb="-10vh" position="relative" pointerEvents={"none"}>
@@ -98,7 +99,7 @@ const About = () => {
               w="25%"
               position="absolute"
               right="25%"
-              bottom="-10%"
+              bottom="-20%"
               scroll={y}
               zIndex="2"
               speed={-0.1}
@@ -141,10 +142,7 @@ const About = () => {
                 Before web dev, I worked in Cybersecurity consultancy at <Link title="EY UK" href="https://www.ey.com/en_uk" target={"_blank"}>EY UK</Link>. Before that, I spent a year at <Link title="IBM UK" href="https://www.ibm.com/uk-en" target={"_blank"}>IBM UK</Link> managing technical projects.
               </MotionText>
               <MotionText variants={itemVariant} mb='4' textStyle='paragraph'>
-                I have a Bachelor's degree in Physics from the <Link title="University of Manchester" href="https://www.manchester.ac.uk/" target={"_blank"}>University of Manchester</Link>. I'm also a Level 3 qualified Personal Trainer!
-              </MotionText>
-              <MotionText variants={itemVariant} mb='4' textStyle='paragraph'>
-                I'm completely smitten with my rescue cat, Buttons, and my two guinea pigs (Godzilla and Benny).
+                I have a Bachelor's degree in Physics from the <Link title="University of Manchester" href="https://www.manchester.ac.uk/" target={"_blank"}>University of Manchester</Link>. I'm also a Level 3 qualified Personal Trainer! I'm completely smitten with my rescue cat, Buttons, and my two guinea pigs (Godzilla and Benny).
               </MotionText>
             </StaggeredFade>
           </Flex>

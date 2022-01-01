@@ -16,8 +16,8 @@ export const Comets = (props) => {
       <g transform="rotate(20)">
         <ellipse className={styles.comet} style={{animationDelay: "-3.3s"}} fill="url(#comet-gradient)" cx="100%" cy="0" rx="150" ry="2"></ellipse>
       </g>
-      <g transform="rotate(300)">
-        <ellipse className={styles.comet} style={{animationDelay: "-5s"}} fill="url(#comet-gradient)" cx="40%" cy="100%" rx="150" ry="2"></ellipse>
+      <g transform="rotate(335)">
+        <ellipse className={styles.comet} style={{animationDelay: "-5s"}} fill="url(#comet-gradient)" cx="100%" cy="50%" rx="150" ry="2"></ellipse>
       </g>
     </svg >
   );

@@ -2,6 +2,14 @@ html, body {
   cursor: none !important;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 .cursor,
 .cursor2 {
   position: fixed;

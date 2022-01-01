@@ -74,7 +74,4 @@ const Forest = (props) => {
   );
 };
 
-
-
-
 export default Forest;

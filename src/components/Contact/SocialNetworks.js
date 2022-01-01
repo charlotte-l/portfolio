@@ -8,7 +8,7 @@ export const socialNetworks = [
     name: 'linkedin',
     url: 'https://www.linkedin.com/in/charlotte-cameron-dev/',
     icon: <LinkedinIcon color='white' boxSize={10} />,
-    x: "50%",
+    x: "45%",
     y: "0%",
   },
   {
@@ -16,7 +16,7 @@ export const socialNetworks = [
     name: 'github',
     url: 'https://github.com/charlotte-l',
     icon: <GithubIcon color='white' boxSize={10} />,
-    x: "60%",
+    x: "65%",
     y: "35%",
   },
   {
@@ -24,7 +24,7 @@ export const socialNetworks = [
     name: 'email',
     url: 'mailto:cel.cameron@protonmail.com',
     icon: <EmailIcon color='white' boxSize={10} />,
-    x: "70%",
+    x: "85%",
     y: "10%",
   },
 ];

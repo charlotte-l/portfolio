@@ -18,24 +18,12 @@ const SideProjects = () => {
       id="side-projects"
       position="relative"
       pt={{ base: 32, md: 56 }}
-      pb={{ base: 32, md: 32 }}
+      pb={{ base: 32, md: 96 }}
       bg="#062D36"
       color="#FFF"
-      _before={{
-        position: "absolute",
-        content: "''",
-        zIndex: "0",
-        width: "78vh",
-        height: "55vh",
-        left: "-20%",
-        bottom: "-5vh",
-        borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%",
-        transform: "rotate(35deg)",
-        background: "#062D36",
-        boxShadow: "inset 0px 0px 0px 2px rgb(255 255 255 / 25%), 0px 0px 0px 59px #062D36, 0px 0px 0px 60px rgb(255 255 255 / 20%)",
-      }}
+      zIndex="0"
     >
-      <Container maxW="5xl" textAlign="center" zIndex='2'>
+      <Container maxW="5xl" textAlign="center" zIndex='2' mb="56">
         <StaggeredFade>
           <Box mb="16">
             <MotionHeading

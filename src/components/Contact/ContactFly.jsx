@@ -30,7 +30,7 @@ const ContactFly = ({ link, icon, x, y }) => {
       >
         {icon}
       </Flex>
-      <LinkOverlay href={link} />
+      <LinkOverlay href={link} cursor="none" />
     </MotionLinkBox>
   );
 }
