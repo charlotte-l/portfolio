@@ -3,7 +3,7 @@ import { throttle } from "lodash";
 import { useMotionValue } from 'framer-motion'
 
 let defaultOptions = {
-  throttle: 32
+  throttle: 100
 };
 
 function useWindowScrollPosition(options) {
