@@ -54,7 +54,7 @@ const Hero = () => {
           <StaggeredFade>
             <MotionHeading
               fontWeight={700}
-              fontSize={{ base: '4xl', md: '6xl', xl: '8xl' }}
+              fontSize={{ base: '6xl', md: '7xl', xl: '8xl' }}
               letterSpacing="1.5px"
               as="h1"
               variants={variants}

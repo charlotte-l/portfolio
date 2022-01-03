@@ -10,7 +10,7 @@ const textStyles = {
     letterSpacing: '0.5px',
   },
   "paragraph-sm": {
-    fontSize: ['16px', '18px'],
+    fontSize: '16px',
     fontWeight: 'light',
     letterSpacing: '0.35px',
   },
@@ -19,6 +19,12 @@ const textStyles = {
     fontWeight: 'light',
     letterSpacing: '0.40px',
   },
+  "accent": {
+    fontSize: ['10rem', '20rem', null, '50rem'],
+    fontWeight: 'light',
+    fontFamily: 'Playfair Display',
+    lineHeight: '1',
+  }
 };
 
 export default textStyles;

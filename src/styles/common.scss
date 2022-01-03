@@ -44,6 +44,12 @@ footer {
   border: 1px solid rgba(241, 196, 15, 0.3);
 }
 
+.section-number {
+  position: absolute;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+  opacity: 0.2;
+}
+
 .heading--r,
 .heading--l {
   position: absolute;

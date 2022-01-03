@@ -55,19 +55,6 @@ export const itemVariant = {
   }
 };
 
-export const cardVariant = {
-  show: (i) => ({
-    rotateY: i == 'top' ? 0 : -180,
-  }),
-  hover: (i) => ({
-    rotateY: i == 'top' ? 180 : 0,
-    transition: {
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  }),
-};
-
 const swoopTransition = {
   type: 'tween',
   duration: 1.25,

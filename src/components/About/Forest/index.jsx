@@ -6,7 +6,7 @@ const Forest = (props) => {
   const showParallaxEffect = useBreakpointValue({ base: false, lg: true });
   const y = props.y;
   const opacity = useTransform(y, [0, 600], [0.5, 1]);
-  const oS = useSpring(opacity, { duration: 1, bounce: 0 })
+  const oS = useSpring(opacity, { stiffness: 400, damping: 90 })
   const y0 = useTransform(y, value => value / -2.5);
   const y1 = useTransform(y, value => value / 30);
   const y2 = useTransform(y, value => value / 5);
@@ -21,7 +21,7 @@ const Forest = (props) => {
   const yS5 = useSpring(y5, { stiffness: 400, damping: 90 });
 
   return (
-    <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3877.3 2174.2" opacity={oS} {...props}>
+    <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3877.3 2174.2" opacity={oS} width={props.width} style={{position: 'relative', left: props.translateX}}>
       <defs>
         <linearGradient id="layer6Gradient" x1="1740.7" y1="2430.5" x2="2149.4" y2="-452.9" gradientUnits="userSpaceOnUse">
           <stop offset="20%" stopColor="#ffe876" />

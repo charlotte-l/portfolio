@@ -14,7 +14,7 @@ import Fonts from "../@chakra-ui/components/fonts";
 
 function App() {
   const showCursor = useBreakpointValue({ base: false, md: true })
-
+  
   return (
     <>
       <Fonts />

@@ -11,6 +11,7 @@ import textStyles from "../foundations/textStyles"
 // Component style overrides
 import Button from "../components/button"
 import Link from "../components/link"
+import breakpoints from "../components/breakpoints"
 
 const theme = extendTheme({
     styles,
@@ -25,6 +26,7 @@ const theme = extendTheme({
       body: "system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     },
     textStyles,
+    breakpoints,
 });
 
 export default theme;
