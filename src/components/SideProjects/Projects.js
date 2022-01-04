@@ -1,5 +1,5 @@
 import projectImageOne from "./images/project-one.png";
-import projectImageTwo from "./images/project-two.png";
+import projectImageTwo from "./images/project-two.jpg";
 import projectImageThree from "./images/project-three.png";
 import projectImageFour from "./images/project-four.png";
 
@@ -13,7 +13,7 @@ export const projects = [
     {
         title: 'Project 2',
         info: 'Some info to go here',
-        img: projectImageTwo,
+        img: projectImageFour,
         link: '#',
     },
     {
@@ -23,9 +23,9 @@ export const projects = [
         link: '#',
     },
     {
-        title: 'Project 4',
-        info: 'Some info to go here',
-        img: projectImageFour,
-        link: '#',
+        title: 'Iridescent',
+        info: 'Gorgeous gorgeous girls love soup and shiny things. Built with Three.JS.',
+        img: projectImageTwo,   
+        link: 'https://codepen.io/amarisse/pen/LYzmaZN',
     },
 ];
