@@ -100,7 +100,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         }}
       >
         <Heading as="h3" size="lg" mb="1" zIndex="1">{props.title}</Heading>
-        <Text textStyle="paragraph-sm" zIndex="1">{props.info}</Text>
+        <Text textStyle="paragraph-sm" maxW="40ch" zIndex="1">{props.info}</Text>
         <Link className="view-live" zIndex="1" href={props.link} target="_blank" rel="nofollow noopener">View live</Link>
       </MotionBox>
     </MotionBox>

@@ -1,6 +1,6 @@
 import projectImageOne from "./images/project-one.png";
 import projectImageTwo from "./images/project-two.jpg";
-import projectImageThree from "./images/project-three.png";
+import projectImageThree from "./images/project-three.jpg";
 import projectImageFour from "./images/project-four.png";
 
 export const projects = [
@@ -17,10 +17,10 @@ export const projects = [
         link: '#',
     },
     {
-        title: 'Project 3',
-        info: 'Some info to go here',
+        title: 'Aquarium',
+        info: 'CSS-only illustration of a rimless aquarium with hardscaping, aquatic plants and a betta fish.',
         img: projectImageThree,
-        link: '#',
+        link: 'https://codepen.io/amarisse/pen/jOGKwoo',
     },
     {
         title: 'Iridescent',
