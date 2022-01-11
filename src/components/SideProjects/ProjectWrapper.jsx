@@ -18,7 +18,10 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
   const setPosition = (event) => {
     const { pageX, pageY } = event
     const offsetX = pageX - left - (width / 2)
-    const offsetY = pageY - window.scrollY - top - (height / 2)
+    let offsetY = pageY - window.scrollY - top - (height / 2)
+    if (Math.sign(offsetY) == "-1" && offsetY < -125) offsetY = "-100"
+    if (Math.sign(offsetY) == "1" && offsetY > 100) offsetY = "100"
+    
     controls.start({ rotateX: (offsetY / height) * -20, rotateY: (offsetX / width) * 20, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
     bgControls.start({ translateX: (offsetX / width) * -35, translateY: (offsetY / height) * -35, opacity: 0.8, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
     contentControls.start({ translateY: "0%", transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
