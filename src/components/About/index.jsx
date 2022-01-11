@@ -6,9 +6,9 @@ import { motion, useReducedMotion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
 import Forest from './Forest';
-import profile1 from 'images/profile-1.jpg'
+import me from 'images/me.jpg'
 import buttons from 'images/buttons-the-cat.jpg'
-import guineapigs from 'images/benny-and-godzilla.jpeg'
+import guineapigs from 'images/benny-and-godzilla.jpg'
 import ParallaxItem from 'components/common/ParallaxItem';
 
 const MotionHeading = motion(Heading);
@@ -81,7 +81,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={profile1} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={me} h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "25%", sm: "20%", xl: "25%" }}
