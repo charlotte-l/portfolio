@@ -144,6 +144,30 @@
   }
 }
 
+@media (prefers-reduced-motion) {
+  .ray {
+    &:nth-child(3) {
+      animation: aurora-small ease-in-out 6397ms infinite;
+    }
+
+    &:nth-child(4) {
+      animation: aurora-medium ease-in-out 6613ms infinite;
+    }
+
+    &:nth-child(5) {
+      animation: aurora-large ease-in-out 6044ms infinite;
+    }
+
+    &:nth-child(6) {
+      animation: aurora-small ease-in-out 6261ms infinite;
+    }
+
+    &:nth-child(7) {
+      animation: aurora-medium ease-in-out 6543ms infinite;
+    }
+  }
+}
+
 .swoopArrow {
   animation: float ease-in-out 1.5s infinite alternate;
 }

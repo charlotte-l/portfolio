@@ -15,9 +15,9 @@ export const onClientEntry = () => {
 export const onInitialClientRender = () => {
   setTimeout(function () {
     document.getElementById("___loading").classList.add('hide')
-  }, 400)
+  }, 1000)
 
   setTimeout(function () {
     document.getElementById("___loading").style.display = 'none'
-  }, 900)
+  }, 1500)
 }

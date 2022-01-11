@@ -1,7 +1,7 @@
 import projectImageOne from "./images/project-one.png";
 import projectImageTwo from "./images/project-two.jpg";
 import projectImageThree from "./images/project-three.jpg";
-import projectImageFour from "./images/project-four.png";
+import projectImageFour from "./images/project-four.jpg";
 
 export const projects = [
     {
@@ -11,10 +11,10 @@ export const projects = [
         link: 'https://codesandbox.io/s/stargazing-svg-framer-motion-8b96c',
     },
     {
-        title: 'Project 2',
-        info: 'Some info to go here',
+        title: 'Smart Home',
+        info: 'JS-free mockup of a Smart Home app UI in a glassmorphic style, inspired by a Dribbble.',
         img: projectImageFour,
-        link: '#',
+        link: 'https://codepen.io/amarisse/pen/poWZQmG',
     },
     {
         title: 'Aquarium',

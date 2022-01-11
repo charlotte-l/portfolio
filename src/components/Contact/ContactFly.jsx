@@ -1,18 +1,20 @@
 import React from "react";
 import { LinkBox, LinkOverlay, Flex } from "@chakra-ui/layout";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const MotionLinkBox = motion(LinkBox);
 
 const ContactFly = ({ link, icon, x, y }) => {
+  const shouldReduceMotion = useReducedMotion();
   const delay = Math.floor(parseInt(x) / 10) / -2;
+
   return (
     <MotionLinkBox
       position={{ base: "relative", md: "absolute" }}
       left={{ md: x }}
       top={{ md: y }}
       style={{ transition: "cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s" }}
-      animation={`bob 5s infinite ${delay}s alternate-reverse`}
+      animation={!shouldReduceMotion && `bob 5s infinite ${delay}s alternate-reverse`}
       role="group"
     >
       <Flex

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Heading, Flex, SimpleGrid, Box, Text, Link, Image } from "@chakra-ui/react";
 import useWindowScrollPosition from "hooks/useWindowScrollPos";
 import useIsDesktop from 'hooks/useIsDesktop';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
 import Forest from './Forest';
@@ -17,6 +17,7 @@ const MotionText = motion(Text);
 const About = (props) => {
   const { y } = useWindowScrollPosition()
   const isDesktop = useIsDesktop()
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <Flex
@@ -42,7 +43,7 @@ const About = (props) => {
               w={{ base: "25%", sm: "20%", xl: "25%" }}
               zIndex="2"
               scroll={y}
-              speed={isDesktop ? 0.2 : 0.05}
+              speed={(isDesktop || !shouldReduceMotion) ? 0.2 : 0.05}
               alignSelf={{ base: "center", xl: "flex-start" }}
               initial={{ translateY: "-125%" }}
               mt={{ base: "20%", xl: "0%" }}
@@ -64,7 +65,7 @@ const About = (props) => {
               w={{ base: "50%", sm: "33%", xl: "50%" }}
               zIndex="1"
               scroll={y}
-              speed={isDesktop ? 0.1 : 0.05}
+              speed={(isDesktop || !shouldReduceMotion) ? 0.1 : 0.05}
               alignSelf="center"
               initial={{ translateY: "-12.5%" }}
               ml="-2.5%"
@@ -86,7 +87,7 @@ const About = (props) => {
               w={{ base: "25%", sm: "20%", xl: "25%" }}
               scroll={y}
               zIndex="2"
-              speed={isDesktop ? -0.1 : 0.05}
+              speed={(isDesktop || !shouldReduceMotion) ? -0.1 : 0.05}
               alignSelf={{ base: "center", xl: "flex-end" }}
               initial={{ translateY: "100%" }}
               mt={{ base: "-33.33%", xl: "0%" }}

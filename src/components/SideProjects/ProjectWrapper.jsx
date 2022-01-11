@@ -1,17 +1,19 @@
 import React, { useEffect, useMemo } from "react";
 import { Box, Heading, Text, Link } from "@chakra-ui/react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useReducedMotion } from "framer-motion";
 import { useBoundingRect } from 'hooks/useBoundingRect';
 import { debounce, throttle } from "lodash";
 
 const MotionBox = motion(Box);
 
 const ProjectWrapper = React.forwardRef((props, ref) => {
+  const shouldReduceMotion = useReducedMotion();
   const [boxRef, dimensions] = useBoundingRect();
   const { width, height, left, top } = dimensions;
   const controls = useAnimation();
   const bgControls = useAnimation();
   const contentControls = useAnimation();
+  const reducedAnimationContentControls = useAnimation();
 
   const setPosition = (event) => {
     const { pageX, pageY } = event
@@ -20,6 +22,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
     controls.start({ rotateX: (offsetY / height) * -20, rotateY: (offsetX / width) * 20, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
     bgControls.start({ translateX: (offsetX / width) * -35, translateY: (offsetY / height) * -35, opacity: 0.8, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
     contentControls.start({ translateY: "0%", transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
+    reducedAnimationContentControls.start({ opacity: 1, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
   }
 
   const resetPosition = () => {
@@ -27,6 +30,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
       controls.start({ rotateX: 0, rotateY: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
       bgControls.start({ translateX: 0, translateY: 0, opacity: 0.5, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } })
       contentControls.start({ translateY: "60%", transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
+      reducedAnimationContentControls.start({ opacity: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } })
     }, 500);
   }
 
@@ -47,7 +51,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
       overflow="hidden"
       backgroundColor="#062D36"
       initial={{ perspective: 800, rotateX: 0, rotateY: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } }}
-      animate={controls}
+      animate={shouldReduceMotion ? null : controls}
       onMouseMove={throttledSetPosition}
       onMouseLeave={debouncedResetPosition}
       boxShadow="border"
@@ -68,7 +72,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         bgSize="cover"
         opacity={0.5}
         pointerEvents="none"
-        animate={bgControls}
+        animate={shouldReduceMotion ? null : bgControls}
       ></MotionBox>
       <MotionBox
         position="absolute"
@@ -77,8 +81,8 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         width="100%"
         padding="20px"
         textAlign="left"
-        initial={{translateY: "60%"}}
-        animate={contentControls}
+        initial={shouldReduceMotion ? {translateY: "0%", opacity: 0} : {translateY: "60%"}}
+        animate={shouldReduceMotion ? reducedAnimationContentControls : contentControls}
         _after={{
           content: "''",
           position: "absolute",

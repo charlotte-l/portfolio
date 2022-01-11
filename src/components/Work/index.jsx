@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Flex, SimpleGrid, Box, Text, Heading, Link, Image, useBreakpointValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import useWindowScrollPosition from "hooks/useWindowScrollPos";
 import useIsDesktop from 'hooks/useIsDesktop';
 import ParallaxItem from 'components/common/ParallaxItem';
@@ -9,7 +9,7 @@ import { headingVariant, itemVariant } from 'components/common/constants';
 
 import screenshot1 from "./screenshots/screenshot-one.png";
 import screenshot2 from "./screenshots/screenshot-two.png";
-import screenshot3 from "./screenshots/screenshot-three.png";
+import screenshot3 from "./screenshots/screenshot-three.jpg";
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
@@ -17,6 +17,7 @@ const MotionText = motion(Text);
 const Work = (props) => {
   const { y } = useWindowScrollPosition()
   const isDesktop = useIsDesktop()
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <Flex
@@ -66,7 +67,7 @@ const Work = (props) => {
               rounded={6}
               boxShadow="dark-lg"
               scroll={y}
-              speed={isDesktop ? 0.12 : 0.05}
+              speed={(isDesktop || !shouldReduceMotion) ? 0.12 : 0.05}
               initial={{ translateY: "-50%" }}
               mt={{ base: "-5%", md: "7.5%", xl: "0%" }}
               _after={{
@@ -89,7 +90,7 @@ const Work = (props) => {
               rounded={6}
               boxShadow="dark-lg"
               scroll={y}
-              speed={isDesktop ? -0.14 : 0.05}
+              speed={(isDesktop || !shouldReduceMotion) ? -0.14 : 0.05}
               mr={{ base: "-10%", xl: "0%" }}
               ml={{ base: "-10%", xl: "auto" }}
               _after={{
@@ -112,7 +113,7 @@ const Work = (props) => {
               rounded={6}
               boxShadow="dark-lg"
               scroll={y}
-              speed={isDesktop ? -0.125 : 0.05}
+              speed={(isDesktop || !shouldReduceMotion) ? -0.125 : 0.05}
               initial={{ translateY: "100%" }}
               mt={{ base: "-25%", xl: "0%" }}
               _after={{

@@ -9,13 +9,14 @@ import { Comets } from 'components/Graphics/Comets';
 // import { Bridge } from '../Graphics/Bridge';
 import bridge from 'images/bridge.svg';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const MotionContainer = motion(Container);
 const MotionFlex = motion(Flex);
 
 const Contact = (props) => {
-
+  const shouldReduceMotion = useReducedMotion();
+  
   return (
     <Flex
       as="section"
@@ -48,7 +49,7 @@ const Contact = (props) => {
           </Heading>
         </MotionContainer>
         <MotionFlex w="100%" position='relative' direction={{ base: "column-reverse", md: "column" }} variants={itemVariant}>
-          <Comets style={{ position: "absolute", pointerEvents: "none", height: "300%", top: "-150%", zIndex: "0" }} />
+          {!shouldReduceMotion && <Comets style={{ position: "absolute", pointerEvents: "none", height: "300%", top: "-150%", zIndex: "0" }} /> }
           <Box w="3xl" maxW="100%" h="30vh" mx="auto" position="relative" display={{ base: "flex" }} justifyContent={{ base: "space-evenly" }}>
             {socialNetworks && socialNetworks.map((network) => <ContactFly key={network.id} icon={network.icon} link={network.url} x={network.x} y={network.y} />)}
           </Box>

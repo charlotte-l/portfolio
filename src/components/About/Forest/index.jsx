@@ -1,9 +1,11 @@
 import React from "react";
-import { motion, useTransform, useSpring } from "framer-motion";
+import { motion, useTransform, useSpring, useReducedMotion } from "framer-motion";
 import { useBreakpointValue } from '@chakra-ui/react'
 
 const Forest = (props) => {
-  const showParallaxEffect = useBreakpointValue({ base: false, lg: true });
+  let showParallaxEffect = useBreakpointValue({ base: false, lg: true });
+  if (useReducedMotion()) showParallaxEffect = false;
+  
   const y = props.y;
   const opacity = useTransform(y, [0, 600], [0.5, 1]);
   const oS = useSpring(opacity, { stiffness: 400, damping: 90 })
