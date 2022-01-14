@@ -6,9 +6,14 @@ import { motion, useReducedMotion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
 import Forest from './Forest';
-import me from 'images/me.jpg'
-import buttons from 'images/buttons-the-cat.jpg'
-import guineapigs from 'images/benny-and-godzilla.jpg'
+
+import me from 'images/me-2x.jpg'
+import meSm from 'images/me.jpg'
+import buttons from 'images/buttons-the-cat-2x.jpg'
+import buttonsSm from 'images/buttons-the-cat.jpg'
+import guineapigs from 'images/benny-and-godzilla-2x.jpg'
+import guineapigsSm from 'images/benny-and-godzilla.jpg'
+
 import ParallaxItem from 'components/common/ParallaxItem';
 
 const MotionHeading = motion(Heading);
@@ -59,7 +64,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={guineapigs} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={guineapigs} srcset={`${guineapigsSm} 275w, ${guineapigs} 550w`} sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Godzilla and Benny (guinea pigs)" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "50%", sm: "33%", xl: "50%" }}
@@ -81,7 +86,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={me} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={me} srcset={`${meSm} 320w, ${me} 640w`} sizes="(min-width: 80em) 25vw, (min-width: 100em) 352px, 40vw" alt="It's me!" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "25%", sm: "20%", xl: "25%" }}
@@ -104,7 +109,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={buttons} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={buttons} srcset={`${buttonsSm} 251w, ${buttons} 501w`} sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Buttons (black cat)" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
           </Flex>
           <Flex position='relative' maxW={{ base: "100%", sm: "75ch", xl: "60ch" }} direction="column" mx={{ base: 'auto', xl: '0' }} textAlign={{ base: "center", xl: "left" }}>
