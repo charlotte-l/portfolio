@@ -116,13 +116,13 @@ export default function HTML({
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {headComponents}
-        <style dangerouslySetInnerHTML={{ __html: loadingCSS }}></style>
+        {/* <style dangerouslySetInnerHTML={{ __html: loadingCSS }}></style> */}
       </head>
       <body {...bodyAttributes}>
         {preBodyComponents}
-        <div id="___loading">
+        {/* <div id="___loading">
           <div className="loader" aria-label="Loading..."><div className="loader-inner"></div></div>
-        </div>
+        </div> */}
         <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
         {postBodyComponents}
       </body>
