@@ -16,6 +16,7 @@ export default function useIsDesktop() {
     }
 
     window.addEventListener("resize", onResize);
+    onResize();
 
     return () => {
       window.removeEventListener("resize", onResize);
