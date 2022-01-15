@@ -8,7 +8,6 @@ import { Comets } from 'components/Graphics/Comets';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { itemVariant } from 'components/common/constants';
 import * as styles from "../styles/not-found.module.scss";
-import { Campsite } from 'components/Graphics/Campsite'; 
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
@@ -26,7 +25,7 @@ const PageNotFound = () => {
         <Comets style={{position: "absolute", pointerEvents: "none"}} />
         <SimpleGrid columns={{ md: 2 }} gap='12'>
           <Box maxH={{base: "50vh", md: "90vh", xl: "75vh"}} px={{base: '12', md: '6', xl: '12'}} zIndex='2'>
-            <Campsite width="100%" height="100%" mx="auto" filter='drop-shadow(0px 12px 32px rgba(0,16,36,0.5))' />
+            {/* <Campsite width="100%" height="100%" mx="auto" filter='drop-shadow(0px 12px 32px rgba(0,16,36,0.5))' /> */}
           </Box>
           <Flex alignItems='center' textAlign={{base: "center", md: "left"}}>
             <StaggeredFade>
