@@ -4,6 +4,12 @@
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "MIT",
+  "browserslist": [
+    ">0.25%",
+    "last 2 versions",
+    "not dead",
+    "not IE 11"
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -11,7 +17,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "analyze": "cross-env INTERACTIVE_ANALYZE=1 npm run build"
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^2.0.2",
@@ -43,6 +50,7 @@
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.3",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "7.2.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -53,7 +61,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "repository": {
     "type": "git",
