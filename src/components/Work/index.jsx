@@ -7,9 +7,12 @@ import ParallaxItem from 'components/common/ParallaxItem';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
 
-import screenshot1 from "./screenshots/screenshot-one.png";
-import screenshot2 from "./screenshots/screenshot-two.png";
-import screenshot3 from "./screenshots/screenshot-three.jpg";
+import screenshot1 from "images/screenshot-one-2x.jpg";
+import screenshot1Sm from "images/screenshot-one.jpg";
+import screenshot2 from "images/screenshot-two-2x.jpg";
+import screenshot2Sm from "images/screenshot-two.jpg";
+import screenshot3 from "images/screenshot-three-2x.jpg";
+import screenshot3Sm from "images/screenshot-three.jpg";
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
@@ -81,7 +84,7 @@ const Work = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={screenshot2} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={screenshot2} srcset={`${screenshot2Sm} 412w, ${screenshot2} 824w`} sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "44%", xl: "80%" }}
@@ -104,7 +107,7 @@ const Work = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={screenshot1} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={screenshot1} srcset={`${screenshot1Sm} 500w, ${screenshot1} 1000w`} sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw" alt="Digital Assistant app UI" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "50%", sm: "30%", xl: "50%" }}
@@ -127,7 +130,7 @@ const Work = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={screenshot3} h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image src={screenshot3} srcset={`${screenshot3Sm} 312w, ${screenshot3} 600w`} sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
           </Flex>
         </SimpleGrid>
