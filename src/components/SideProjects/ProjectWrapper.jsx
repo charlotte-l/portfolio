@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo } from "react";
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
-import { motion, useAnimation, useReducedMotion } from "framer-motion";
+import React, { useEffect, useMemo, useState } from "react";
+import { useInView } from 'react-intersection-observer';
+import { Box, Heading, Text, Link, useMergeRefs } from "@chakra-ui/react";
+import { motion, useAnimation, useReducedMotion, useSpring } from "framer-motion";
 import { useBoundingRect } from 'hooks/useBoundingRect';
 import { debounce, throttle } from "lodash";
 
@@ -14,6 +15,10 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
   const bgControls = useAnimation();
   const contentControls = useAnimation();
   const reducedAnimationContentControls = useAnimation();
+  const [viewRef, inView] = useInView({ threshold: 0, triggerOnce: true, fallbackInView: true, rootMargin: '-50px 0px -50px 0px' });
+  const [bgImageLoaded, setBgImageLoaded] = useState(false);
+
+  const refs = useMergeRefs(boxRef, viewRef);
 
   const setPosition = (event) => {
     const { pageX, pageY } = event
@@ -40,9 +45,16 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
   const throttledSetPosition = useMemo(() => throttle(setPosition, 60));
   const debouncedResetPosition = useMemo(() => debounce(resetPosition, 300));
 
+  let bgLoaded = false;
+
   useEffect(() => {
     resetPosition();
-  });
+
+    if (inView) {
+      console.log('visible');
+      setBgImageLoaded(true);
+    }
+  }, [inView]);
 
   return (
     <MotionBox
@@ -61,7 +73,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
       _hover={{
         boxShadow: "border-hover",
       }}
-      ref={boxRef}
+      ref={refs}
       role="group"
     >
       <MotionBox
@@ -71,7 +83,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         top="-25px"
         left="-25px"
         rounded={6}
-        bgImage={props.img}
+        bgImage={bgImageLoaded ? props.img : 'none'}
         bgSize="cover"
         opacity={0.5}
         pointerEvents="none"

@@ -64,7 +64,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={guineapigs} srcset={`${guineapigsSm} 275w, ${guineapigs} 550w`} sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Godzilla and Benny (guinea pigs)" h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image loading="lazy" src={guineapigs} srcSet={`${guineapigsSm} 275w, ${guineapigs} 550w`} sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Godzilla and Benny (guinea pigs)" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "50%", sm: "33%", xl: "50%" }}
@@ -86,7 +86,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={me} srcset={`${meSm} 320w, ${me} 640w`} sizes="(min-width: 80em) 25vw, (min-width: 100em) 352px, 40vw" alt="It's me!" h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image loading="lazy" src={me} srcSet={`${meSm} 320w, ${me} 640w`} sizes="(min-width: 80em) 25vw, (min-width: 100em) 352px, 40vw" alt="It's me!" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "25%", sm: "20%", xl: "25%" }}
@@ -109,7 +109,7 @@ const About = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={buttons} srcset={`${buttonsSm} 251w, ${buttons} 501w`} sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Buttons (black cat)" h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image loading="lazy" src={buttons} srcSet={`${buttonsSm} 251w, ${buttons} 501w`} sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Buttons (black cat)" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
           </Flex>
           <Flex position='relative' maxW={{ base: "100%", sm: "75ch", xl: "60ch" }} direction="column" mx={{ base: 'auto', xl: '0' }} textAlign={{ base: "center", xl: "left" }}>

@@ -84,7 +84,7 @@ const Work = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={screenshot2} srcset={`${screenshot2Sm} 412w, ${screenshot2} 824w`} sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw" h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image loading="lazy" src={screenshot2} srcSet={`${screenshot2Sm} 412w, ${screenshot2} 824w`} sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "44%", xl: "80%" }}
@@ -107,7 +107,7 @@ const Work = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={screenshot1} srcset={`${screenshot1Sm} 500w, ${screenshot1} 1000w`} sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw" alt="Digital Assistant app UI" h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image loading="lazy" src={screenshot1} srcSet={`${screenshot1Sm} 500w, ${screenshot1} 1000w`} sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw" alt="Digital Assistant app UI" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
             <ParallaxItem
               w={{ base: "50%", sm: "30%", xl: "50%" }}
@@ -130,7 +130,7 @@ const Work = (props) => {
                 boxShadow: "border-dark",
               }}
             >
-              <Image src={screenshot3} srcset={`${screenshot3Sm} 312w, ${screenshot3} 600w`} sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw" h="100%" w="100%" rounded={6} objectFit='cover' />
+              <Image loading="lazy" src={screenshot3} srcSet={`${screenshot3Sm} 312w, ${screenshot3} 600w`} sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw" h="100%" w="100%" rounded={6} objectFit='cover' />
             </ParallaxItem>
           </Flex>
         </SimpleGrid>
