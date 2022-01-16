@@ -66,14 +66,16 @@ footer {
   left: 0;
 }
 
-#forest-wrap::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 20px;
-  width: 100%;
-  background: #062D36;
+@media screen and (max-width: 992px) {
+  #forest-wrap::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 20px;
+    width: 100%;
+    background: #062D36;
+  }
 }
 
 @keyframes hover {
