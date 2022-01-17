@@ -8,11 +8,19 @@ import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
 
 import screenshot1 from 'images/screenshot-one-2x.jpg';
+import screenshot1WebP from 'images/screenshot-one-2x.webp';
 import screenshot1Sm from 'images/screenshot-one.jpg';
+import screenshot1SmWebP from 'images/screenshot-one.webp';
+
 import screenshot2 from 'images/screenshot-two-2x.jpg';
+import screenshot2WebP from 'images/screenshot-two-2x.webp';
 import screenshot2Sm from 'images/screenshot-two.jpg';
+import screenshot2SmWebP from 'images/screenshot-two.webp';
+
 import screenshot3 from 'images/screenshot-three-2x.jpg';
+import screenshot3WebP from 'images/screenshot-three-2x.webp';
 import screenshot3Sm from 'images/screenshot-three.jpg';
+import screenshot3SmWebP from 'images/screenshot-three.webp';
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
@@ -110,16 +118,10 @@ const Work = (props) => {
                 boxShadow: 'border-dark',
               }}
             >
-              <Image
-                loading="lazy"
-                src={screenshot2}
-                srcSet={`${screenshot2Sm} 412w, ${screenshot2} 824w`}
-                sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw"
-                h="100%"
-                w="100%"
-                rounded={6}
-                objectFit="cover"
-              />
+              <picture>
+                <source srcSet={`${screenshot2SmWebP} 412w, ${screenshot2WebP} 824w`} type='image/webp' />
+                <img src={screenshot2} srcSet={`${screenshot2Sm} 412w, ${screenshot2} 824w`}  sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw" alt="Digital Assistant registration flow" style={{borderRadius: "6px"}} loading="lazy" />
+              </picture>
             </ParallaxItem>
             <ParallaxItem
               w={{ base: '44%', xl: '80%' }}
@@ -142,17 +144,10 @@ const Work = (props) => {
                 boxShadow: 'border-dark',
               }}
             >
-              <Image
-                loading="lazy"
-                src={screenshot1}
-                srcSet={`${screenshot1Sm} 500w, ${screenshot1} 1000w`}
-                sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw"
-                alt="Digital Assistant app UI"
-                h="100%"
-                w="100%"
-                rounded={6}
-                objectFit="cover"
-              />
+              <picture>
+                <source srcSet={`${screenshot1SmWebP} 500w, ${screenshot1WebP} 1000w`} type='image/webp' />
+                <img src={screenshot1} srcSet={`${screenshot1Sm} 500w, ${screenshot1} 1000w`}  sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw" alt="Digital Assistant app UI" style={{borderRadius: "6px"}} loading="lazy" />
+              </picture>
             </ParallaxItem>
             <ParallaxItem
               w={{ base: '50%', sm: '30%', xl: '50%' }}
@@ -175,16 +170,10 @@ const Work = (props) => {
                 boxShadow: 'border-dark',
               }}
             >
-              <Image
-                loading="lazy"
-                src={screenshot3}
-                srcSet={`${screenshot3Sm} 312w, ${screenshot3} 600w`}
-                sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw"
-                h="100%"
-                w="100%"
-                rounded={6}
-                objectFit="cover"
-              />
+              <picture>
+                <source srcSet={`${screenshot3SmWebP} 312w, ${screenshot3WebP} 600w`} type='image/webp' />
+                <img src={screenshot3} srcSet={`${screenshot3Sm} 312w, ${screenshot3} 600w`}  sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw" alt="adenin Blog posts" style={{borderRadius: "6px"}} loading="lazy" />
+              </picture>
             </ParallaxItem>
           </Flex>
         </SimpleGrid>
