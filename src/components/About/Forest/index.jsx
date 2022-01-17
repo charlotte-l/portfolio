@@ -20,7 +20,7 @@ const Forest = (props) => {
   const oS = useSpring(opacity, { stiffness: 400, damping: 90 });
   const y0 = useTransform(y, (value) => value / -2.5);
   const y1 = useTransform(y, (value) => value / 20);
-  const y2 = useTransform(y, (value) => value / -5);
+  const y2 = useTransform(y, (value) => value / -10);
   const y3 = useTransform(y, (value) => value / 20);
   const y4 = useTransform(y, (value) => value / 35);
   const y5 = useTransform(y, (value) => value / 15);
