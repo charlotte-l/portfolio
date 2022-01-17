@@ -1,26 +1,26 @@
-import React, { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from 'react';
 
 const getIsDesktop = () => {
-  if ("undefined" !== typeof window) {
+  if (typeof window !== 'undefined') {
     return window.innerWidth >= 1280;
   }
   return undefined;
-}
+};
 
 export default function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(getIsDesktop());
 
   useLayoutEffect(() => {
-    const onResize = () => {
+    const listener = () => {
       setIsDesktop(getIsDesktop());
-    }
+    };
 
-    window.addEventListener("resize", onResize);
-    onResize();
+    window.addEventListener('resize', listener);
+    window.addEventListener('scroll', listener, { once: true });
 
     return () => {
-      window.removeEventListener("resize", onResize);
-    }
+      window.removeEventListener('resize', listener);
+    };
   }, []);
 
   return isDesktop;
