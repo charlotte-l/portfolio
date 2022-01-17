@@ -36,7 +36,7 @@ const Forest = (props) => {
       width={props.width}
       position="relative"
       left={props.translateX}
-      style={{ opacity: oS, aspectRatio: '3877.3 / 2174.2' }}
+      style={{ opacity: oS, aspectRatio: '3877.3 / 2174.2', minHeight: '50vh' }}
     >
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS0 : 0 }}>
         <Image src={layer6} w="100%" objectFit="cover" />
