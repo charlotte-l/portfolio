@@ -4,7 +4,7 @@ const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 
 const useMediaQuery = (query) => {
-  const [targetReached, setTargetReached] = React.useState(false);
+  const [targetReached, setTargetReached] = React.useState(null);
 
   const updateTarget = React.useCallback((e) => {
     if (e.matches) {

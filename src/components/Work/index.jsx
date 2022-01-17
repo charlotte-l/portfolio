@@ -62,6 +62,7 @@ const Work = (props) => {
                 custom={isDesktop && 'left'}
                 variants={isDesktop ? headingVariant : itemVariant}
                 className={isDesktop && 'heading--l'}
+                key={isDesktop}
               >
                 Work
               </MotionHeading>

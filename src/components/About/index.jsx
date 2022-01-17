@@ -182,6 +182,7 @@ const About = (props) => {
                 custom={isDesktop && 'right'}
                 variants={isDesktop ? headingVariant : itemVariant}
                 className={isDesktop && 'heading--r'}
+                key={isDesktop}
               >
                 About
               </MotionHeading>
