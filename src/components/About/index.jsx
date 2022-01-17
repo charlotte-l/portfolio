@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Container,
-  Heading,
-  Flex,
-  SimpleGrid,
-  Box,
-  Text,
-  Link,
-  Image,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Container, Heading, Flex, SimpleGrid, Box, Text, Link, Image } from '@chakra-ui/react';
 import useWindowScrollPosition from 'hooks/useWindowScrollPos';
+import useMediaQuery from 'hooks/useMediaQuery';
 import { motion, useReducedMotion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
@@ -30,7 +21,7 @@ const MotionText = motion(Text);
 
 const About = (props) => {
   const { y } = useWindowScrollPosition();
-  const [isDesktop] = useMediaQuery('(min-width: 80em)');
+  const isDesktop = useMediaQuery('(min-width: 80em)');
   const shouldReduceMotion = useReducedMotion();
 
   return (
