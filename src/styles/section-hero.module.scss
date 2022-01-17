@@ -37,9 +37,22 @@
     top: -20px;
     left: 0;
     z-index: 2;
-    opacity: 0.75;
     border-radius: 50%;
-    animation: light-field 40000ms ease-in-out infinite alternate;
+    box-shadow: 0 0 210px 35px #4cecaf;
+    opacity: 0.75;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 280px 105px #4cecaf;
+      opacity: 0;
+      animation: light-field 20000ms ease-in-out infinite alternate;
+    }
   }
 
   // color rays
@@ -186,10 +199,12 @@
 
 @keyframes light-field {
   0% {
-    box-shadow: 0 0 280px 105px #4cecaf;
+    // box-shadow: 0 0 280px 105px #4cecaf;
+    opacity: 0;
   }
   100% {
-    box-shadow: 0 0 210px 35px #4cecaf;
+    // box-shadow: 0 0 210px 35px #4cecaf;
+    opacity: 1;
   }
 }
 
