@@ -11,7 +11,7 @@ const getDimensionObject = (node) => {
   };
 };
 
-export const useBoundingRect = () => {
+export default function useBoundingRect() {
   const [dimensions, setDimensions] = useState({});
   const [node, setNode] = useState(null);
 
@@ -21,25 +21,25 @@ export const useBoundingRect = () => {
 
   const measure = () => {
     return window.requestAnimationFrame(() => {
-      setDimensions(getDimensionObject(node))
+      setDimensions(getDimensionObject(node));
     });
   };
 
   const listener = useMemo(() => debounce(measure, 100));
 
   useLayoutEffect(() => {
-    if ("undefined" !== typeof window && node) {
+    if (typeof window !== 'undefined' && node) {
       measure();
 
-      window.addEventListener("resize", listener);
-      window.addEventListener("scroll", listener);
+      window.addEventListener('resize', listener);
+      window.addEventListener('scroll', listener);
 
       return () => {
-        window.removeEventListener("resize", listener);
-        window.removeEventListener("scroll", listener);
+        window.removeEventListener('resize', listener);
+        window.removeEventListener('scroll', listener);
       };
     }
   }, [node]);
 
   return [ref, dimensions, node];
-};
+}
