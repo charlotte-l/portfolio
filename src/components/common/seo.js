@@ -1,18 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const SEO = ({ title, description }) => {
-  const { pathname } = useLocation();
-
   const { defaultTitle, titleTemplate, defaultDescription, siteUrl } =
     useStaticQuery(getSiteMeta).site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${pathname}`,
+    url: `${siteUrl}`,
   };
 
   return (
@@ -34,6 +31,12 @@ const SEO = ({ title, description }) => {
       {seo.title && <meta property="og:title" content={seo.title} />}
 
       {seo.description && <meta property="og:description" content={seo.description} />}
+
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "e098f1c317fb4aa1a7c7c9b5b3345762"}'
+      />
     </Helmet>
   );
 };
