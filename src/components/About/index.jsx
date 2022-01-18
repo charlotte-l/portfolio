@@ -1,11 +1,11 @@
 import React from 'react';
-import { chakra, Container, Heading, Flex, SimpleGrid, Box, Text, Link, Image } from '@chakra-ui/react';
+import { Container, Heading, Flex, SimpleGrid, Box, Text, Link } from '@chakra-ui/react';
 import useWindowScrollPosition from 'hooks/useWindowScrollPos';
 import useMediaQuery from 'hooks/useMediaQuery';
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { headingVariant, itemVariant } from 'components/common/constants';
-import Forest from './Forest';
+import ParallaxItem from 'components/common/ParallaxItem';
 
 import me from 'images/me-2x.jpg';
 import meWebP from 'images/me-2x.webp';
@@ -22,12 +22,12 @@ import guineapigsWebP from 'images/benny-and-godzilla-2x.webp';
 import guineapigsSm from 'images/benny-and-godzilla.jpg';
 import guineapigsSmWebP from 'images/benny-and-godzilla.webp';
 
-import ParallaxItem from 'components/common/ParallaxItem';
+import Forest from './Forest';
 
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
+const MotionHeading = m(Heading);
+const MotionText = m(Text);
 
-const About = (props) => {
+const About = () => {
   const { y } = useWindowScrollPosition();
   const isDesktop = useMediaQuery('(min-width: 80em)');
   const shouldReduceMotion = useReducedMotion();
@@ -96,8 +96,18 @@ const About = (props) => {
               }}
             >
               <picture>
-                <source srcSet={`${guineapigsSmWebP} 275w, ${guineapigsWebP} 550w`} type='image/webp' />
-                <img src={guineapigs} srcSet={`${guineapigsSm} 275w, ${guineapigs} 550w`}  sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Godzilla and Benny (guinea pigs)" style={{borderRadius: "6px"}} loading="lazy" />
+                <source
+                  srcSet={`${guineapigsSmWebP} 275w, ${guineapigsWebP} 550w`}
+                  type="image/webp"
+                />
+                <img
+                  src={guineapigs}
+                  srcSet={`${guineapigsSm} 275w, ${guineapigs} 550w`}
+                  sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw"
+                  alt="Godzilla and Benny (guinea pigs)"
+                  style={{ borderRadius: '6px' }}
+                  loading="lazy"
+                />
               </picture>
             </ParallaxItem>
             <ParallaxItem
@@ -121,8 +131,15 @@ const About = (props) => {
               }}
             >
               <picture>
-                <source srcSet={`${meSmWebP} 320w, ${meWebP} 640w`} type='image/webp' />
-                <img src={me} srcSet={`${meSm} 320w, ${me} 640w`}  sizes="(min-width: 80em) 25vw, (min-width: 100em) 352px, 40vw" alt="It's me!" style={{borderRadius: "6px"}} loading="lazy" />
+                <source srcSet={`${meSmWebP} 320w, ${meWebP} 640w`} type="image/webp" />
+                <img
+                  src={me}
+                  srcSet={`${meSm} 320w, ${me} 640w`}
+                  sizes="(min-width: 80em) 25vw, (min-width: 100em) 352px, 40vw"
+                  alt="It's me!"
+                  style={{ borderRadius: '6px' }}
+                  loading="lazy"
+                />
               </picture>
             </ParallaxItem>
             <ParallaxItem
@@ -147,8 +164,15 @@ const About = (props) => {
               }}
             >
               <picture>
-                <source srcSet={`${buttonsSmWebP} 251w, ${buttonsWebP} 501w`} type='image/webp' />
-                <img src={buttons} srcSet={`${buttonsSm} 251w, ${buttons} 501w`}  sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw" alt="Buttons (black cat)" style={{borderRadius: "6px"}} loading="lazy" />
+                <source srcSet={`${buttonsSmWebP} 251w, ${buttonsWebP} 501w`} type="image/webp" />
+                <img
+                  src={buttons}
+                  srcSet={`${buttonsSm} 251w, ${buttons} 501w`}
+                  sizes="(min-width: 80em) 12.5vw, (min-width: 100em) 176px, 20vw"
+                  alt="Buttons (black cat)"
+                  style={{ borderRadius: '6px' }}
+                  loading="lazy"
+                />
               </picture>
             </ParallaxItem>
           </Flex>
@@ -186,7 +210,7 @@ const About = (props) => {
                 I'm currently a web developer at{' '}
                 <Link
                   title="adenin Technologies"
-                  href="#"
+                  href="https://www.adenin.com/"
                   target={'_blank'}
                   rel="nofollow noopener"
                 >

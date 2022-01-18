@@ -1,11 +1,11 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
 const wrapperTransition = {
   duration: 0.8,
   delay: 0.6,
   ease: [0, 0.55, 0.45, 1],
   delayChildren: 0.6,
-  staggerChildren: 0.4
+  staggerChildren: 0.4,
 };
 
 export const wrapperVariant = {
@@ -18,25 +18,25 @@ export const wrapperVariant = {
     x: 0,
     opacity: 1,
     transition: wrapperTransition,
-  }
+  },
 };
 
 const itemTransition = {
   duration: 0.8,
   ease: [0, 0.55, 0.45, 1],
-}
+};
 
 export const headingVariant = {
   hidden: (i) => ({
     opacity: 0,
-    x: i == 'left' ? "-100%" : "100%",
+    x: i == 'left' ? '-100%' : '100%',
     y: 24,
     scale: i == 'left' ? -1 : 1,
   }),
   show: (i) => ({
     opacity: 1,
     y: 0,
-    x: i == 'left' ? "-100%" : "100%",
+    x: i == 'left' ? '-100%' : '100%',
     scale: i == 'left' ? -1 : 1,
     transition: itemTransition,
   }),
@@ -52,7 +52,7 @@ export const itemVariant = {
     y: 0,
     x: 0,
     transition: itemTransition,
-  }
+  },
 };
 
 const swoopTransition = {
@@ -60,7 +60,7 @@ const swoopTransition = {
   duration: 1.25,
   delay: 2,
   ease: 'linear',
-}
+};
 
 export const swoopArrowVariant = {
   hidden: {

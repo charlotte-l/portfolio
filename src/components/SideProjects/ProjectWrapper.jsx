@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Box, Heading, Text, Link, useMergeRefs } from '@chakra-ui/react';
-import { motion, useAnimation, useReducedMotion } from 'framer-motion';
+import { m, useAnimation, useReducedMotion } from 'framer-motion';
 import useBoundingRect from 'hooks/useBoundingRect';
 import { debounce, throttle } from 'lodash';
 
-const MotionBox = motion(Box);
+const MotionBox = m(Box);
 
 const ProjectWrapper = React.forwardRef((props, ref) => {
   const shouldReduceMotion = useReducedMotion();

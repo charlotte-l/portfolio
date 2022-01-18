@@ -1,5 +1,5 @@
-import React from "react";
-import * as styles from "../../styles/not-found.module.scss";
+import React from 'react';
+import * as styles from '../../styles/not-found.module.scss';
 
 export const Comets = (props) => {
   return (
@@ -11,14 +11,37 @@ export const Comets = (props) => {
         </radialGradient>
       </defs>
       <g transform="rotate(-135)">
-        <ellipse className={styles.comet} fill="url(#comet-gradient)" cx="0" cy="0" rx="150" ry="2"></ellipse>
+        <ellipse
+          className={styles.comet}
+          fill="url(#comet-gradient)"
+          cx="0"
+          cy="0"
+          rx="150"
+          ry="2"
+        ></ellipse>
       </g>
       <g transform="rotate(20)">
-        <ellipse className={styles.comet} style={{animationDelay: "-3.3s"}} fill="url(#comet-gradient)" cx="100%" cy="0" rx="150" ry="2"></ellipse>
+        <ellipse
+          className={styles.comet}
+          style={{ animationDelay: '-3.3s' }}
+          fill="url(#comet-gradient)"
+          cx="100%"
+          cy="0"
+          rx="150"
+          ry="2"
+        ></ellipse>
       </g>
       <g transform="rotate(335)">
-        <ellipse className={styles.comet} style={{animationDelay: "-5s"}} fill="url(#comet-gradient)" cx="100%" cy="50%" rx="150" ry="2"></ellipse>
+        <ellipse
+          className={styles.comet}
+          style={{ animationDelay: '-5s' }}
+          fill="url(#comet-gradient)"
+          cx="100%"
+          cy="50%"
+          rx="150"
+          ry="2"
+        ></ellipse>
       </g>
-    </svg >
+    </svg>
   );
 };

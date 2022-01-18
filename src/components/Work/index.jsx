@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Flex, SimpleGrid, Text, Heading, Image } from '@chakra-ui/react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { Container, Flex, SimpleGrid, Text, Heading } from '@chakra-ui/react';
+import { m, useReducedMotion } from 'framer-motion';
 import useWindowScrollPosition from 'hooks/useWindowScrollPos';
 import useMediaQuery from 'hooks/useMediaQuery';
 import ParallaxItem from 'components/common/ParallaxItem';
@@ -22,10 +22,10 @@ import screenshot3WebP from 'images/screenshot-three-2x.webp';
 import screenshot3Sm from 'images/screenshot-three.jpg';
 import screenshot3SmWebP from 'images/screenshot-three.webp';
 
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
+const MotionHeading = m(Heading);
+const MotionText = m(Text);
 
-const Work = (props) => {
+const Work = () => {
   const { y } = useWindowScrollPosition();
   const isDesktop = useMediaQuery('(min-width: 80em)');
   const shouldReduceMotion = useReducedMotion();
@@ -119,8 +119,18 @@ const Work = (props) => {
               }}
             >
               <picture>
-                <source srcSet={`${screenshot2SmWebP} 412w, ${screenshot2WebP} 824w`} type='image/webp' />
-                <img src={screenshot2} srcSet={`${screenshot2Sm} 412w, ${screenshot2} 824w`}  sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw" alt="Digital Assistant registration flow" style={{borderRadius: "6px"}} loading="lazy" />
+                <source
+                  srcSet={`${screenshot2SmWebP} 412w, ${screenshot2WebP} 824w`}
+                  type="image/webp"
+                />
+                <img
+                  src={screenshot2}
+                  srcSet={`${screenshot2Sm} 412w, ${screenshot2} 824w`}
+                  sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw"
+                  alt="Digital Assistant registration flow"
+                  style={{ borderRadius: '6px' }}
+                  loading="lazy"
+                />
               </picture>
             </ParallaxItem>
             <ParallaxItem
@@ -145,8 +155,18 @@ const Work = (props) => {
               }}
             >
               <picture>
-                <source srcSet={`${screenshot1SmWebP} 500w, ${screenshot1WebP} 1000w`} type='image/webp' />
-                <img src={screenshot1} srcSet={`${screenshot1Sm} 500w, ${screenshot1} 1000w`}  sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw" alt="Digital Assistant app UI" style={{borderRadius: "6px"}} loading="lazy" />
+                <source
+                  srcSet={`${screenshot1SmWebP} 500w, ${screenshot1WebP} 1000w`}
+                  type="image/webp"
+                />
+                <img
+                  src={screenshot1}
+                  srcSet={`${screenshot1Sm} 500w, ${screenshot1} 1000w`}
+                  sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw"
+                  alt="Digital Assistant app UI"
+                  style={{ borderRadius: '6px' }}
+                  loading="lazy"
+                />
               </picture>
             </ParallaxItem>
             <ParallaxItem
@@ -171,8 +191,18 @@ const Work = (props) => {
               }}
             >
               <picture>
-                <source srcSet={`${screenshot3SmWebP} 312w, ${screenshot3WebP} 600w`} type='image/webp' />
-                <img src={screenshot3} srcSet={`${screenshot3Sm} 312w, ${screenshot3} 600w`}  sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw" alt="adenin Blog posts" style={{borderRadius: "6px"}} loading="lazy" />
+                <source
+                  srcSet={`${screenshot3SmWebP} 312w, ${screenshot3WebP} 600w`}
+                  type="image/webp"
+                />
+                <img
+                  src={screenshot3}
+                  srcSet={`${screenshot3Sm} 312w, ${screenshot3} 600w`}
+                  sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw"
+                  alt="adenin Blog posts"
+                  style={{ borderRadius: '6px' }}
+                  loading="lazy"
+                />
               </picture>
             </ParallaxItem>
           </Flex>

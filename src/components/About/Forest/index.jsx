@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useTransform, useSpring, useReducedMotion } from 'framer-motion';
+import { m, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import { Box, Image, useBreakpointValue } from '@chakra-ui/react';
 
 import layer1 from 'images/forest/layer-1.svg';
@@ -9,7 +9,7 @@ import layer4 from 'images/forest/layer-4.svg';
 import layer5 from 'images/forest/layer-5.svg';
 import layer6 from 'images/forest/layer-6.svg';
 
-const MotionBox = motion(Box);
+const MotionBox = m(Box);
 
 const Forest = (props) => {
   let showParallaxEffect = useBreakpointValue({ base: false, lg: true });

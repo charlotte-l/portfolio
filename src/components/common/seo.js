@@ -1,29 +1,31 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useLocation } from '@reach/router';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const SEO = ({ title, description }) => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
-  const {
-    defaultTitle,
-    titleTemplate,
-    defaultDescription,
-    siteUrl,
-  } = useStaticQuery(getSiteMeta).site.siteMetadata
+  const { defaultTitle, titleTemplate, defaultDescription, siteUrl } =
+    useStaticQuery(getSiteMeta).site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     url: `${siteUrl}${pathname}`,
-  }
+  };
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <html lang='en' dir="ltr" />
+      <html lang="en" dir="ltr" />
 
-      <link rel="preload" href="/fonts/playfair-display-v25-latin-700-subset.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+      <link
+        rel="preload"
+        href="/fonts/playfair-display-v25-latin-700-subset.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
 
       <meta name="description" content={seo.description} />
 
@@ -31,14 +33,12 @@ const SEO = ({ title, description }) => {
 
       {seo.title && <meta property="og:title" content={seo.title} />}
 
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
+      {seo.description && <meta property="og:description" content={seo.description} />}
     </Helmet>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;
 
 const getSiteMeta = graphql`
   query SEO {
@@ -51,4 +51,4 @@ const getSiteMeta = graphql`
       }
     }
   }
-`
+`;

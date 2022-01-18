@@ -29,14 +29,14 @@ const Cursor = () => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
 
-    document.addEventListener("pointermove", throttledMouseMove);
-    window.addEventListener("resize", onResize);
+    document.addEventListener('pointermove', throttledMouseMove);
+    window.addEventListener('resize', onResize);
     requestRef.current = requestAnimationFrame(animateCursor2);
     handleLinks();
 
     return () => {
-      document.removeEventListener("pointermove", throttledMouseMove);
-      window.removeEventListener("resize", onResize);
+      document.removeEventListener('pointermove', throttledMouseMove);
+      window.removeEventListener('resize', onResize);
       cancelAnimationFrame(requestRef.current);
     };
   }, []);
@@ -49,12 +49,12 @@ const Cursor = () => {
   function animateCursor(e) {
     endX = e.clientX;
     endY = e.clientY;
-    cursor.current.style.transform =  `translate3d(${endX}px, ${endY}px, 0)`;
+    cursor.current.style.transform = `translate3d(${endX}px, ${endY}px, 0)`;
   }
 
   const animateCursor2 = (time) => {
     if (!cursor2.current) return false;
-    
+
     if (previousTimeRef.current !== undefined) {
       x += (endX - x) / 8;
       y += (endY - y) / 8;
@@ -66,35 +66,35 @@ const Cursor = () => {
 
   function toggleCursorHover() {
     if (!cursor2.current) return false;
-    
+
     if (cursorIsHovering.current) {
       // hover state
       cursor.current.style.opacity = 0;
-      cursor2.current.style.height = "48px";
-      cursor2.current.style.width = "48px";
-      cursor2.current.style.marginLeft = "-24px";
-      cursor2.current.style.marginTop = "-24px";
-      cursor2.current.style.border = "3px solid #f1c40f";
-      cursor2.current.style.boxShadow = "0 0 22px rgba(241, 196, 15, 0.6)";
+      cursor2.current.style.height = '48px';
+      cursor2.current.style.width = '48px';
+      cursor2.current.style.marginLeft = '-24px';
+      cursor2.current.style.marginTop = '-24px';
+      cursor2.current.style.border = '3px solid #f1c40f';
+      cursor2.current.style.boxShadow = '0 0 22px rgba(241, 196, 15, 0.6)';
     } else {
       // normal state
       cursor.current.style.opacity = 1;
-      cursor2.current.style.height = "";
-      cursor2.current.style.width = "";
-      cursor2.current.style.marginLeft = "";
-      cursor2.current.style.marginTop = "";
-      cursor2.current.style.border = "";
-      cursor2.current.style.boxShadow =  "";
+      cursor2.current.style.height = '';
+      cursor2.current.style.width = '';
+      cursor2.current.style.marginLeft = '';
+      cursor2.current.style.marginTop = '';
+      cursor2.current.style.border = '';
+      cursor2.current.style.boxShadow = '';
     }
   }
 
   function handleLinks() {
-    document.querySelectorAll("a, button").forEach(el => {
-      el.addEventListener("mouseover", () => {
+    document.querySelectorAll('a, button').forEach((el) => {
+      el.addEventListener('mouseover', () => {
         cursorIsHovering.current = true;
         toggleCursorHover();
       });
-      el.addEventListener("mouseout", () => {
+      el.addEventListener('mouseout', () => {
         cursorIsHovering.current = false;
         toggleCursorHover();
       });
@@ -103,8 +103,8 @@ const Cursor = () => {
 
   return (
     <>
-      <div ref={cursor} className={`cursor`} id="cursor"></div>
-      <div ref={cursor2} className={`cursor2`} id="cursor2"></div>
+      <div ref={cursor} className="cursor" id="cursor" />
+      <div ref={cursor2} className="cursor2" id="cursor2" />
     </>
   );
 };
