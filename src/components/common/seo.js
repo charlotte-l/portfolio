@@ -23,7 +23,7 @@ const SEO = ({ title, description }) => {
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <html lang='en' dir="ltr" />
 
-      <link rel="preload" href="/fonts/playfair-display-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+      <link rel="preload" href="/fonts/playfair-display-v25-latin-700-subset.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
       <meta name="description" content={seo.description} />
 
