@@ -1,19 +1,16 @@
 module.exports = {
   siteMetadata: {
-		title: `Charlotte Cameron · Web Developer`,
+    title: `Charlotte Cameron · Web Developer`,
     titleTemplate: '%s · Charlotte Cameron',
-		description: `Hi! I'm Charlotte, I make websites.`,
+    description: `Hi! I'm Charlotte, I make websites.`,
     url: `https://charlotte-cameron.github.io`,
     favicon: `/static/favicon/favicon.png`,
-	},
+  },
   plugins: [
     `gatsby-plugin-preact`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,11 +31,11 @@ module.exports = {
       },
     },
     {
-      resolve: "@chakra-ui/gatsby-plugin",
+      resolve: '@chakra-ui/gatsby-plugin',
       options: {
         resetCSS: true,
       },
     },
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
   ],
 };
