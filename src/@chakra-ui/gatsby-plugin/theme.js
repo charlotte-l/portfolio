@@ -23,7 +23,7 @@ const theme = extendTheme({
   },
   fonts: {
     heading:
-      "'Playfair Display', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif",
+      "'Playfair Display', 'Times New Roman'",
     body: "system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
   },
   textStyles,

@@ -13,6 +13,15 @@ const Fonts = () => (
         unicode-range: U+20-7E;
         font-display: swap;
       }
+
+      @font-face {
+        font-family: 'Times New Roman';
+        src: local('Times New Roman');
+        advance-override: 122.6%;
+        ascent-override: 108.2%;
+        descent-override: -25.1%;
+        line-gap-override: 0%;
+      }
       `}
   />
 );
