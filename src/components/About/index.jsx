@@ -48,10 +48,10 @@ const About = () => {
       <Box
         id="forest-wrap"
         w="100%"
-        transform="translateY(-20vh)"
         mb="-10vh"
         position="relative"
         pointerEvents="none"
+        style={{transform: "translateY(-20vh)"}}
       >
         <Forest
           y={y}
