@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, Container, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import { m } from 'framer-motion';
 
 import Ray from './Ray';
@@ -46,7 +46,7 @@ const Hero = () => {
         <Ray />
       </Container>
       <Container maxW="5xl" zIndex="2" transform="translate3D(0,0,0)">
-        <Stack
+        <Box
           textAlign="center"
           align="center"
           spacing={{ base: 4, md: 8 }}
@@ -81,7 +81,7 @@ const Hero = () => {
               onAnimationComplete={(def) => addHoverClass(def)}
             />
           </StaggeredFade>
-        </Stack>
+        </Box>
       </Container>
     </Box>
   );
