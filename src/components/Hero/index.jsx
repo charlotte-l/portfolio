@@ -49,7 +49,6 @@ const Hero = () => {
         <Box
           textAlign="center"
           align="center"
-          spacing={{ base: 4, md: 8 }}
           mt={{ base: 36, md: 48 }}
           mb={{ base: 32, md: 32 }}
         >

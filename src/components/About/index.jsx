@@ -30,6 +30,7 @@ const MotionText = m(Text);
 const About = () => {
   const { y } = useWindowScrollPosition();
   const isDesktop = useMediaQuery('(min-width: 80em)');
+  const isNotMobile = useMediaQuery('(min-width: 30em)');
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -55,8 +56,8 @@ const About = () => {
       >
         <Forest
           y={y}
-          width={isDesktop ? '105%' : '150%'}
-          translateX={isDesktop ? '-2.5%' : '-25%'}
+          width='105%'
+          translateX={isNotMobile ? '-2.5%' : '-50%' }
         />
       </Box>
       <Text
