@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Flex, SimpleGrid, Text, Heading } from '@chakra-ui/react';
+import { Container, Flex, Grid, Text, Heading } from '@chakra-ui/react';
 import { m, useReducedMotion } from 'framer-motion';
 import useWindowScrollPosition from 'hooks/useWindowScrollPos';
 import useMediaQuery from 'hooks/useMediaQuery';
@@ -51,7 +51,7 @@ const Work = () => {
         02
       </Text>
       <Container maxW="7xl">
-        <SimpleGrid columns={{ xl: '2' }}>
+        <Grid templateColumns={{ base: '1fr', xl: '0.5fr 0.5fr' }}>
           <Flex
             position="relative"
             maxW={{ base: '100%', sm: '75ch', xl: '57.5ch', '2xl': '60ch' }}
@@ -206,7 +206,7 @@ const Work = () => {
               </picture>
             </ParallaxItem>
           </Flex>
-        </SimpleGrid>
+        </Grid>
       </Container>
     </Flex>
   );

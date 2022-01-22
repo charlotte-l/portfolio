@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@chakra-ui/react';
+import { chakra } from '@chakra-ui/react';
 
 function getElementY(handle) {
   return window.pageYOffset + handle.getBoundingClientRect().top - 100;
@@ -49,7 +49,7 @@ const scrollDown = () => {
 };
 
 const SwoopArrow = React.forwardRef((props, ref) => (
-  <Button ref={ref} onClick={scrollDown} _focus={{ boxShadow: 'none' }} variant="link" {...props}>
+  <chakra.button ref={ref} transition="transform 0.2s" onClick={scrollDown} _focus={{ boxShadow: 'none' }} {...props}>
     <svg viewBox="0 0 25 21.785" xmlns="http://www.w3.org/2000/svg">
       <path
         fill="#FFF"
@@ -61,7 +61,7 @@ const SwoopArrow = React.forwardRef((props, ref) => (
         strokeMiterlimit="6.3"
       />
     </svg>
-  </Button>
+  </chakra.button>
 ));
 
 export default SwoopArrow;
