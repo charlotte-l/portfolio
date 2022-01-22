@@ -1,3 +1,7 @@
+if (typeof window !== 'undefined') {
+  require('preact/debug')
+}
+
 import React from 'react';
 import { LazyMotion, domAnimation } from 'framer-motion';
 import { useBreakpointValue } from '@chakra-ui/react';
