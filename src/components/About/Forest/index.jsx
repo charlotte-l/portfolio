@@ -1,6 +1,7 @@
 import React from 'react';
 import { m, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import { Box, Image, useBreakpointValue } from '@chakra-ui/react';
+import styled from 'styled-components';
 
 import layer1 from 'images/forest/layer-1.svg';
 import layer2 from 'images/forest/layer-2.svg';
@@ -10,6 +11,15 @@ import layer5 from 'images/forest/layer-5.svg';
 import layer6 from 'images/forest/layer-6.svg';
 
 const MotionBox = m(Box);
+
+const StyledMotionBox = styled(MotionBox)`
+  width: 105%;
+  transform: translateX(-5%);
+
+  @media screen and (max-width: 30em) {
+    transform: translateX(-33%);
+  }
+`;
 
 const Forest = (props) => {
   let showParallaxEffect = useBreakpointValue({ base: false, lg: true });
@@ -32,10 +42,7 @@ const Forest = (props) => {
   const yS5 = useSpring(y5, { stiffness: 400, damping: 90 });
 
   return (
-    <MotionBox
-      width={props.width}
-      position="relative"
-      left={props.translateX}
+    <StyledMotionBox
       style={{ opacity: oS, aspectRatio: '3877.3 / 2174.2', minHeight: '50vh' }}
     >
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS0 : 0 }}>
@@ -56,7 +63,7 @@ const Forest = (props) => {
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS5 : 0 }}>
         <Image src={layer1} w="100%" objectFit="cover" />
       </MotionBox>
-    </MotionBox>
+    </StyledMotionBox>
   );
 };
 
