@@ -46,22 +46,22 @@ const Forest = (props) => {
       style={{ opacity: oS, aspectRatio: '3877.3 / 2174.2', minHeight: '50vh' }}
     >
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS0 : 0 }}>
-        <Image src={layer6} w="100%" objectFit="cover" />
+        <Image src={layer6} w="100%" objectFit="cover" alt="" />
       </MotionBox>
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS1 : 0 }}>
-        <Image src={layer5} w="100%" objectFit="cover" />
+        <Image src={layer5} w="100%" objectFit="cover" alt="" />
       </MotionBox>
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS2 : 0 }}>
-        <Image src={layer4} w="100%" objectFit="cover" />
+        <Image src={layer4} w="100%" objectFit="cover" alt="" />
       </MotionBox>
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS3 : 0 }}>
-        <Image src={layer3} w="100%" objectFit="cover" />
+        <Image src={layer3} w="100%" objectFit="cover" alt="" />
       </MotionBox>
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS4 : 0 }}>
-        <Image src={layer2} w="100%" objectFit="cover" />
+        <Image src={layer2} w="100%" objectFit="cover" alt="" />
       </MotionBox>
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS5 : 0 }}>
-        <Image src={layer1} w="100%" objectFit="cover" />
+        <Image src={layer1} w="100%" objectFit="cover" alt="" />
       </MotionBox>
     </StyledMotionBox>
   );

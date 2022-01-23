@@ -44,7 +44,8 @@ footer {
   border: 1px solid rgba(241, 196, 15, 0.3);
 }
 
-.animate {
+.animate,
+.animate * {
   animation-play-state: running !important;
 }
 

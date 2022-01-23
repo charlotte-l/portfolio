@@ -8,7 +8,7 @@ import Ray from './Ray';
 import SwoopArrow from './SwoopArrow';
 
 import StaggeredFade from 'components/common/StaggeredFade';
-import { itemVariant, swoopArrowVariant } from 'components/common/constants';
+import { itemVariant, swoopArrowVariant, swoopArrowMobileVariant } from 'components/common/constants';
 
 import * as heroStyles from '../../styles/section-hero.module.scss';
 
@@ -82,9 +82,9 @@ const Hero = () => {
               className={inView && 'animate'}
               w="10"
               mt="24"
-              variants={isDesktop && !shouldReduceMotion && swoopArrowVariants}
-              transform={(!isDesktop || shouldReduceMotion) && 'rotate(180deg)'}
+              variants={isDesktop && !shouldReduceMotion ? swoopArrowVariants : swoopArrowMobileVariant}
               onAnimationComplete={(def) => addHoverClass(def)}
+              aria-label="Scroll to content"
             />
           </StaggeredFade>
         </Box>

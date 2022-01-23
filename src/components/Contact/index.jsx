@@ -99,6 +99,7 @@ const Contact = () => {
               socialNetworks.map((network) => (
                 <ContactFly
                   key={network.id}
+                  name={network.name}
                   icon={network.icon}
                   link={network.url}
                   x={network.x}

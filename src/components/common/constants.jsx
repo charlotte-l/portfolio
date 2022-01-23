@@ -79,3 +79,19 @@ export const swoopArrowVariant = {
     transition: swoopTransition,
   },
 };
+
+export const swoopArrowMobileVariant = {
+  hidden: {
+    opacity: 0,
+    y: -24,
+    x: 0,
+    rotate: 180,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    rotate: 180,
+    transition: itemTransition,
+  },
+};

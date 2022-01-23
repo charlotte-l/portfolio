@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 const MotionLinkBox = m(LinkBox);
 
-const ContactFly = ({ link, icon, x, y }) => {
+const ContactFly = ({ link, icon, x, y, name }) => {
   const shouldReduceMotion = useReducedMotion();
   const [ref, inView] = useInView({ threshold: 0.1 });
   const delay = Math.floor(parseInt(x) / 10) / -2;
@@ -35,7 +35,7 @@ const ContactFly = ({ link, icon, x, y }) => {
       >
         {icon}
       </Flex>
-      <LinkOverlay href={link} cursor="none" />
+      <LinkOverlay href={link} cursor="none" aria-label={`Contact me via ${name}`} />
     </MotionLinkBox>
   );
 };
