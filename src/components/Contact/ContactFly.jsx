@@ -1,11 +1,13 @@
 import React from 'react';
 import { LinkBox, LinkOverlay, Flex } from '@chakra-ui/layout';
 import { m, useReducedMotion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const MotionLinkBox = m(LinkBox);
 
 const ContactFly = ({ link, icon, x, y }) => {
   const shouldReduceMotion = useReducedMotion();
+  const [ref, inView] = useInView({ threshold: 0.1 });
   const delay = Math.floor(parseInt(x) / 10) / -2;
 
   return (
@@ -14,8 +16,9 @@ const ContactFly = ({ link, icon, x, y }) => {
       left={{ md: x }}
       top={{ md: y }}
       style={{ transition: 'cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s' }}
-      animation={!shouldReduceMotion && `bob 5s infinite ${delay}s alternate-reverse`}
+      animation={!shouldReduceMotion && inView && `bob 5s infinite ${delay}s alternate-reverse`}
       role="group"
+      ref={ref}
     >
       <Flex
         rounded="full"

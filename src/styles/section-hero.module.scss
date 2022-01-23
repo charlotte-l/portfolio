@@ -52,6 +52,7 @@
       box-shadow: 0 0 120px 150px #4cecaf;
       opacity: 0;
       animation: light-field 5s ease-in-out infinite alternate;
+      animation-play-state: paused;
     }
   }
 
@@ -77,6 +78,7 @@
     );
     filter: blur(32.17px);
     animation: aurora-small ease-in-out 6397ms infinite, shift-small ease-in-out 6511ms infinite;
+    animation-play-state: paused;
   }
 
   &:nth-child(4) {
@@ -98,6 +100,7 @@
     );
     filter: blur(22.4px);
     animation: aurora-medium ease-in-out 6613ms infinite, shift-medium ease-in-out 6716ms infinite;
+    animation-play-state: paused;
   }
 
   &:nth-child(5) {
@@ -120,6 +123,7 @@
     );
     filter: blur(38.95px);
     animation: aurora-large ease-in-out 6044ms infinite, shift-large ease-in-out 11034ms infinite;
+    animation-play-state: paused;
   }
 
   &:nth-child(6) {
@@ -139,6 +143,7 @@
     );
     filter: blur(22.2px);
     animation: aurora-small ease-in-out 6261ms infinite, shift-small ease-in-out 6104ms infinite;
+    animation-play-state: paused;
   }
 
   &:nth-child(7) {
@@ -154,6 +159,7 @@
     );
     filter: blur(34.2px);
     animation: aurora-medium ease-in-out 6543ms infinite, shift-medium ease-in-out 15833ms infinite;
+    animation-play-state: paused;
   }
 }
 
@@ -183,6 +189,7 @@
 
 .swoopArrow {
   animation: float ease-in-out 1.5s infinite alternate;
+  animation-play-state: paused;
 }
 
 @keyframes twinkle {

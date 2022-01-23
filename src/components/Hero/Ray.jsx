@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 import * as heroStyles from '../../styles/section-hero.module.scss';
 
 const Ray = (props) => {
-  return <Box className={heroStyles.ray} {...props} />;
+  return <Box className={`${heroStyles.ray} ${props.inView && 'animate'}`} {...props} />;
 };
 
 export default Ray;

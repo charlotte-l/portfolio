@@ -77,6 +77,8 @@ const About = () => {
               w={{ base: '25%', sm: '20%', xl: '25%' }}
               zIndex="2"
               scroll={y}
+              min='100'
+              max='400'
               speed={isDesktop || !shouldReduceMotion ? 0.2 : 0.05}
               alignSelf={{ base: 'center', xl: 'flex-start' }}
               initial={{ translateY: '-125%' }}
@@ -112,6 +114,8 @@ const About = () => {
               w={{ base: '50%', sm: '33%', xl: '50%' }}
               zIndex="1"
               scroll={y}
+              min='100'
+              max='400'
               speed={isDesktop || !shouldReduceMotion ? 0.1 : 0.05}
               alignSelf="center"
               initial={{ translateY: '-12.5%' }}
@@ -143,6 +147,8 @@ const About = () => {
             <ParallaxItem
               w={{ base: '25%', sm: '20%', xl: '25%' }}
               scroll={y}
+              min='-200'
+              max='-100'
               zIndex="2"
               speed={isDesktop || !shouldReduceMotion ? -0.1 : 0.05}
               alignSelf={{ base: 'center', xl: 'flex-end' }}

@@ -104,6 +104,8 @@ const Work = () => {
               rounded={6}
               boxShadow="dark-lg"
               scroll={y}
+              min='200'
+              max='400'
               speed={isDesktop || !shouldReduceMotion ? 0.12 : 0.05}
               initial={{ translateY: '-50%' }}
               mt={{ base: '-5%', md: '7.5%', xl: '0%' }}
@@ -140,6 +142,8 @@ const Work = () => {
               rounded={6}
               boxShadow="dark-lg"
               scroll={y}
+              min='-400'
+              max='-200'
               speed={isDesktop || !shouldReduceMotion ? -0.14 : 0.05}
               mr={{ base: '-10%', xl: '0%' }}
               ml={{ base: '-10%', xl: 'auto' }}
@@ -176,6 +180,8 @@ const Work = () => {
               rounded={6}
               boxShadow="dark-lg"
               scroll={y}
+              min='-400'
+              max='-250'
               speed={isDesktop || !shouldReduceMotion ? -0.125 : 0.05}
               initial={{ translateY: '100%' }}
               mt={{ base: '-25%', xl: '0%' }}

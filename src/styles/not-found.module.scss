@@ -12,6 +12,7 @@
 .comet {
   transform-origin: center center;
   animation: comet 8s linear infinite;
+  animation-play-state: paused;
 }
 
 @keyframes comet {
