@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Box, Flex, Heading, Link } from '@chakra-ui/react';
 import { m, useReducedMotion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Comets } from 'components/Graphics/Comets';
 import bridge from 'images/bridge.svg';
 import StaggeredFade from 'components/common/StaggeredFade';
@@ -14,6 +15,7 @@ const MotionFlex = m(Flex);
 
 const Contact = () => {
   const shouldReduceMotion = useReducedMotion();
+  const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
     <Flex
@@ -47,6 +49,7 @@ const Contact = () => {
         backgroundPosition: '50% 0%',
         pointerEvents: 'none',
       }}
+      ref={ref}
     >
       <StaggeredFade>
         <MotionContainer
@@ -80,6 +83,7 @@ const Contact = () => {
                 top: '-150%',
                 zIndex: '0',
               }}
+              className={inView && 'animate'}
             />
           )}
           <Box

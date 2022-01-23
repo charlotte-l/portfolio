@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, Container, Heading, Text, useMergeRefs } from '@chakra-ui/react';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import { m } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -20,7 +20,6 @@ const swoopArrowVariants = swoopArrowVariant;
 const Hero = () => {
   const [ref, inView] = useInView({ threshold: 0.1 });
   const swoopArrow = useRef(null);
-  const mergedRef = useMergeRefs(ref, swoopArrow);
 
   const addHoverClass = (def) => {
     if (def !== 'show') return;
@@ -39,7 +38,7 @@ const Hero = () => {
       minH="50vh"
       color="white"
     >
-      <Container width="100%" height="100%" maxW="unset" position="absolute">
+      <Container width="100%" height="100%" maxW="unset" position="absolute" ref={ref}>
         <Ray inView={inView} />
         <Ray inView={inView} />
         <Ray inView={inView} />
@@ -76,7 +75,7 @@ const Hero = () => {
               beautiful experiences for all. It's great to meet&nbsp;you!
             </MotionText>
             <MotionArrow
-              ref={mergedRef}
+              ref={swoopArrow}
               className={inView && 'animate'}
               w="10"
               mt="24"
