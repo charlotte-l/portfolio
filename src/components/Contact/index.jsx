@@ -56,6 +56,7 @@ const Contact = () => {
           maxW="3xl"
           pt={{ base: '56', md: '36', '3xl': 72 }}
           pb="20"
+          px={{base: '4', sm: '12', md: '4'}}
           mx="auto"
           textAlign={{ base: 'center', md: 'left' }}
           zIndex="1"

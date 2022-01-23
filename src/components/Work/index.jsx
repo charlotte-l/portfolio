@@ -58,6 +58,7 @@ const Work = () => {
             direction="column"
             mr={{ base: 'auto', xl: '6', '2xl': 0 }}
             ml={{ base: 'auto', '2xl': '0' }}
+            mb={{ base: '0', sm: '20', md: '0' }}
             textAlign={{ base: 'center', xl: 'left' }}
           >
             <StaggeredFade>
