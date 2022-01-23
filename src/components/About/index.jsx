@@ -77,9 +77,9 @@ const About = () => {
               w={{ base: '25%', sm: '20%', xl: '25%' }}
               zIndex="2"
               scroll={y}
-              min='100'
+              min={isDesktop && !shouldReduceMotion ? 100 : 0}
               max='400'
-              speed={isDesktop || !shouldReduceMotion ? 0.2 : 0.05}
+              speed={isDesktop && !shouldReduceMotion && 0.2}
               alignSelf={{ base: 'center', xl: 'flex-start' }}
               initial={{ translateY: '-125%' }}
               mt={{ base: '20%', xl: '0%' }}
@@ -114,9 +114,9 @@ const About = () => {
               w={{ base: '50%', sm: '33%', xl: '50%' }}
               zIndex="1"
               scroll={y}
-              min='100'
+              min={isDesktop && !shouldReduceMotion ? 100 : 0}
               max='400'
-              speed={isDesktop || !shouldReduceMotion ? 0.1 : 0.05}
+              speed={isDesktop && !shouldReduceMotion && 0.1}
               alignSelf="center"
               initial={{ translateY: '-12.5%' }}
               ml="-2.5%"
@@ -147,10 +147,10 @@ const About = () => {
             <ParallaxItem
               w={{ base: '25%', sm: '20%', xl: '25%' }}
               scroll={y}
-              min='-200'
-              max='-100'
+              min={isDesktop && !shouldReduceMotion ? -200 : 50}
+              max={isDesktop && !shouldReduceMotion ? -100 : 100}
               zIndex="2"
-              speed={isDesktop || !shouldReduceMotion ? -0.1 : 0.05}
+              speed={isDesktop && !shouldReduceMotion && -0.1}
               alignSelf={{ base: 'center', xl: 'flex-end' }}
               initial={{ translateY: '100%' }}
               mt={{ base: '-33.33%', xl: '0%' }}

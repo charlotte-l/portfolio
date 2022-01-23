@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
-import { m } from 'framer-motion';
+import { m ,useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import useMediaQuery from 'hooks/useMediaQuery';
 
 import Ray from './Ray';
 import SwoopArrow from './SwoopArrow';
@@ -19,10 +20,12 @@ const swoopArrowVariants = swoopArrowVariant;
 
 const Hero = () => {
   const [ref, inView] = useInView({ threshold: 0.1 });
+  const isDesktop = useMediaQuery('(min-width: 80em)');
+  const shouldReduceMotion = useReducedMotion();
   const swoopArrow = useRef(null);
 
   const addHoverClass = (def) => {
-    if (def !== 'show') return;
+    if (def !== 'show' || shouldReduceMotion) return;
     setTimeout(() => {
       swoopArrow.current.classList.add(heroStyles.swoopArrow);
     }, 500);
@@ -39,13 +42,13 @@ const Hero = () => {
       color="white"
     >
       <Container width="100%" height="100%" maxW="unset" position="absolute" ref={ref}>
-        <Ray inView={inView} />
-        <Ray inView={inView} />
-        <Ray inView={inView} />
-        <Ray inView={inView} />
-        <Ray inView={inView} />
-        <Ray inView={inView} />
-        <Ray inView={inView} />
+        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop} />
       </Container>
       <Container maxW="5xl" zIndex="2" transform="translate3D(0,0,0)">
         <Box
@@ -79,7 +82,8 @@ const Hero = () => {
               className={inView && 'animate'}
               w="10"
               mt="24"
-              variants={swoopArrowVariants}
+              variants={isDesktop && !shouldReduceMotion && swoopArrowVariants}
+              transform={(!isDesktop || shouldReduceMotion) && 'rotate(180deg)'}
               onAnimationComplete={(def) => addHoverClass(def)}
             />
           </StaggeredFade>

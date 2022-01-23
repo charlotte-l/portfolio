@@ -11,7 +11,7 @@ const Footer = () => {
         textAlign={{ base: 'center', md: 'left' }}
       >
         <Text textStyle="paragraph-sm" textShadow="0px 0px 8px #61336c">
-          Made with 🤍 by Charlotte Cameron. &copy; {new Date().getFullYear()}.
+          Made with 🤍 by Charlotte Cameron. &copy;&nbsp;{new Date().getFullYear()}.
         </Text>
         <Text textStyle="paragraph-sm" textShadow="0px 0px 8px #61336c">
           Thanks for scrolling all the way! 👋

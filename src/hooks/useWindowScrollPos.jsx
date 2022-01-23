@@ -31,7 +31,7 @@ function useWindowScrollPosition(options) {
   }, opts.throttle);
 
   useLayoutEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: false });
 
     return () => {
       handleScroll.cancel();

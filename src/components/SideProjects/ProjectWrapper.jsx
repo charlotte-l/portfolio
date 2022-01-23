@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import useMediaQuery from 'hooks/useMediaQuery';
 import { Box, Heading, Text, Link, useMergeRefs } from '@chakra-ui/react';
 import { m, useAnimation, useReducedMotion } from 'framer-motion';
 import useBoundingRect from 'hooks/useBoundingRect';
@@ -9,12 +10,15 @@ const MotionBox = m(Box);
 
 const ProjectWrapper = React.forwardRef((props, ref) => {
   const shouldReduceMotion = useReducedMotion();
-  const [boxRef, dimensions] = useBoundingRect();
+  const isDesktop = useMediaQuery('(min-width: 80em)');
+  const [boxRef, dimensions] = useBoundingRect(); 
+
   const { width, height, left, top } = dimensions;
   const controls = useAnimation();
   const bgControls = useAnimation();
   const contentControls = useAnimation();
   const reducedAnimationContentControls = useAnimation();
+
   const [viewRef, inView] = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -67,7 +71,7 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] },
       });
       contentControls.start({
-        translateY: '60%',
+        translateY: isDesktop ? '60%' : '70%',
         transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
       });
       reducedAnimationContentControls.start({
@@ -131,9 +135,10 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         bottom="0"
         left="0"
         width="100%"
+        height={!isDesktop && "100%"}
         padding="20px"
         textAlign="left"
-        initial={shouldReduceMotion ? { translateY: '0%', opacity: 0 } : { translateY: '60%' }}
+        initial={shouldReduceMotion ? { translateY: '0%', opacity: 0 } : { translateY: `${isDesktop ? '60%' : '70%'}` }}
         animate={shouldReduceMotion ? reducedAnimationContentControls : contentControls}
         _after={{
           content: "''",

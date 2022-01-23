@@ -14,6 +14,7 @@ const SEO = () => {
         crossOrigin="anonymous"
       />
       <link rel="canonical" href="https://charlottecameron.dev/" />
+      <meta name="color-scheme" content="light" />
       <meta name="description" content='Hi! My name is Charlotte. I make fast, accessible and beautiful web experiences.' />
       <meta property="og:locale" content="en_GB" />
       <meta property="og:type" content="website" />

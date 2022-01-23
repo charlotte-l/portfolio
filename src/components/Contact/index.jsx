@@ -54,7 +54,7 @@ const Contact = () => {
       <StaggeredFade>
         <MotionContainer
           maxW="3xl"
-          pt={{ base: '36', '3xl': 72 }}
+          pt={{ base: '56', md: '36', '3xl': 72 }}
           pb="20"
           mx="auto"
           textAlign={{ base: 'center', md: 'left' }}

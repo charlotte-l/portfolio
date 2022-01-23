@@ -13,7 +13,7 @@ import layer6 from 'images/forest/layer-6.svg';
 const MotionBox = m(Box);
 
 const StyledMotionBox = styled(MotionBox)`
-  width: 105%;
+  min-width: 105%;
   transform: translateX(-5%);
 
   @media screen and (max-width: 30em) {
