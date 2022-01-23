@@ -70,6 +70,8 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
               'blue',
               'cyan',
               'gray',
+              'white',
+              'black',
               'yellow',
               'linkedin',
               'facebook',

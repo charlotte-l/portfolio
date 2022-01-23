@@ -1,9 +1,10 @@
+const siteUrl = "https://charlottecameron.dev"
+
 module.exports = {
   siteMetadata: {
     title: `Charlotte Cameron · Web Developer`,
-    titleTemplate: '%s · Charlotte Cameron',
+    siteUrl: "https://charlottecameron.dev",
     description: `Hi! I'm Charlotte, I make websites.`,
-    url: `https://charlotte-cameron.github.io`,
     favicon: `/static/favicon/favicon.png`,
   },
   plugins: [
@@ -35,6 +36,47 @@ module.exports = {
       options: {
         resetCSS: true,
       },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }`,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages.map(page => {
+            return { ...page }
+          })
+        },
+        serialize: ({ path, modifiedGmt }) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+          }
+        },
+        createLinkInHead: false
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap/sitemap-0.xml`,
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
     },
     `gatsby-plugin-netlify`,
   ],
