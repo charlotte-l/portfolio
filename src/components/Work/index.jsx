@@ -54,7 +54,7 @@ const Work = () => {
         <Grid templateColumns={{ base: '1fr', xl: '0.5fr 0.5fr' }}>
           <Flex
             position="relative"
-            maxW={{ base: '100%', sm: '75ch', xl: '57.5ch', '2xl': '60ch' }}
+            maxW={{ base: '100%', sm: '75ch', xl: '52.5ch', '2xl': '60ch' }}
             direction="column"
             mr={{ base: 'auto', xl: '6', '2xl': 0 }}
             ml={{ base: 'auto', '2xl': '0' }}
@@ -131,7 +131,7 @@ const Work = () => {
                   srcSet={`${screenshot2Sm} 412w, ${screenshot2} 824w`}
                   sizes="(min-width: 30em) 66vw, (min-width: 80em) 33vw, (min-width: 100em) 412px, 75vw"
                   alt="Digital Assistant registration flow"
-                  style={{ borderRadius: '6px' }}
+                  style={{ borderRadius: '6px', width: '100%' }}
                   loading="lazy"
                 />
               </picture>
@@ -169,7 +169,7 @@ const Work = () => {
                   srcSet={`${screenshot1Sm} 500w, ${screenshot1} 1000w`}
                   sizes="(min-width: 80em) 22vw, (min-width: 100em) 500px, 44vw"
                   alt="Digital Assistant app UI"
-                  style={{ borderRadius: '6px' }}
+                  style={{ borderRadius: '6px', width: '100%' }}
                   loading="lazy"
                 />
               </picture>
@@ -207,7 +207,7 @@ const Work = () => {
                   srcSet={`${screenshot3Sm} 312w, ${screenshot3} 600w`}
                   sizes="(min-width: 30em) 30vw, (min-width: 80em) 25vw, (min-width: 100em) 312px, 50vw"
                   alt="adenin Blog posts"
-                  style={{ borderRadius: '6px' }}
+                  style={{ borderRadius: '6px', width: '100%' }}
                   loading="lazy"
                 />
               </picture>

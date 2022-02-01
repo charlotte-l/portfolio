@@ -53,7 +53,7 @@ const Contact = () => {
     >
       <StaggeredFade>
         <MotionContainer
-          maxW="3xl"
+          maxW={{ base: "2xl", "xl": "3xl" }}
           pt={{ base: '56', md: '36', '3xl': 72 }}
           pb="20"
           px={{base: '4', sm: '12', md: '4'}}

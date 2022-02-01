@@ -53,6 +53,7 @@ footer {
   position: absolute;
   text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
   opacity: 0.2;
+  pointer-events: none;
 }
 
 .heading--r,

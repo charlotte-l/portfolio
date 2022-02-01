@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <Box maxW="4xl" mx="auto" p="4" color="#FFF">
+    <Box maxW={{ base: "3xl", "2xl": "4xl" }} mx="auto" p="4" color="#FFF">
       <Stack
         direction={{ base: 'column', md: 'row' }}
         justifyContent="space-between"

@@ -182,7 +182,7 @@ const About = () => {
           </Flex>
           <Flex
             position="relative"
-            maxW={{ base: '100%', sm: '75ch', xl: '60ch' }}
+            maxW={{ base: '100%', sm: '75ch', xl: '55ch', '2xl': '60ch' }}
             direction="column"
             mx={{ base: 'auto', xl: '0' }}
             textAlign={{ base: 'center', xl: 'left' }}
