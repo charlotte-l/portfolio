@@ -8,7 +8,7 @@ const MotionLinkBox = m(LinkBox);
 const ContactFly = ({ link, icon, x, y, name }) => {
   const shouldReduceMotion = useReducedMotion();
   const [ref, inView] = useInView({ threshold: 0.1 });
-  const delay = Math.floor(parseInt(x) / 10) / -2;
+  const delay = Math.floor(parseInt(x, 10) / 10) / -2;
 
   return (
     <MotionLinkBox

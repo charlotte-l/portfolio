@@ -2,12 +2,12 @@ import React from 'react';
 import { Container, Box, Flex, Heading, Link } from '@chakra-ui/react';
 import { m, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Comets } from 'components/Graphics/Comets';
+import Comets from 'components/Graphics/Comets';
 import bridge from 'images/bridge.svg';
 import StaggeredFade from 'components/common/StaggeredFade';
 import { itemVariant } from 'components/common/constants';
 import ContactFly from './ContactFly';
-import { socialNetworks } from './SocialNetworks';
+import socialNetworks from './SocialNetworks';
 import * as styles from '../../styles/section-contact.module.scss';
 
 const MotionContainer = m(Container);
@@ -53,10 +53,10 @@ const Contact = () => {
     >
       <StaggeredFade>
         <MotionContainer
-          maxW={{ base: "2xl", "xl": "3xl" }}
+          maxW={{ base: '2xl', xl: '3xl' }}
           pt={{ base: '56', md: '36', '3xl': 72 }}
           pb="20"
-          px={{base: '4', sm: '12', md: '4'}}
+          px={{ base: '4', sm: '12', md: '4' }}
           mx="auto"
           textAlign={{ base: 'center', md: 'left' }}
           zIndex="1"
@@ -66,7 +66,7 @@ const Contact = () => {
             <Link href="mailto:cel.cameron@protonmail.com" title="Email Charlotte">
               Drop me a line
             </Link>
-            , I'd love to hear from&nbsp;you!
+            , I&apos;d love to hear from&nbsp;you!
           </Heading>
         </MotionContainer>
         <MotionFlex

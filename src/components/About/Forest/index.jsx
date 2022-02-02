@@ -21,11 +21,10 @@ const StyledMotionBox = styled(MotionBox)`
   }
 `;
 
-const Forest = (props) => {
+const Forest = ({ y }) => {
   let showParallaxEffect = useBreakpointValue({ base: false, lg: true });
   if (useReducedMotion()) showParallaxEffect = false;
 
-  const y = props.y;
   const opacity = useTransform(y, [0, 600], [0.5, 1]);
   const oS = useSpring(opacity, { stiffness: 400, damping: 90 });
   const y0 = useTransform(y, (value) => value / -2.5);
@@ -42,9 +41,7 @@ const Forest = (props) => {
   const yS5 = useSpring(y5, { stiffness: 400, damping: 90 });
 
   return (
-    <StyledMotionBox
-      style={{ opacity: oS, aspectRatio: '3877.3 / 2174.2', minHeight: '50vh' }}
-    >
+    <StyledMotionBox style={{ opacity: oS, aspectRatio: '3877.3 / 2174.2', minHeight: '50vh' }}>
       <MotionBox position="absolute" w="100%" h="100%" style={{ y: showParallaxEffect ? yS0 : 0 }}>
         <Image src={layer6} w="100%" objectFit="cover" alt="" />
       </MotionBox>

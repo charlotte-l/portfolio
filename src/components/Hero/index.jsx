@@ -1,14 +1,16 @@
 import React, { useRef } from 'react';
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
-import { m ,useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery from 'hooks/useMediaQuery';
-
+import StaggeredFade from 'components/common/StaggeredFade';
+import {
+  itemVariant,
+  swoopArrowVariant,
+  swoopArrowMobileVariant,
+} from 'components/common/constants';
 import Ray from './Ray';
 import SwoopArrow from './SwoopArrow';
-
-import StaggeredFade from 'components/common/StaggeredFade';
-import { itemVariant, swoopArrowVariant, swoopArrowMobileVariant } from 'components/common/constants';
 
 import * as heroStyles from '../../styles/section-hero.module.scss';
 
@@ -51,12 +53,7 @@ const Hero = () => {
         <Ray animate={inView && isDesktop} />
       </Container>
       <Container maxW="5xl" zIndex="2" transform="translate3D(0,0,0)">
-        <Box
-          textAlign="center"
-          align="center"
-          mt={{ base: 36, md: 48 }}
-          mb={{ base: 32, md: 32 }}
-        >
+        <Box textAlign="center" align="center" mt={{ base: 36, md: 48 }} mb={{ base: 32, md: 32 }}>
           <StaggeredFade>
             <MotionHeading
               fontWeight={700}
@@ -66,7 +63,7 @@ const Hero = () => {
               variants={variants}
               mb="4"
             >
-              Hi, I'm Charlotte
+              Hi, I&apos;m Charlotte
             </MotionHeading>
             <MotionText
               maxW={{ base: '100%', md: '60ch' }}
@@ -74,15 +71,17 @@ const Hero = () => {
               variants={variants}
               textStyle="paragraph-lg"
             >
-              I'm a UK based web developer. I'm passionate about building fast, accessible and
-              beautiful experiences for all. It's great to meet&nbsp;you!
+              I&apos;m a UK based web developer. I&apos;m passionate about building fast, accessible
+              and beautiful experiences for all. It&apos;s great to meet&nbsp;you!
             </MotionText>
             <MotionArrow
               ref={swoopArrow}
               className={inView && 'animate'}
               w="10"
               mt="24"
-              variants={isDesktop && !shouldReduceMotion ? swoopArrowVariants : swoopArrowMobileVariant}
+              variants={
+                isDesktop && !shouldReduceMotion ? swoopArrowVariants : swoopArrowMobileVariant
+              }
               onAnimationComplete={(def) => addHoverClass(def)}
               aria-label="Scroll to content"
             />

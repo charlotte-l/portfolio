@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Flex, Heading, Grid, Box, Text } from '@chakra-ui/react';
+import { itemVariant } from 'components/common/constants';
+import StaggeredFade from 'components/common/StaggeredFade';
+import { m } from 'framer-motion';
 import ProjectWrapper from './ProjectWrapper';
 import projects from './Projects';
-
-import { m } from 'framer-motion';
-import StaggeredFade from 'components/common/StaggeredFade';
-import { itemVariant } from 'components/common/constants';
 
 const MotionBox = m(Box);
 const MotionHeading = m(Heading);
@@ -41,7 +40,7 @@ const SideProjects = () => {
             </MotionHeading>
             <MotionText maxW="66ch" mx="auto" variants={itemVariant} textStyle="paragraph">
               When I get chance, I like to mess around with various projects to learn new skills and
-              flex my right brain. Here's a couple of my most recent experiments.
+              flex my right brain. Here&apos;s a couple of my most recent experiments.
             </MotionText>
           </Box>
           <Grid templateColumns={{ base: '1fr', md: '0.37fr 0.64fr' }} gap="8" mb="8">

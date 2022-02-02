@@ -4,7 +4,7 @@ import { Container, Flex, useBreakpointValue, Heading, Text, Link } from '@chakr
 
 import { itemVariant } from 'components/common/constants';
 import Cursor from 'components/common/Cursor';
-import { Comets } from 'components/Graphics/Comets';
+import Comets from 'components/Graphics/Comets';
 import StaggeredFade from 'components/common/StaggeredFade';
 import SEO from '../components/common/seo';
 

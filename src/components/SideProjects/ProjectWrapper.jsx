@@ -11,7 +11,7 @@ const MotionBox = m(Box);
 const ProjectWrapper = React.forwardRef((props, ref) => {
   const shouldReduceMotion = useReducedMotion();
   const isDesktop = useMediaQuery('(min-width: 80em)');
-  const [boxRef, dimensions] = useBoundingRect(); 
+  const [boxRef, dimensions] = useBoundingRect();
 
   const { width, height, left, top } = dimensions;
   const controls = useAnimation();
@@ -135,10 +135,14 @@ const ProjectWrapper = React.forwardRef((props, ref) => {
         bottom="0"
         left="0"
         width="100%"
-        height={!isDesktop && "100%"}
+        height={!isDesktop && '100%'}
         padding="20px"
         textAlign="left"
-        initial={shouldReduceMotion ? { translateY: '0%', opacity: 0 } : { translateY: `${isDesktop ? '60%' : '70%'}` }}
+        initial={
+          shouldReduceMotion
+            ? { translateY: '0%', opacity: 0 }
+            : { translateY: `${isDesktop ? '60%' : '70%'}` }
+        }
         animate={shouldReduceMotion ? reducedAnimationContentControls : contentControls}
         _after={{
           content: "''",

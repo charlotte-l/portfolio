@@ -49,7 +49,13 @@ const scrollDown = () => {
 };
 
 const SwoopArrow = React.forwardRef((props, ref) => (
-  <chakra.button ref={ref} transition="transform 0.2s" onClick={scrollDown} _focus={{ boxShadow: 'none' }} {...props}>
+  <chakra.button
+    ref={ref}
+    transition="transform 0.2s"
+    onClick={scrollDown}
+    _focus={{ boxShadow: 'none' }}
+    {...props}
+  >
     <svg viewBox="0 0 25 21.785" xmlns="http://www.w3.org/2000/svg">
       <path
         fill="#FFF"

@@ -1,8 +1,8 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { LinkedinIcon, GithubIcon, EmailIcon } from '../../components/common/icons';
+import { LinkedinIcon, GithubIcon, EmailIcon } from '../common/icons';
 
-export const socialNetworks = [
+const socialNetworks = [
   {
     id: nanoid(),
     name: 'linkedin',
@@ -28,3 +28,5 @@ export const socialNetworks = [
     y: '10%',
   },
 ];
+
+export default socialNetworks;

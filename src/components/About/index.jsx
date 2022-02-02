@@ -51,11 +51,9 @@ const About = () => {
         mb="-10vh"
         position="relative"
         pointerEvents="none"
-        style={{transform: "translateY(-20vh)"}}
+        style={{ transform: 'translateY(-20vh)' }}
       >
-        <Forest
-          y={y}
-        />
+        <Forest y={y} />
       </Box>
       <Text
         textStyle="accent"
@@ -78,7 +76,7 @@ const About = () => {
               zIndex="2"
               scroll={y}
               min={isDesktop && !shouldReduceMotion ? 100 : 0}
-              max='400'
+              max="400"
               speed={isDesktop && !shouldReduceMotion && 0.2}
               alignSelf={{ base: 'center', xl: 'flex-start' }}
               initial={{ translateY: '-125%' }}
@@ -115,7 +113,7 @@ const About = () => {
               zIndex="1"
               scroll={y}
               min={isDesktop && !shouldReduceMotion ? 100 : 0}
-              max='400'
+              max="400"
               speed={isDesktop && !shouldReduceMotion && 0.1}
               alignSelf="center"
               initial={{ translateY: '-12.5%' }}
@@ -211,12 +209,8 @@ const About = () => {
                 and functional web&nbsp;experiences.
               </MotionText>
               <MotionText variants={itemVariant} mb="4" textStyle="paragraph">
-                I'm currently a web developer at{' '}
-                <Link
-                  href="https://www.adenin.com/"
-                  target={'_blank'}
-                  rel="nofollow noopener"
-                >
+                I&apos;m currently a web developer at{' '}
+                <Link href="https://www.adenin.com/" target="_blank" rel="nofollow noopener">
                   adenin Technologies
                 </Link>
                 ; I built the majority of the company website. More recently, I've been developing
@@ -224,34 +218,22 @@ const About = () => {
               </MotionText>
               <MotionText variants={itemVariant} mb="4" textStyle="paragraph">
                 Before web dev, I worked in Cybersecurity consulting at{' '}
-                <Link
-                  href="https://www.ey.com/en_uk"
-                  target="_blank"
-                  rel="nofollow noopener"
-                >
+                <Link href="https://www.ey.com/en_uk" target="_blank" rel="nofollow noopener">
                   EY UK
                 </Link>
                 . Before <em>that</em>, I spent a year at{' '}
-                <Link
-                  href="https://www.ibm.com/uk-en"
-                  target="_blank"
-                  rel="nofollow noopener"
-                >
+                <Link href="https://www.ibm.com/uk-en" target="_blank" rel="nofollow noopener">
                   IBM UK
                 </Link>{' '}
                 managing technical projects.
               </MotionText>
               <MotionText variants={itemVariant} mb="4" textStyle="paragraph">
-                I have a Bachelor's degree in Physics from the{' '}
-                <Link
-                  href="https://www.manchester.ac.uk/"
-                  target="_blank"
-                  rel="nofollow noopener"
-                >
+                I have a Bachelor&apos;s degree in Physics from the{' '}
+                <Link href="https://www.manchester.ac.uk/" target="_blank" rel="nofollow noopener">
                   University of Manchester
                 </Link>
-                . I'm also a Level 3 qualified Personal Trainer! I'm completely smitten with my
-                rescue cat, Buttons, and my two guinea pigs (Godzilla and Benny).
+                . I&apos;m also a Level 3 qualified Personal Trainer! I&apos;m completely smitten
+                with my rescue cat, Buttons, and my two guinea pigs (Godzilla and Benny).
               </MotionText>
             </StaggeredFade>
           </Flex>

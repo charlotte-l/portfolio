@@ -6,40 +6,10 @@ const Cursor = () => {
   const cursor2 = useRef();
   const requestRef = useRef();
   const previousTimeRef = useRef();
-  let [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-  let cursorIsHovering = useState(false);
-
-  const onMouseMove = (event) => {
-    // const { clientX: x, clientY: y } = event;
-    // setMousePosition({ x, y });
-    animateCursor(event);
-  };
-
-  const throttledMouseMove = useMemo(() => throttle(onMouseMove, 16));
-
-  const onResize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
-
-  useEffect(() => {
-    // set initial width/height
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-
-    document.addEventListener('pointermove', throttledMouseMove);
-    window.addEventListener('resize', onResize);
-    requestRef.current = requestAnimationFrame(animateCursor2);
-    handleLinks();
-
-    return () => {
-      document.removeEventListener('pointermove', throttledMouseMove);
-      window.removeEventListener('resize', onResize);
-      cancelAnimationFrame(requestRef.current);
-    };
-  }, []);
+  const cursorIsHovering = useState(false);
 
   let { x, y } = mousePosition;
   const winDimensions = { width, height };
@@ -62,6 +32,18 @@ const Cursor = () => {
     }
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animateCursor2);
+    return false;
+  };
+
+  const onMouseMove = (event) => {
+    animateCursor(event);
+  };
+
+  const throttledMouseMove = useMemo(() => throttle(onMouseMove, 16));
+
+  const onResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
   };
 
   function toggleCursorHover() {
@@ -86,6 +68,7 @@ const Cursor = () => {
       cursor2.current.style.border = '';
       cursor2.current.style.boxShadow = '';
     }
+    return false;
   }
 
   function handleLinks() {
@@ -100,6 +83,23 @@ const Cursor = () => {
       });
     });
   }
+
+  useEffect(() => {
+    // set initial width/height
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+
+    document.addEventListener('pointermove', throttledMouseMove);
+    window.addEventListener('resize', onResize);
+    requestRef.current = requestAnimationFrame(animateCursor2);
+    handleLinks();
+
+    return () => {
+      document.removeEventListener('pointermove', throttledMouseMove);
+      window.removeEventListener('resize', onResize);
+      cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
 
   return (
     <>
