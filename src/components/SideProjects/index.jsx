@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Flex, Heading, Grid, Box, Text } from '@chakra-ui/react';
 import ProjectWrapper from './ProjectWrapper';
-import { projects } from './Projects';
+import projects from './Projects';
 
 import { m } from 'framer-motion';
 import StaggeredFade from 'components/common/StaggeredFade';

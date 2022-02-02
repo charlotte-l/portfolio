@@ -3,7 +3,7 @@ import projectImageTwo from './images/project-two.jpg';
 import projectImageThree from './images/project-three.jpg';
 import projectImageFour from './images/project-four.jpg';
 
-export const projects = [
+const projects = [
   {
     title: 'Stargazing',
     info: 'A simple SVG illustration, brought to life with CSS and Framer Motion animation.',
@@ -17,10 +17,10 @@ export const projects = [
     link: 'https://codepen.io/amarisse/pen/poWZQmG',
   },
   {
-    title: 'Aquarium',
-    info: 'CSS-only illustration of a rimless aquarium with hardscaping, aquatic plants and a betta fish.',
+    title: 'Claymorphic',
+    info: 'An assortment of CSS elements and widgets, designed in a squishy, claymorphic style.',
     img: projectImageThree,
-    link: 'https://codepen.io/amarisse/pen/jOGKwoo',
+    link: 'https://codepen.io/amarisse/pen/NWaEXmL',
   },
   {
     title: 'Iridescent',
@@ -29,3 +29,5 @@ export const projects = [
     link: 'https://codepen.io/amarisse/pen/LYzmaZN',
   },
 ];
+
+export default projects;
