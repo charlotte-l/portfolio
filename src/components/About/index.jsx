@@ -209,7 +209,7 @@ const About = () => {
                 and functional web&nbsp;experiences.
               </MotionText>
               <MotionText variants={itemVariant} mb="4" textStyle="paragraph">
-                I&apos;m currently a web developer at{' '}
+                I’m currently a web developer at{' '}
                 <Link href="https://www.adenin.com/" target="_blank" rel="nofollow noopener">
                   adenin Technologies
                 </Link>
@@ -228,12 +228,12 @@ const About = () => {
                 managing technical projects.
               </MotionText>
               <MotionText variants={itemVariant} mb="4" textStyle="paragraph">
-                I have a Bachelor&apos;s degree in Physics from the{' '}
+                I have a Bachelor’s degree in Physics from the{' '}
                 <Link href="https://www.manchester.ac.uk/" target="_blank" rel="nofollow noopener">
                   University of Manchester
                 </Link>
-                . I&apos;m also a Level 3 qualified Personal Trainer! I&apos;m completely smitten
-                with my rescue cat, Buttons, and my two guinea pigs (Godzilla and Benny).
+                . I’m also a Level 3 qualified Personal Trainer! I’m completely smitten with my
+                rescue cat, Buttons, and my two guinea pigs (Godzilla and Benny).
               </MotionText>
             </StaggeredFade>
           </Flex>

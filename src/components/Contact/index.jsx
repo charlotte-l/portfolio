@@ -66,7 +66,7 @@ const Contact = () => {
             <Link href="mailto:cel.cameron@protonmail.com" title="Email Charlotte">
               Drop me a line
             </Link>
-            , I&apos;d love to hear from&nbsp;you!
+            , I’d love to hear from&nbsp;you!
           </Heading>
         </MotionContainer>
         <MotionFlex

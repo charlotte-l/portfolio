@@ -63,7 +63,7 @@ const Hero = () => {
               variants={variants}
               mb="4"
             >
-              Hi, I&apos;m Charlotte
+              Hi, I’m Charlotte
             </MotionHeading>
             <MotionText
               maxW={{ base: '100%', md: '60ch' }}
@@ -71,8 +71,8 @@ const Hero = () => {
               variants={variants}
               textStyle="paragraph-lg"
             >
-              I&apos;m a UK based web developer. I&apos;m passionate about building fast, accessible
-              and beautiful experiences for all. It&apos;s great to meet&nbsp;you!
+              I’m a UK based web developer. I’m passionate about building fast, accessible and
+              beautiful experiences for all. It’s great to meet&nbsp;you!
             </MotionText>
             <MotionArrow
               ref={swoopArrow}

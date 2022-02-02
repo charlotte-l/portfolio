@@ -92,7 +92,7 @@ const Work = () => {
               <MotionText variants={itemVariant} textStyle="paragraph">
                 I run Node.js-based workflow automation via Gulp or Grunt for web projects, and I've
                 written other Node scripts to automate mundane tasks. I also know my way around
-                Sketch and Figma, and I&apos;m comfortable using Adobe Photoshop, Illustrator and
+                Sketch and Figma, and I’m comfortable using Adobe Photoshop, Illustrator and
                 Premiere.
               </MotionText>
             </StaggeredFade>
