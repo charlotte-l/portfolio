@@ -46,13 +46,13 @@ const Hero = () => {
       color="white"
     >
       <Container width="100%" height="100%" maxW="unset" position="absolute" ref={ref}>
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
-        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors >= 8} />
       </Container>
       <Container maxW="5xl" zIndex="2" transform="translate3D(0,0,0)">
         <Box textAlign="center" align="center" mt={{ base: 36, md: 48 }} mb={{ base: 32, md: 32 }}>
