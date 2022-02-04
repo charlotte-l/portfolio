@@ -3,6 +3,7 @@ import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import { m, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery from 'hooks/useMediaQuery';
+import useHardwareConcurrency from 'hooks/useHardwareConcurrency';
 import StaggeredFade from 'components/common/StaggeredFade';
 import {
   itemVariant,
@@ -24,6 +25,7 @@ const Hero = () => {
   const [ref, inView] = useInView({ threshold: 0.1 });
   const isDesktop = useMediaQuery('(min-width: 80em)');
   const shouldReduceMotion = useReducedMotion();
+  const { numberOfLogicalProcessors } = useHardwareConcurrency();
   const swoopArrow = useRef(null);
 
   const addHoverClass = (def) => {
@@ -44,13 +46,13 @@ const Hero = () => {
       color="white"
     >
       <Container width="100%" height="100%" maxW="unset" position="absolute" ref={ref}>
-        <Ray animate={inView && isDesktop} />
-        <Ray animate={inView && isDesktop} />
-        <Ray animate={inView && isDesktop} />
-        <Ray animate={inView && isDesktop} />
-        <Ray animate={inView && isDesktop} />
-        <Ray animate={inView && isDesktop} />
-        <Ray animate={inView && isDesktop} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
+        <Ray animate={inView && isDesktop && numberOfLogicalProcessors > 8} />
       </Container>
       <Container maxW="5xl" zIndex="2" transform="translate3D(0,0,0)">
         <Box textAlign="center" align="center" mt={{ base: 36, md: 48 }} mb={{ base: 32, md: 32 }}>
